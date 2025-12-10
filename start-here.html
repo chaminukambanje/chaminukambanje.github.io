@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Here - MB-800 Guide</title>
+    <style>
+        /* CORE STYLES - Same across all pages */
+        :root { --primary: #0078d4; --secondary: #2b88d8; --text: #333; --bg: #f4f4f4; --white: #fff; --alert: #d83b01; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        /* NAV BAR */
+        header { background: var(--white); box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
 
+        /* CONTENT */
+        .hero { background: var(--primary); color: var(--white); padding: 3rem 0; text-align: center; margin-bottom: 2rem; }
+        .content-box { background: var(--white); padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        h1, h2, h3 { color: var(--primary); }
+        .tip-box { background: #fff4ce; border-left: 5px solid #ffb900; padding: 15px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">BC Prep</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="start-here.html" class="active">Start Here</a>
+                <a href="setup.html">Setup</a>
+                <a href="financials.html">Financials</a>
+                <a href="sales-purchase.html">Sales & Purch</a>
+                <a href="operations.html">Operations</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Start Here: Exam Strategy</h1>
+        <p>Everything you need to know about the MB-800 structure and scoring.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="content-box">
+        <h2>The MB-800 Exam Profile</h2>
+        <p>The <strong>Microsoft Certified: Dynamics 365 Business Central Functional Consultant Associate</strong> exam measures your ability to set up Business Central, configure financials, and manage sales/purchasing operations.</p>
+        
+        <h3>Key Details</h3>
+        <ul>
+            <li><strong>Time Limit:</strong> 120 Minutes (approx. 100 mins for questions).</li>
+            <li><strong>Question Count:</strong> 40-60 questions.</li>
+            <li><strong>Passing Score:</strong> 700 / 1000.</li>
+            <li><strong>Experience Level:</strong> Intermediate. You are expected to know "Small to Medium Business" (SMB) requirements.</li>
+        </ul>
+
+        <div class="tip-box">
+            <strong>Warning: Case Studies</strong><br>
+            You will likely face 1 or 2 "Case Studies" at the start or end of the exam. You cannot go back to these questions once you finish the section. Read the requirements carefully!
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h2>Question Types</h2>
+        <table class="table">
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Strategy</th>
+            </tr>
+            <tr>
+                <td><strong>Multiple Choice</strong></td>
+                <td>Standard select 1 or select 2 correct answers.</td>
+                <td>Eliminate obviously wrong answers (like "Restart the server").</td>
+            </tr>
+            <tr>
+                <td><strong>Drag and Drop</strong></td>
+                <td>Match steps to a process order.</td>
+                <td>Focus on the logical flow (e.g., Quote comes before Invoice).</td>
+            </tr>
+            <tr>
+                <td><strong>Hotspot</strong></td>
+                <td>Click a specific area on a screenshot or diagram.</td>
+                <td>Usually tests menu locations or ribbon buttons.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
