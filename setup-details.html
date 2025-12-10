@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup Details - MB-800</title>
+    <title>Setup Deep Dive - MB-800</title>
     <style>
         /* SHARED CSS */
         :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
@@ -27,10 +27,13 @@
         /* Content */
         .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: var(--secondary); margin-top: 0; }
-        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; }
-        .example-box { background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px; }
-        code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        h2 { color: var(--secondary); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; background: #fafafa; padding: 10px; }
+        ul, ol { margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        
+        .example-box { background: #f0f6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 20px 0; }
+        .alert-box { background: #fff4ce; border-left: 5px solid #ffb900; padding: 20px; margin: 20px 0; }
         
         @media (max-width: 768px) { .nav-links { display: none; } .sub-nav { display: none; } }
     </style>
@@ -40,7 +43,7 @@
 <header>
     <div class="container">
         <nav>
-            <a href="index.html" class="logo">MB-800 Prep</a>
+            <a href="index.html" class="logo">MB-800 Guide</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="setup-details.html" class="active">Setup Guide</a>
@@ -55,75 +58,99 @@
 <div class="sub-nav">
     <div class="container">
         <ul>
-            <li><a href="#new-company">Creating Companies</a></li>
-            <li><a href="#rapidstart">RapidStart (Config Packages)</a></li>
-            <li><a href="#security">Users & Security</a></li>
-            <li><a href="#number-series">Number Series</a></li>
+            <li><a href="#companies">Company Creation</a></li>
+            <li><a href="#rapidstart">RapidStart In-Depth</a></li>
+            <li><a href="#security">Security & Users</a></li>
+            <li><a href="#automation">Job Queues</a></li>
         </ul>
     </div>
 </div>
 
 <div class="container">
     
-    <div id="new-company" class="content-section">
+    <div id="companies" class="content-section">
         <h1>1. Creating and Configuring Companies</h1>
-        <p>Before any transaction occurs, the environment must be initialized. This often involves creating a new company within an existing environment.</p>
+        <p>A "Company" in Business Central is a legal entity or a data container. A single BC environment (Tenant) can hold multiple companies (e.g., "Cronus USA", "Cronus Canada").</p>
         
-        <h3>Assisted Setup Wizards</h3>
-        <p>Business Central provides wizards to streamline setup. You must know:</p>
+        <h3>Types of Setup</h3>
         <ul>
-            <li><strong>Set up Company:</strong> Basic details (Name, Address, Logo).</li>
-            <li><strong>Set up Email:</strong> Connects BC to Exchange/Outlook (using Graph API or SMTP).</li>
-            <li><strong>Set up Approval Workflows:</strong> Basic templates for document approvals.</li>
+            <li><strong>Production vs. Sandbox:</strong> You should always configure in a Sandbox environment first. You can copy a Production environment to a Sandbox for testing, but you cannot copy Sandbox to Production directly.</li>
+            <li><strong>Copy Company:</strong> In the "Companies" page, you can use the "Copy" function to duplicate an existing company (including data) to test a new process without affecting live data.</li>
         </ul>
         
+        <h3>Assisted Setup</h3>
+        <p>The "Assisted Setup" page is a hub for wizards. Key wizards to know for the exam:</p>
+        <ul>
+            <li><strong>Set up Company:</strong> Configures name, logo, and basic address.</li>
+            <li><strong>Set up Exchange Rates:</strong> Connects to a service (like FloatRates or Yahoo) to auto-update currency rates.</li>
+            <li><strong>Set up Email:</strong> Connects BC to M365 Outlook. You can set specific scenarios (e.g., Sales Orders come from sales@cronus.com, POs come from purchasing@cronus.com).</li>
+        </ul>
     </div>
 
     <div id="rapidstart" class="content-section">
-        <h2>2. RapidStart Services (Configuration Packages)</h2>
-        <p>This is the primary method for data migration. It allows you to extract, transform, and load data.</p>
-
-        <h3>The Workflow</h3>
+        <h2>2. RapidStart (Configuration Packages)</h2>
+        <p>This is the most critical setup topic. It involves migrating legacy data into BC.</p>
+        
+        <h3>The Migration Process (Order Matters!)</h3>
         <ol>
-            <li><strong>Create Package:</strong> Select the table ID (e.g., Table 18 for Customers).</li>
-            <li><strong>Select Fields:</strong> You rarely need all fields. Uncheck non-essential fields to reduce errors.</li>
-            <li><strong>Export to Excel:</strong> Generates a template.</li>
-            <li><strong>Populate & Import:</strong> Upload the filled Excel file.</li>
-            <li><strong>Validate:</strong> <span style="color:red">Critical Step.</span> Checks business logic (e.g., Does the "Payment Terms Code" actually exist?).</li>
-            <li><strong>Apply:</strong> Moves data from the temporary staging table to the real database table.</li>
+            <li><strong>Master Data (Dependents):</strong> Payment Terms, Posting Groups, Currencies, Locations. <br><em>(Why? Because you can't create a Customer without a Payment Term Code).</em></li>
+            <li><strong>Master Records:</strong> Chart of Accounts, Customers, Vendors, Items.</li>
+            <li><strong>Open Balances:</strong> General Journal Lines (for G/L history), Item Journal Lines (for Inventory count).</li>
         </ol>
 
-        <div class="example-box">
-            <strong>Exam Scenario:</strong> You get an error "Parent ID not found".<br>
-            <strong>Reason:</strong> You are trying to import "Sales Lines" before "Sales Headers," or you are importing Customers with a "Customer Posting Group" that hasn't been created yet.
-            <br><strong>Fix:</strong> Import Master Data (Posting Groups, Payment Terms) <em>before</em> Transactional Data.
+        
+
+        <h3>Configuration Package Card - Key Fields</h3>
+        <ul>
+            <li><strong>Table ID:</strong> The integer ID of the table (e.g., Customer = 18, Item = 27).</li>
+            <li><strong>Dimensions as Columns:</strong> If checked, your Excel export will have columns for "Global Dimension 1" and "2". If you need Shortcut Dimensions 3-8, you must add the "Dimensions" table (360) separately.</li>
+            <li><strong>Delete Table Records Before Processing:</strong> <span style="color:red; font-weight:bold;">Warning!</span> If checked, applying the package wipes the existing data in that table. Useful for cleaning a test company, dangerous for live go-live.</li>
+        </ul>
+
+        <div class="alert-box">
+            <strong>Exam Scenario: Import Errors</strong><br>
+            You import a package and get the error: <em>"The field Gen. Bus. Posting Group of table Customer contains a value (DOMESTIC) that cannot be found in the related table (Gen. Business Posting Group)."</em>
+            <br><br>
+            <strong>Solution:</strong> You failed to import the "Gen. Business Posting Groups" table first. You must create the group "DOMESTIC" before you can assign it to a customer.
         </div>
     </div>
 
     <div id="security" class="content-section">
         <h2>3. Security Management</h2>
-        <p>Business Central uses a layered security model.</p>
         
-        <h3>Permission Sets vs. User Groups</h3>
+        <h3>Users and Licenses</h3>
+        <p>Users are managed in the Microsoft 365 Admin Center, not directly in BC. You must click <strong>"Update Users from Microsoft 365"</strong> in BC to sync them.</p>
         <ul>
-            <li><strong>Permission Set:</strong> A collection of permissions for specific objects (Tables, Pages, Reports).
-                <br><em>Example:</em> "D365 SALES DOC" gives read/write access to Sales Orders.</li>
-            <li><strong>User Group:</strong> A collection of Permission Sets.
-                <br><em>Example:</em> The "SALES AGENT" group might contain "D365 SALES DOC" + "D365 CUSTOMER EDIT".</li>
+            <li><strong>Full User (Essential/Premium):</strong> Full read/write access.</li>
+            <li><strong>Team Member:</strong> Read-only access to most things; limited write access (e.g., can approve workflows, edit time sheets).</li>
         </ul>
 
-        <h3>Recording Permissions</h3>
-        <p>If you don't know which tables are needed for a task, use the <strong>Record Permissions</strong> feature. Start recording, perform the task (e.g., Create a Vendor), stop recording, and BC generates the permission set for you.</p>
+        <h3>Permission Sets</h3>
+        <ul>
+            <li><strong>System Permissions:</strong> Created by Microsoft (e.g., `D365 BASIC`, `D365 SALES`). You cannot edit these.</li>
+            <li><strong>User-Defined Permissions:</strong> You can copy a System set and modify it.</li>
+            <li><strong>Record Permissions:</strong> A tool that "watches" what you do. If you start recording and create a Customer, BC builds a permission set containing "Insert" permission for Table 18.</li>
+        </ul>
+
+        <h3>The "Effective Permissions" Page</h3>
+        <p>If a user complains they cannot see a page, go here. It lists every permission a user has and <strong>Source</strong> (which Permission Set granted it).</p>
     </div>
 
-    <div id="number-series" class="content-section">
-        <h2>4. Number Series</h2>
-        <p>Every document (Invoice, Order, Customer Card) needs a unique ID.</p>
-        <ul>
-            <li><strong>Default Nos.:</strong> Automatically assigns the next number (e.g., S-ORD-1001).</li>
-            <li><strong>Manual Nos.:</strong> Allows the user to type a custom ID (e.g., using a customer's external ID).</li>
-            <li><strong>Relationships:</strong> Allows you to select from multiple numbering series for a single document type (e.g., distinct series for Domestic vs. International orders).</li>
-        </ul>
+    <div id="automation" class="content-section">
+        <h2>4. Job Queues (Automation)</h2>
+        <p>Job Queues allow you to schedule tasks to run automatically (e.g., Post Recurring Journals every night, Sync Exchange Rates every morning).</p>
+        
+        <h3>Setup Steps</h3>
+        <ol>
+            <li><strong>Object Type to Run:</strong> Usually "Report" or "Codeunit".</li>
+            <li><strong>Object ID:</strong> The ID number of the report (e.g., "Suggest Vendor Payments").</li>
+            <li><strong>Recurrence:</strong> Set days of the week and start/end times.</li>
+            <li><strong>Parameter String:</strong> Used to pass specific filters to the report (rarely used, but examinable).</li>
+        </ol>
+        
+        <div class="example-box">
+            <strong>Troubleshooting:</strong> If a Job Queue fails, check the "Log Entries". If it says "User does not have permission," check the permissions of the <strong>User ID assigned to the Job Queue Entry</strong>, not your own ID.
+        </div>
     </div>
 
 </div>
