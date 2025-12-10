@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales & Purchase - MB-800 Guide</title>
+    <title>Sales & Purchase - MB-800</title>
     <style>
-        :root { --primary: #0078d4; --secondary: #2b88d8; --text: #333; --bg: #f4f4f4; --white: #fff; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: var(--white); box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
-        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
-        .hero { background: var(--primary); color: var(--white); padding: 3rem 0; text-align: center; margin-bottom: 2rem; }
-        .content-box { background: var(--white); padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        h1, h2, h3 { color: var(--primary); border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
-        .tip-box { background: #fff4ce; border-left: 5px solid #ffb900; padding: 15px; margin: 20px 0; }
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
+        
+        .content { background: var(--white); padding: 40px; margin-top: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { margin-top: 30px; color: var(--secondary); }
+        .badge { background: #e1f0fa; color: var(--primary); padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -24,53 +25,41 @@
 <header>
     <div class="container">
         <nav>
-            <a href="index.html" class="logo">BC Prep</a>
+            <a href="index.html" class="logo">MB-800 Prep</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="start-here.html">Start Here</a>
                 <a href="setup.html">Setup</a>
                 <a href="financials.html">Financials</a>
-                <a href="sales-purchase.html" class="active">Sales & Purch</a>
+                <a href="sales-purchase.html" class="active">Sales/Purch</a>
                 <a href="operations.html">Operations</a>
             </div>
         </nav>
     </div>
 </header>
 
-<section class="hero">
-    <div class="container">
-        <h1>Module 3: Configure Sales and Purchasing</h1>
-        <p>Inventory Costing, Prices, and Vendor/Customer setup.</p>
-    </div>
-</section>
-
 <div class="container">
-    <div class="content-box">
-        <h2>3.1 Inventory Costing Methods</h2>
-        <p>Defined on the Item Card. Once entries are posted, this is very hard to change.</p>
-        <ul>
-            <li><strong>FIFO (First In First Out):</strong> Standard for distribution. Oldest stock is sold first.</li>
-            <li><strong>LIFO:</strong> Rarely used due to accounting rules, but available.</li>
-            <li><strong>Average:</strong> Costs are weighted. Calculations can be per Item or per Item/Location/Variant.</li>
-            <li><strong>Standard:</strong> Used for Manufacturing. Costs are fixed; deviations are posted to Variance accounts.</li>
-        </ul>
-    </div>
+    <div class="content">
+        <span class="badge">Module 3</span>
+        <h1>Configure Sales & Purchasing</h1>
 
-    <div class="content-box">
-        <h2>3.2 Sales Prices & Discounts</h2>
-        <p>Business Central moved to a "New Sales Pricing Experience" (Feature Management).</p>
-        <h3>Price Lists</h3>
-        <p>You create <strong>Sales Price Lists</strong> which can apply to:</p>
+        <h2>3.1 Inventory Costing</h2>
+        <p>You must know the <strong>Costing Methods</strong> defined on the Item Card:</p>
         <ul>
-            <li>All Customers</li>
-            <li>Specific Customer</li>
-            <li>Customer Price Group (e.g., "Retail", "Wholesale")</li>
-            <li>Campaigns</li>
+            <li><strong>FIFO:</strong> First In, First Out. (Most common for distribution).</li>
+            <li><strong>LIFO:</strong> Last In, First Out.</li>
+            <li><strong>Specific:</strong> Tracks the exact cost of a specific Serial Number (High value items).</li>
+            <li><strong>Standard:</strong> Uses a pre-defined cost. Differences are posted to "Variance" accounts (Manufacturing).</li>
         </ul>
-        <h3>Discount Types</h3>
+
+        <h2>3.2 Pricing and Discounts</h2>
+        <p>BC uses <strong>Sales Price Lists</strong>.</p>
+        <p>You can set prices based on:</p>
         <ul>
-            <li><strong>Line Discount:</strong> % off specific items (e.g., Buy 10 chairs, get 5% off).</li>
-            <li><strong>Invoice Discount:</strong> % off the total bill (e.g., Order over $1000 gets 2% off total).</li>
+            <li>Customer (Specific)</li>
+            <li>Customer Price Group (e.g., "Wholesale")</li>
+            <li>Campaign</li>
+            <li>Date Range</li>
         </ul>
     </div>
 </div>
