@@ -18,6 +18,19 @@
         h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h2 { margin-top: 30px; color: var(--secondary); }
         .badge { background: #e1f0fa; color: var(--primary); padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+
+        .btn-detail {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+        .btn-detail:hover { background-color: var(--secondary); }
     </style>
 </head>
 <body>
@@ -40,27 +53,19 @@
 
 <div class="container">
     <div class="content">
-        <span class="badge">Module 3</span>
+        <span class="badge">Module 3 Overview</span>
         <h1>Configure Sales & Purchasing</h1>
 
+        <p><strong>Goal:</strong> Configure the trade logistics, including Item Cards, Costing, and Prices.</p>
+
         <h2>3.1 Inventory Costing</h2>
-        <p>You must know the <strong>Costing Methods</strong> defined on the Item Card:</p>
-        <ul>
-            <li><strong>FIFO:</strong> First In, First Out. (Most common for distribution).</li>
-            <li><strong>LIFO:</strong> Last In, First Out.</li>
-            <li><strong>Specific:</strong> Tracks the exact cost of a specific Serial Number (High value items).</li>
-            <li><strong>Standard:</strong> Uses a pre-defined cost. Differences are posted to "Variance" accounts (Manufacturing).</li>
-        </ul>
+        <p>Understanding <strong>Costing Methods</strong> (FIFO, LIFO, Average, Standard, Specific) is mandatory. This affects how the Balance Sheet and Income Statement are updated.</p>
 
         <h2>3.2 Pricing and Discounts</h2>
-        <p>BC uses <strong>Sales Price Lists</strong>.</p>
-        <p>You can set prices based on:</p>
-        <ul>
-            <li>Customer (Specific)</li>
-            <li>Customer Price Group (e.g., "Wholesale")</li>
-            <li>Campaign</li>
-            <li>Date Range</li>
-        </ul>
+        <p>Learn about Sales Price Lists and how BC determines the "Best Price" for a customer.</p>
+
+        <br>
+        <a href="sales-purchases-details.html" class="btn-detail">Open Detailed Study Guide &rarr;</a>
     </div>
 </div>
 
