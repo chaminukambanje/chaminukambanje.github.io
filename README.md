@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MB-800: Dynamics 365 Business Central Functional Consultant Guide</title>
+    <title>Dynamics 365 Business Central Functional Consultant Guide</title>
     <style>
         :root {
             --primary-color: #0078d4; /* Microsoft Blue */
