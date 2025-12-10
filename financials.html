@@ -21,6 +21,21 @@
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #f9f9f9; }
+
+        .btn-detail {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+        .btn-detail:hover { background-color: var(--secondary); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -43,41 +58,34 @@
 
 <div class="container">
     <div class="content">
-        <span class="badge">Module 2</span>
+        <span class="badge">Module 2 Overview</span>
         <h1>Configure Financials</h1>
 
+        <p><strong>Goal:</strong> Set up the accounting core, including Chart of Accounts, Dimensions, and Posting Groups.</p>
+
         <h2>2.1 Posting Groups</h2>
-        <p>This is the most critical part of the exam. Business Central uses "Posting Groups" to link customers and items to the G/L.</p>
+        <p>The "engine" of Business Central. You must understand how the system uses matrix logic to find G/L accounts.</p>
         
         <table>
             <tr>
                 <th>Group Name</th>
                 <th>Description</th>
-                <th>Example</th>
             </tr>
             <tr>
                 <td><strong>Gen. Bus. Posting Group</strong></td>
-                <td>Who we are dealing with.</td>
-                <td>Domestic, EU, Export</td>
+                <td>Who we deal with (Customers/Vendors).</td>
             </tr>
             <tr>
                 <td><strong>Gen. Prod. Posting Group</strong></td>
-                <td>What we are buying/selling.</td>
-                <td>Retail, Service, Raw Mat</td>
-            </tr>
-            <tr>
-                <td><strong>Customer Posting Group</strong></td>
-                <td>Links to the Receivables Account.</td>
-                <td>A/R Domestic</td>
+                <td>What we buy/sell (Items/Resources).</td>
             </tr>
         </table>
         
         <h2>2.2 Dimensions</h2>
-        <p>Dimensions allow you to analyze data without creating new G/L accounts.</p>
-        <ul>
-            <li><strong>Global Dimensions:</strong> You can only have 2. They appear everywhere and are fast to filter.</li>
-            <li><strong>Shortcut Dimensions:</strong> You can have up to 6 more (Total 8). They appear on Journal lines but are harder to filter in the G/L entries.</li>
-        </ul>
+        <p>Global Dimensions (2) vs. Shortcut Dimensions (6). Know the difference in reporting capabilities.</p>
+
+        <br>
+        <a href="financials-details.html" class="btn-detail">Open Detailed Study Guide &rarr;</a>
     </div>
 </div>
 
