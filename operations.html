@@ -8,6 +8,7 @@
         :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
         header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
         .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
@@ -18,6 +19,21 @@
         h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h2 { margin-top: 30px; color: var(--secondary); }
         .badge { background: #e1f0fa; color: var(--primary); padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+        
+        .btn-detail {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+        .btn-detail:hover { background-color: var(--secondary); }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -40,26 +56,22 @@
 
 <div class="container">
     <div class="content">
-        <span class="badge">Module 4</span>
+        <span class="badge">Module 4 Overview</span>
         <h1>Perform Operations</h1>
 
+        <p><strong>Goal:</strong> Execute daily tasks, from creating quotes to reconciling bank accounts.</p>
+
         <h2>4.1 The Sales & Purchase Cycle</h2>
-        <p><strong>Quote -> Order -> Invoice -> Credit Memo</strong></p>
-        <p></p>
+        <p>Understanding the full lifecycle: <strong>Quote -> Order -> Invoice -> Credit Memo</strong>.</p>
         
-        <h3>Key Concept: Quantity to Ship vs. Quantity Shipped</h3>
-        <p>On a Sales Order, you can do partial shipments.</p>
-        <ul>
-            <li><strong>Qty. to Ship:</strong> How many you want to send <em>now</em>.</li>
-            <li><strong>Qty. Shipped:</strong> How many have already been sent.</li>
-        </ul>
+        <h3>Key Concept: Shipping vs Invoicing</h3>
+        <p>BC separates physical inventory movement (Shipment/Receipt) from financial posting (Invoice).</p>
 
         <h2>4.2 Vendor Payments</h2>
-        <p>To pay vendors, you use the <strong>Payment Journal</strong>.</p>
-        <ul>
-            <li><strong>Suggest Vendor Payments:</strong> A batch job that automatically fills the journal based on Due Dates and available cash discounts.</li>
-            <li><strong>Bank Export:</strong> You can export the file to upload to your bank portal.</li>
-        </ul>
+        <p>Using the Payment Journal and the "Suggest Vendor Payments" batch job.</p>
+
+        <br>
+        <a href="operations-details.html" class="btn-detail">Open Detailed Study Guide &rarr;</a>
     </div>
 </div>
 
