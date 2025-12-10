@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations - MB-800 Guide</title>
+    <style>
+        :root { --primary: #0078d4; --secondary: #2b88d8; --text: #333; --bg: #f4f4f4; --white: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: var(--white); box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+        .hero { background: var(--primary); color: var(--white); padding: 3rem 0; text-align: center; margin-bottom: 2rem; }
+        .content-box { background: var(--white); padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        h1, h2, h3 { color: var(--primary); border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .tip-box { background: #fff4ce; border-left: 5px solid #ffb900; padding: 15px; margin: 20px 0; }
+    </style>
+</head>
+<body>
 
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">BC Prep</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="start-here.html">Start Here</a>
+                <a href="setup.html">Setup</a>
+                <a href="financials.html">Financials</a>
+                <a href="sales-purchase.html">Sales & Purch</a>
+                <a href="operations.html" class="active">Operations</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Module 4: Perform Business Operations</h1>
+        <p>Managing the daily lifecycle of sales, purchasing, and banking.</p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="content-box">
+        <h2>4.1 The Document Lifecycle</h2>
+        <p>Understanding the flow of documents is critical for the exam.</p>
+        
+        <h3>Sales Flow</h3>
+        <ol>
+            <li><strong>Sales Quote:</strong> Offer to customer (Does not affect stock).</li>
+            <li><strong>Sales Order:</strong> Confirmation (Allocates stock).</li>
+            <li><strong>Posted Sales Shipment:</strong> Removes item from inventory (affects Item Ledger).</li>
+            <li><strong>Posted Sales Invoice:</strong> Finalizes financials (affects Cust. Ledger & G/L).</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>Exam Tip:</strong> You can skip the "Order" step and go straight from Quote to Invoice if your process is simple. However, if you need partial shipping, you <strong>must</strong> use a Sales Order.
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h2>4.2 Banking & Journals</h2>
+        <h3>Payment Registration</h3>
+        <p>A simplified tool to mark multiple customer invoices as "Paid" in one screen. It automatically creates and posts the lump sum to the bank account.</p>
+
+        <h3>Bank Reconciliation</h3>
+        <p>Matching the bank statement lines to your internal Bank Ledger Entries. </p>
+        <ul>
+            <li><strong>Auto-Match:</strong> BC can automatically match lines based on text/amount.</li>
+            <li><strong>Transfer to GL:</strong> If a fee appears on the bank statement that isn't in BC, you can transfer it to a General Journal directly from the Rec screen.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
