@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Deep Dive - MB-800</title>
+    <style>
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
+        .sub-nav { background-color: var(--bg-nav); padding: 10px 0; border-bottom: 1px solid #d0e7f7; }
+        .sub-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        .sub-nav li { margin: 0 15px; }
+        .sub-nav a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
+        .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--secondary); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; background: #fafafa; padding: 10px; }
+        ul, ol { margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        .example-box { background: #f0f6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 20px 0; }
+        
+        @media (max-width: 768px) { .nav-links, .sub-nav { display: none; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">MB-800 Guide</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="setup-details.html">Setup Guide</a>
+                <a href="financials-details.html">Financials Guide</a>
+                <a href="sales-purchases-details.html" class="active">Sales/Purch Guide</a>
+                <a href="operations-details.html">Operations Guide</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="sub-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#costing">Costing Methods</a></li>
+            <li><a href="#prices">Price Lists</a></li>
+            <li><a href="#item-tracking">Serial/Lot Tracking</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="costing" class="content-section">
+        <h1>1. Inventory Costing Methods</h1>
+        <p>You cannot change the costing method of an item once transactions exist. Choose carefully.</p>
+        
+        
+
+        <h3>Methods Defined</h3>
+        <ul>
+            <li><strong>FIFO (First-In, First-Out):</strong> Standard for distribution. The cost of goods sold is taken from the oldest inventory. The Balance Sheet value reflects the most recent costs.</li>
+            <li><strong>LIFO (Last-In, First-Out):</strong> Cost of goods sold is taken from the newest inventory.</li>
+            <li><strong>Average:</strong> A weighted average. You can configure "Average Cost Period" (Day, Week, Month) and "Average Cost Calc. Type" (Item, or Item & Location & Variant).</li>
+            <li><strong>Specific:</strong> Used for high-value items (cars, art). You must identify exactly which serial number was sold, and BC uses the exact cost of that specific serial number.</li>
+            <li><strong>Standard:</strong> Used in Manufacturing. The cost is "Frozen". Any difference between purchase price and standard cost is posted immediately to a Purchase Variance Account.</li>
+        </ul>
+    </div>
+
+    <div id="prices" class="content-section">
+        <h2>2. Sales Price Lists</h2>
+        <p>The "New Sales Pricing Experience" consolidates prices and discounts into "Price Lists".</p>
+        
+        <h3>Setup Options</h3>
+        <ul>
+            <li><strong>Assign-to Type:</strong> Who gets this price? (All Customers, Customer, Customer Price Group, Campaign).</li>
+            <li><strong>Asset Type:</strong> What are we selling? (Item, G/L Account, Resource, Service Cost).</li>
+            <li><strong>Minimum Quantity:</strong> Price only triggers if they buy 10+.</li>
+            <li><strong>Unit of Measure:</strong> Price is $10 for "PCS" but $80 for "BOX" (of 10).</li>
+        </ul>
+        
+        <div class="example-box">
+            <strong>Best Price Logic:</strong> If a customer qualifies for two prices (e.g., they are in the "Retail" group which gets $10, but they have a specific customer price of $9), Business Central <strong>always gives the lowest price</strong>.
+        </div>
+    </div>
+
+    <div id="item-tracking" class="content-section">
+        <h2>3. Item Tracking (Serials & Lots)</h2>
+        <p>Configured via <strong>Item Tracking Codes</strong>.</p>
+        
+        <h3>Key Settings</h3>
+        <ul>
+            <li><strong>SN Specific Tracking:</strong> If true, you cannot move/sell the item without selecting a Serial No.</li>
+            <li><strong>Lot Specific Tracking:</strong> Same as above, but for Batches/Lots.</li>
+            <li><strong>Expiration Date Formula:</strong> Requires user to enter expiry date on inbound (Purchase). Enforces "FEFO" (First Expired, First Out) picking.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
