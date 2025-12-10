@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financials Deep Dive - MB-800</title>
+    <style>
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
+        .sub-nav { background-color: var(--bg-nav); padding: 10px 0; border-bottom: 1px solid #d0e7f7; }
+        .sub-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        .sub-nav li { margin: 0 15px; }
+        .sub-nav a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
+        .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--secondary); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; background: #fafafa; padding: 10px; }
+        ul, ol { margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        .example-box { background: #f0f6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        
+        @media (max-width: 768px) { .nav-links, .sub-nav { display: none; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">MB-800 Guide</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="setup-details.html">Setup Guide</a>
+                <a href="financials-details.html" class="active">Financials Guide</a>
+                <a href="sales-purchases-details.html">Sales/Purch Guide</a>
+                <a href="operations-details.html">Operations Guide</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="sub-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#coa">Chart of Accounts</a></li>
+            <li><a href="#posting">Posting Groups (The Matrix)</a></li>
+            <li><a href="#dimensions">Dimensions Setup</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="coa" class="content-section">
+        <h1>1. Chart of Accounts (COA)</h1>
+        <p>The COA is the core list of all G/L accounts. In BC, this is a flat list, structured by indentation.</p>
+        
+        <h3>Account Categories & Subcategories</h3>
+        <p>Used for reporting (Financial Reports). For example, you can map 5 different G/L accounts to the category "Cash". When you run the Balance Sheet, it sums them up automatically.</p>
+        
+        <h3>Direct Posting</h3>
+        <p>This checkbox on the G/L Account Card is vital.</p>
+        <ul>
+            <li><strong>ON:</strong> Users can select this account in a General Journal (e.g., Office Supplies).</li>
+            <li><strong>OFF:</strong> Users are blocked from selecting this account. It can <em>only</em> be posted to via the sub-ledgers (e.g., Receivables, Payables, Inventory). This prevents out-of-sync ledgers.</li>
+        </ul>
+    </div>
+
+    <div id="posting" class="content-section">
+        <h2>2. Posting Groups (The Matrix)</h2>
+        <p>You must memorize the three main setup matrices.</p>
+
+        
+        
+        <h3>A. General Posting Setup</h3>
+        <p>Combines <strong>Gen. Bus. Posting Group</strong> (Customer/Vendor) + <strong>Gen. Prod. Posting Group</strong> (Item/Resource).</p>
+        <p><strong>Defines:</strong></p>
+        <ul>
+            <li>Sales Account</li>
+            <li>Cost of Goods Sold (COGS) Account</li>
+            <li>Purchase Account</li>
+            <li>Inventory Adjustment Account (Losses/Gains)</li>
+        </ul>
+
+        <h3>B. VAT (Tax) Posting Setup</h3>
+        <p>Combines <strong>VAT Bus. Posting Group</strong> + <strong>VAT Prod. Posting Group</strong>.</p>
+        <p><strong>Defines:</strong></p>
+        <ul>
+            <li>VAT % (e.g., 20%)</li>
+            <li>VAT Calculation Type (Normal, Reverse Charge, Sales Tax)</li>
+            <li>Sales VAT Account / Purchase VAT Account</li>
+        </ul>
+
+        <h3>C. Inventory Posting Setup</h3>
+        <p>Combines <strong>Location Code</strong> (Warehouse) + <strong>Inventory Posting Group</strong> (Item Category).</p>
+        <p><strong>Defines:</strong></p>
+        <ul>
+            <li>Inventory Account (The Balance Sheet asset account)</li>
+        </ul>
+
+        <div class="example-box">
+            <strong>Exam Question:</strong> "A user posts a Sales Invoice for a Customer (Domestic) and an Item (Retail). The system posts to the wrong Sales GL Account. Where do you fix it?"
+            <br><strong>Answer:</strong> Go to the <strong>General Posting Setup</strong> page. Find the line where Gen. Bus. Group = DOMESTIC and Gen. Prod. Group = RETAIL. Change the "Sales Account" column.
+        </div>
+    </div>
+
+    <div id="dimensions" class="content-section">
+        <h2>3. Dimensions</h2>
+        <p>Dimensions categorize data (Department, Project, Area). They replace the need for segmented accounts (e.g., 4000-01-02).</p>
+
+        <h3>Dimension Priorities</h3>
+        <p>If a Customer has a default dimension "Area: North" and the Item has "Area: South", what happens?</p>
+        <ul>
+            <li><strong>Value Posting - Code Mandatory:</strong> The user MUST select a dimension, but it doesn't matter which one.</li>
+            <li><strong>Value Posting - Same Code:</strong> The document requires a specific code.</li>
+            <li><strong>Default Dimension Priorities:</strong> A setup page where you define that "Customer" dimension wins over "Item" dimension in a conflict.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
