@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Details - MB-800</title>
+    <style>
+        /* SHARED CSS */
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Main Header */
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
 
+        /* Module Sub-Navigation */
+        .sub-nav { background-color: var(--bg-nav); padding: 10px 0; border-bottom: 1px solid #d0e7f7; }
+        .sub-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        .sub-nav li { margin: 0 15px; }
+        .sub-nav a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
+        .sub-nav a:hover { text-decoration: underline; }
+
+        /* Content */
+        .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--secondary); margin-top: 0; }
+        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; }
+        .example-box { background: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+        
+        @media (max-width: 768px) { .nav-links { display: none; } .sub-nav { display: none; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">MB-800 Prep</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="setup-details.html" class="active">Setup Guide</a>
+                <a href="financials-details.html">Financials Guide</a>
+                <a href="sales-purchases-details.html">Sales/Purch Guide</a>
+                <a href="operations-details.html">Operations Guide</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="sub-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#new-company">Creating Companies</a></li>
+            <li><a href="#rapidstart">RapidStart (Config Packages)</a></li>
+            <li><a href="#security">Users & Security</a></li>
+            <li><a href="#number-series">Number Series</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    
+    <div id="new-company" class="content-section">
+        <h1>1. Creating and Configuring Companies</h1>
+        <p>Before any transaction occurs, the environment must be initialized. This often involves creating a new company within an existing environment.</p>
+        
+        <h3>Assisted Setup Wizards</h3>
+        <p>Business Central provides wizards to streamline setup. You must know:</p>
+        <ul>
+            <li><strong>Set up Company:</strong> Basic details (Name, Address, Logo).</li>
+            <li><strong>Set up Email:</strong> Connects BC to Exchange/Outlook (using Graph API or SMTP).</li>
+            <li><strong>Set up Approval Workflows:</strong> Basic templates for document approvals.</li>
+        </ul>
+        
+    </div>
+
+    <div id="rapidstart" class="content-section">
+        <h2>2. RapidStart Services (Configuration Packages)</h2>
+        <p>This is the primary method for data migration. It allows you to extract, transform, and load data.</p>
+
+        <h3>The Workflow</h3>
+        <ol>
+            <li><strong>Create Package:</strong> Select the table ID (e.g., Table 18 for Customers).</li>
+            <li><strong>Select Fields:</strong> You rarely need all fields. Uncheck non-essential fields to reduce errors.</li>
+            <li><strong>Export to Excel:</strong> Generates a template.</li>
+            <li><strong>Populate & Import:</strong> Upload the filled Excel file.</li>
+            <li><strong>Validate:</strong> <span style="color:red">Critical Step.</span> Checks business logic (e.g., Does the "Payment Terms Code" actually exist?).</li>
+            <li><strong>Apply:</strong> Moves data from the temporary staging table to the real database table.</li>
+        </ol>
+
+        <div class="example-box">
+            <strong>Exam Scenario:</strong> You get an error "Parent ID not found".<br>
+            <strong>Reason:</strong> You are trying to import "Sales Lines" before "Sales Headers," or you are importing Customers with a "Customer Posting Group" that hasn't been created yet.
+            <br><strong>Fix:</strong> Import Master Data (Posting Groups, Payment Terms) <em>before</em> Transactional Data.
+        </div>
+    </div>
+
+    <div id="security" class="content-section">
+        <h2>3. Security Management</h2>
+        <p>Business Central uses a layered security model.</p>
+        
+        <h3>Permission Sets vs. User Groups</h3>
+        <ul>
+            <li><strong>Permission Set:</strong> A collection of permissions for specific objects (Tables, Pages, Reports).
+                <br><em>Example:</em> "D365 SALES DOC" gives read/write access to Sales Orders.</li>
+            <li><strong>User Group:</strong> A collection of Permission Sets.
+                <br><em>Example:</em> The "SALES AGENT" group might contain "D365 SALES DOC" + "D365 CUSTOMER EDIT".</li>
+        </ul>
+
+        <h3>Recording Permissions</h3>
+        <p>If you don't know which tables are needed for a task, use the <strong>Record Permissions</strong> feature. Start recording, perform the task (e.g., Create a Vendor), stop recording, and BC generates the permission set for you.</p>
+    </div>
+
+    <div id="number-series" class="content-section">
+        <h2>4. Number Series</h2>
+        <p>Every document (Invoice, Order, Customer Card) needs a unique ID.</p>
+        <ul>
+            <li><strong>Default Nos.:</strong> Automatically assigns the next number (e.g., S-ORD-1001).</li>
+            <li><strong>Manual Nos.:</strong> Allows the user to type a custom ID (e.g., using a customer's external ID).</li>
+            <li><strong>Relationships:</strong> Allows you to select from multiple numbering series for a single document type (e.g., distinct series for Domestic vs. International orders).</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
