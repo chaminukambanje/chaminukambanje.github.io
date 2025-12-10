@@ -3,192 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - MB-800 Business Central Guide</title>
+    <title>MB-800 Study Guide - Home</title>
     <style>
-        :root {
-            --primary-color: #0078d4; /* Microsoft Blue */
-            --secondary-color: #2b88d8;
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-light: #f4f4f4;
-            --white: #ffffff;
-            --accent: #d83b01;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Header & Nav */
-        header {
-            background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto; }
+        /* SHARED CSS START - Copy this style block to other pages if you want to change the look globally */
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        .btn-hero {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.2s;
-        }
-        .btn-hero:hover { background-color: #f0f0f0; }
+        /* Navigation */
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
 
-        /* Content Grid */
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            gap: 2rem;
-            padding: 2rem 0;
-        }
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 0; text-align: center; margin-bottom: 30px; }
+        .hero h1 { margin: 0 0 10px 0; font-size: 2.5rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* Card Styling */
-        .module-card {
-            background: var(--white);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        
-        .module-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-
-        .module-tag {
-            background: #e1f0fa;
-            color: var(--primary-color);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        h2 { color: var(--primary-color); margin-bottom: 0.5rem; }
-        .card-desc { margin-bottom: 1.5rem; color: var(--text-light); }
-
-        .btn-link {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            border: 2px solid var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .btn-link:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Sidebar */
-        .sidebar-widget {
-            background: var(--white);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+        /* Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card { background: var(--white); padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h2 { color: var(--primary); margin-top: 0; font-size: 1.5rem; }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 15px; }
+        .btn:hover { background: var(--secondary); }
 
         /* Footer */
-        footer {
-            background: #333;
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
+        footer { text-align: center; padding: 20px; margin-top: 40px; color: #777; font-size: 0.9rem; border-top: 1px solid #ddd; }
+        
+        /* Mobile */
+        @media (max-width: 768px) { .nav-links { display: none; } } /* Simple hide for mobile simplicity */
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">BC Consultant Prep</a>
-                <div class="nav-links">
-                    <a href="index.html" class="active">Home</a>
-                    <a href="start-here.html">Start Here</a>
-                    <a href="setup.html">Setup</a>
-                    <a href="financials.html">Financials</a>
-                    <a href="sales-purchase.html">Sales & Purch</a>
-                    <a href="operations.html">Operations</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Mastering MB-800</h1>
-            <p>Your complete guide to the Dynamics 365 Business Central Functional Consultant Associate exam.</p>
-            <a href="start-here.html" class="btn-hero">Start Learning Plan</a>
-        </div>
-    </section>
-
-    <div class="container content-wrapper">
-        
-        <main>
-            <div class="module-card">
-                <span class="module-tag">Module 1</span>
-                <h2>Set Up Business Central</h2>
-                <p class="card-desc">Master configuration packages, user security, and core system settings.</p>
-                <a href="setup.html" class="btn-link">Read Study Guide &rarr;</a>
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">MB-800 Prep</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="start-here.html">Start Here</a>
+                <a href="setup.html">Setup</a>
+                <a href="financials.html">Financials</a>
+                <a href="sales-purchase.html">Sales/Purch</a>
+                <a href="operations.html">Operations</a>
             </div>
+        </nav>
+    </div>
+</header>
 
-            <div class="module-card">
-                <span class="module-tag">Module 2</span>
-                <h2>Configure Financials</h2>
-                <p class="card-desc">Deep dive into Chart of Accounts, Dimensions, and Posting Groups.</p>
-                <a href="financials.html
+<div class="hero">
+    <div class="container">
+        <h1>Dynamics 365 Business Central Consultant</h1>
+        <p>Complete Study Guide for Exam MB-800</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="grid">
+        <div class="card">
+            <h2>Start Here</h2>
+            <p>Understand the exam structure, scoring logic, and study strategy before you begin.</p>
+            <a href="start-here.html" class="btn">View Strategy</a>
+        </div>
+
+        <div class="card">
+            <h2>Module 1: Setup</h2>
+            <p><strong>20-25% of Exam</strong><br>RapidStart, Security, and Core Settings.</p>
+            <a href="setup.html" class="btn">Study Setup</a>
+        </div>
+
+        <div class="card">
+            <h2>Module 2: Financials</h2>
+            <p><strong>25-30% of Exam</strong><br>Posting Groups, Dimensions, and Chart of Accounts.</p>
+            <a href="financials.html" class="btn">Study Financials</a>
+        </div>
+
+        <div class="card">
+            <h2>Module 3: Trade</h2>
+            <p><strong>10-15% of Exam</strong><br>Sales prices, Inventory costing, and purchasing.</p>
+            <a href="sales-purchase.html" class="btn">Study Trade</a>
+        </div>
+
+        <div class="card">
+            <h2>Module 4: Operations</h2>
+            <p><strong>30-35% of Exam</strong><br>Document lifecycles and daily tasks.</p>
+            <a href="operations.html" class="btn">Study Operations</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        &copy; 2023 MB-800 Study Guide | Unofficial Educational Resource
+    </div>
+</footer>
+
+</body>
+</html>
