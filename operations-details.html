@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Deep Dive - MB-800</title>
+    <style>
+        :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
+        .sub-nav { background-color: var(--bg-nav); padding: 10px 0; border-bottom: 1px solid #d0e7f7; }
+        .sub-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        .sub-nav li { margin: 0 15px; }
+        .sub-nav a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
+        .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: var(--secondary); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        h3 { border-left: 4px solid var(--primary); padding-left: 10px; margin-top: 25px; background: #fafafa; padding: 10px; }
+        ul, ol { margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        .example-box { background: #f0f6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 20px 0; }
+        
+        @media (max-width: 768px) { .nav-links, .sub-nav { display: none; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">MB-800 Guide</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="setup-details.html">Setup Guide</a>
+                <a href="financials-details.html">Financials Guide</a>
+                <a href="sales-purchases-details.html">Sales/Purch Guide</a>
+                <a href="operations-details.html" class="active">Operations Guide</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="sub-nav">
+    <div class="container">
+        <ul>
+            <li><a href="#doc-flow">Sales/Purchase Flow</a></li>
+            <li><a href="#journals">Journals</a></li>
+            <li><a href="#banking">Bank Reconciliation</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="doc-flow" class="content-section">
+        <h1>1. The Document Flow</h1>
+        
+        <h3>Sales Cycle</h3>
+        <ol>
+            <li><strong>Sales Quote:</strong> No impact on G/L or Inventory. Can be archived.</li>
+            <li><strong>Sales Order:</strong> Increases "Committed" inventory. Required for partial shipments.</li>
+            <li><strong>Sales Shipment:</strong> The warehouse step. Moves inventory out (Credit Inventory, Debit COGS).</li>
+            <li><strong>Sales Invoice:</strong> The financial step. Updates Customer Ledger (Debit AR, Credit Sales).</li>
+        </ol>
+
+        
+
+        <h3>Purchasing Cycle</h3>
+        <p>Similar to sales, but with "Receipts" instead of Shipments.</p>
+        <div class="example-box">
+            <strong>Qty. to Receive:</strong> If you order 10 items, but the vendor only sends 8, set "Qty. to Receive" to 8 and post. The PO remains open with 2 items on "Outstanding Quantity".
+        </div>
+    </div>
+
+    <div id="journals" class="content-section">
+        <h2>2. General Journals</h2>
+        <p>Used for transactions that don't involve a standard document (like adjusting bad debt or monthly accruals).</p>
+        
+        <h3>Recurring General Journals</h3>
+        <p>Used for repeating expenses (Rent, Subscriptions). You must define a <strong>Recurring Method</strong>:</p>
+        <ul>
+            <li><strong>Fixed:</strong> The amount remains the same every time.</li>
+            <li><strong>Variable:</strong> The amount is zeroed out after posting (you must type a new amount next month).</li>
+            <li><strong>Balance:</strong> Allocates the entire balance of an account (e.g., clear out a petty cash account to zero).</li>
+        </ul>
+        
+        <h3>Standard Journals</h3>
+        <p>A template feature. You can save a journal with lines (e.g., Payroll split) and reload it next month to save typing.</p>
+    </div>
+
+    <div id="banking" class="content-section">
+        <h2>3. Bank Reconciliation</h2>
+        <p>Matching your internal Bank Ledger Entries (BLE) to the actual Bank Statement.</p>
+        
+        <h3>Matching Methods</h3>
+        <ul>
+            <li><strong>Automatic Matching:</strong> BC tries to match based on Date, Amount, and Transaction Text. You can configure "Transaction Text Matching" rules to improve accuracy.</li>
+            <li><strong>Manual Matching:</strong> Select a line on the left (Statement) and right (BLE) and click "Match Manually".</li>
+        </ul>
+
+        <h3>Transfer to General Journal</h3>
+        <p>If you find a bank fee on the statement that you forgot to record in BC, you can click "Transfer to General Journal" right from the Recon screen to create and post it immediately.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
