@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operations Deep Dive - MB-800</title>
     <style>
+        /* SHARED CSS */
         :root { --primary: #0078d4; --secondary: #2b88d8; --dark: #333; --light: #f4f4f4; --white: #fff; --bg-nav: #e6f2fb; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: var(--light); color: var(--dark); line-height: 1.6; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigation */
         header { background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
         .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary); text-decoration: none; }
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--dark); font-size: 0.95rem; }
         .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: bold; }
+
+        /* Module Sub-Navigation */
         .sub-nav { background-color: var(--bg-nav); padding: 10px 0; border-bottom: 1px solid #d0e7f7; }
         .sub-nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
         .sub-nav li { margin: 0 15px; }
         .sub-nav a { text-decoration: none; color: var(--secondary); font-size: 0.9rem; font-weight: 600; }
+        
+        /* Content Sections */
         .content-section { background: var(--white); padding: 40px; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         h1 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h2 { color: var(--secondary); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
@@ -24,7 +31,16 @@
         ul, ol { margin-bottom: 20px; }
         li { margin-bottom: 10px; }
         .example-box { background: #f0f6ff; border-left: 5px solid var(--primary); padding: 20px; margin: 20px 0; }
-        
+
+        /* Video Blog Styling */
+        .video-blog-post { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 40px; }
+        .video-header { background: var(--dark); color: white; padding: 20px; }
+        .video-header h2 { margin: 0; color: white; border: none; }
+        .video-meta { font-size: 0.85rem; opacity: 0.8; margin-top: 5px; }
+        .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0; overflow: hidden; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-desc { padding: 20px; background: #fff; }
+
         @media (max-width: 768px) { .nav-links, .sub-nav { display: none; } }
     </style>
 </head>
@@ -33,16 +49,13 @@
 <header>
     <div class="container">
         <nav>
-            <a href="index.html" class="logo">Hub / MB-800</a>
-            
+            <a href="index.html" class="logo">MB-800 Guide</a>
             <div class="nav-links">
-                <a href="mb800-overview.html">Course Home</a> 
-                
-                <a href="start-here.html">Start Here</a>
-                <a href="setup.html">Setup</a>
-                <a href="financials.html">Financials</a>
-                <a href="sales-purchase.html">Sales/Purch</a>
-                <a href="operations.html">Operations</a>
+                <a href="mb800-overview.html">Course Home</a>
+                <a href="setup-details.html">Setup Guide</a>
+                <a href="financials-details.html">Financials Guide</a>
+                <a href="sales-purchases-details.html">Sales/Purch Guide</a>
+                <a href="operations-details.html" class="active">Operations Guide</a>
             </div>
         </nav>
     </div>
@@ -51,14 +64,40 @@
 <div class="sub-nav">
     <div class="container">
         <ul>
+            <li><a href="#video-masterclass">Video Masterclass</a></li>
             <li><a href="#doc-flow">Sales/Purchase Flow</a></li>
             <li><a href="#journals">Journals</a></li>
-            <li><a href="#banking">Bank Reconciliation</a></li>
+            <li><a href="#banking">Bank Recs</a></li>
         </ul>
     </div>
 </div>
 
 <div class="container">
+
+    <div id="video-masterclass" class="content-section" style="padding: 0; overflow: hidden;">
+        <div class="video-blog-post" style="border: none; margin-bottom: 0;">
+            <div class="video-header">
+                <h2>Video Masterclass: Full Operations Cycle</h2>
+                <div class="video-meta">Duration: 60 Mins | Topic: Sales, Purchasing & Returns</div>
+            </div>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/QAIjVZbn5Wo" title="Business Central Operations Tutorial" allowfullscreen></iframe>
+            </div>
+            
+            <div class="video-desc">
+                <h3>What you will learn in this session:</h3>
+                <p>This comprehensive video session covers the end-to-end operational flow required for the MB-800 exam. Unlike short clips, this hour-long masterclass connects the dots between different modules.</p>
+                <ul>
+                    <li><strong>00:00 - 15:00:</strong> The Quote to Cash process (Sales).</li>
+                    <li><strong>15:00 - 30:00:</strong> Procure to Pay (Purchasing) & Vendor Management.</li>
+                    <li><strong>30:00 - 45:00:</strong> Managing Inventory, Item Charges, and Returns.</li>
+                    <li><strong>45:00 - 60:00:</strong> Posted Documents correction and Audit Trails.</li>
+                </ul>
+                <p><em>Tip: Watch this video with a Sandbox environment open to follow along with the instructor.</em></p>
+            </div>
+        </div>
+    </div>
 
     <div id="doc-flow" class="content-section">
         <h1>1. The Document Flow</h1>
