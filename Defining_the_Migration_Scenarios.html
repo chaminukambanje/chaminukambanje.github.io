@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Guide - Phase 1</title>
+</head>
+<body>
+
+    <section id="phase-1-assessment">
+        <header>
+            <h2>Phase 1: Defining the Migration Scenarios & Assessment 🛣️</h2>
+            <p>Before touching any server, we must classify the project to select the correct tooling.</p>
+        </header>
+
+        <figure>
+            <img src="path/to/decision-tree-flowchart.png" alt="Decision tree flowchart showing migration paths based on current environment">
+            <figcaption>Figure 1: Migration Decision Tree</figcaption>
+        </figure>
+
+        <article id="migration-paths">
+            <h3>The Three Main Paths</h3>
+            <table border="1"> <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Description</th>
+                        <th>Key Tooling</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>A. On-Premises to Cloud (SaaS)</strong></td>
+                        <td>Moving from a local server (SQL) to Microsoft's managed cloud.</td>
+                        <td>Cloud Migration Tool</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B. On-Premises Upgrade</strong></td>
+                        <td>Moving from an old version (e.g., NAV 2017) to a newer On-Prem version.</td>
+                        <td>Application Merge Utilities (PowerShell) & Data Upgrade Codeunits</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C. Tenant-to-Tenant</strong></td>
+                        <td>Moving data from one SaaS environment to another.</td>
+                        <td>Environment Copy or Configuration Packages</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article id="technical-assessment">
+            <h3>Workflow: The Technical Assessment</h3>
+            <p>Regardless of the path, you must perform a "Discovery" workflow to validate feasibility.</p>
+            
+            <ol>
+                <li>
+                    <strong>Check Source Version Compatibility</strong>
+                    <ul>
+                        <li><em>Task:</em> Verify the exact build number (e.g., NAV 2018, BC v14).</li>
+                        <li><em>Rule:</em> Direct migration requires <strong>Business Central v14 or later</strong>.</li>
+                        <li><em>Action:</em> If older, perform a "Technical Upgrade" first.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Database Size Analysis</strong>
+                    <ul>
+                        <li><em>Task:</em> Run SQL query to check table sizes.</li>
+                        <li><em>Why:</em> Storage limits apply (check for tables > 80GB).</li>
+                        <li><em>Action:</em> Truncate logs or attachments if necessary.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Code Customisation Audit</strong>
+                    <ul>
+                        <li><em>Task:</em> Identify C/AL vs. AL code.</li>
+                        <li><em>Action:</em> Export objects, compare against base app, and estimate rewrite time for Extensions.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+
+    </section>
+
+</body>
+</html>
