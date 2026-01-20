@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <section id="phase-3-cutover">
+        <header>
+            <h2>Phase 3: Post-Migration & Cutover 🏁</h2>
+            <p>The data is in the cloud, but the system is read-only. This phase involves mapping users, verifying financials, and flipping the switch to "Live".</p>
+        </header>
+
+        <article id="user-mapping">
+            <h3>Step 1: User & Permission Mapping</h3>
+            <p>On-premises SQL users (Windows Authentication) do not automatically translate to Microsoft Entra ID (Azure AD) users.</p>
+            
+            <ol>
+                <li>
+                    <strong>Define User Mappings</strong>
+                    <ul>
+                        <li><em>Task:</em> Open the "Cloud Migration Management" page.</li>
+                        <li><em>Action:</em> Use the <strong>"Define User Mappings"</strong> action to link legacy Windows logins to valid Microsoft 365 email addresses.</li>
+                        <li><em>Note:</em> Unmapped users will lose their permission sets upon cutover.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Assign Licenses</strong>
+                    <ul>
+                        <li><em>Task:</em> Ensure all users have a "Dynamics 365 Business Central" license assigned in the Microsoft 365 Admin Center.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+
+        <article id="system-activation">
+            <h3>Step 2: Disabling Migration & Going Live</h3>
+            <p><strong>Warning:</strong> This is the point of no return. Once migration is disabled, you cannot sync changes from the on-premises SQL server again without restarting.</p>
+
+            <ol>
+                <li>
+                    <strong>Final Delta Sync</strong>
+                    <ul>
+                        <li><em>Task:</em> Run "Run Migration Now" one last time to catch any transactions posted while you were configuring users.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Disable Cloud Migration</strong>
+                    <ul>
+                        <li><em>Action:</em> Click <strong>"Disable Cloud Migration"</strong> in the setup page.</li>
+                        <li><em>Result:</em> This breaks the link to the SQL server, converts the tenant from "Read-Only" to "Read-Write", and finalizes the upgrade.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Initialize Companies</strong>
+                    <ul>
+                        <li><em>Task:</em> Open each company to trigger the final background initialization jobs.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+
+        <article id="post-live-validation">
+            <h3>Step 3: Validation & Clean-up</h3>
+            
+            <ul>
+                <li><strong>Financial Reconciliation:</strong> Run the "Trial Balance" report in both systems. If they differ by even 0.01, do not release the system to users.</li>
+                <li><strong>Enable Job Queues:</strong> Scheduled tasks are paused by default during migration. You must manually set them to "Ready".</li>
+                <li><strong>Update External Integrations:</strong> Repoint any Power BI dashboards, API connectors, or e-commerce sites to the new OData v4 web service URLs.</li>
+            </ul>
+        </article>
+
+    </section>
+
+</body>
+</html>
