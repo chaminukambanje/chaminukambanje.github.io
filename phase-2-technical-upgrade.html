@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <section id="phase-2-technical-upgrade">
+        <header>
+            <h2>Phase 2: The Technical Upgrade (Code & Data) ⚙️</h2>
+            <p>This phase executes the plan. It involves transforming legacy logic into modern extensions and establishing a secure data pipeline to the cloud.</p>
+        </header>
+
+        <article id="code-conversion">
+            <h3>Track 1: Code Conversion (C/AL to AL)</h3>
+            <p>Modern Business Central (SaaS) does not support direct modification of the base application. All custom logic must exist as <strong>Extensions</strong>.</p>
+            
+            <ol>
+                <li>
+                    <strong>Export Legacy Objects</strong>
+                    <ul>
+                        <li><em>Task:</em> Export standard and custom objects from the source database to <code>.txt</code> format using the legacy development environment.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Run Conversion Tool (txt2al)</strong>
+                    <ul>
+                        <li><em>Task:</em> Use the Microsoft <code>txt2al.exe</code> command-line tool to convert text files to AL syntax.</li>
+                        <li><em>Example:</em> <code>txt2al --source=C:\Old --target=C:\New --rename</code></li>
+                        <li><em>Output:</em> Generates individual <code>.al</code> files for each object.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Refactoring to Event Subscribers</strong>
+                    <ul>
+                        <li><em>Constraint:</em> You cannot modify standard code (e.g., Codeunit 80).</li>
+                        <li><em>Action:</em> Move logic to <strong>Event Subscribers</strong> that "hook" into standard triggers (e.g., <code>OnBeforePostSalesLine</code>).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Compile & Publish</strong>
+                    <ul>
+                        <li><em>Task:</em> Use Visual Studio Code to build the <code>.app</code> package and publish it to the target sandbox environment.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+
+        <article id="data-replication">
+            <h3>Track 2: Data Replication (Cloud Migration Tool)</h3>
+            <p>Once the code schema is ready, use the <strong>Cloud Migration Tool</strong> to replicate the data. This requires a secure bridge between your local server and the Azure cloud.</p>
+
+            <figure>
+                
+                <figcaption>Figure 2: The SHIR acts as a secure bridge between local SQL and Azure.</figcaption>
+            </figure>
+
+            <ol>
+                <li>
+                    <strong>Install Self-Hosted Integration Runtime (SHIR)</strong>
+                    <ul>
+                        <li><em>Task:</em> Download SHIR from the Business Central Admin Center.</li>
+                        <li><em>Action:</em> Install on a machine with network visibility to the SQL Server. Register it using the authentication key provided by Microsoft.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Configure SQL Connectivity</strong>
+                    <ul>
+                        <li><em>Task:</em> Create a dedicated SQL user (e.g., <code>CloudMigrator</code>) with <code>db_owner</code> permissions on the source database.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Run the Wizard</strong>
+                    <ul>
+                        <li><em>Task:</em> In BC SaaS, search for "Cloud Migration Setup".</li>
+                        <li><em>Input:</em> Enter the SQL Connection String. <br><code>Server=MyServer;Database=MyDB;User Id=CloudMigrator;Password=...;</code></li>
+                        <li><em>Action:</em> Select the specific companies to migrate.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Execute Replication</strong>
+                    <ul>
+                        <li><em>Action:</em> Start the replication. You can run this incrementally (delta syncs) to keep data updated until the final cutover.</li>
+                    </ul>
+                </li>
+            </ol>
+        </article>
+
+    </section>
+
+</body>
+</html>
