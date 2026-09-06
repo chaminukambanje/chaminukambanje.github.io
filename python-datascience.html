@@ -446,7 +446,7 @@
         </div>
         <h1>Python for Data Science & High-Performance Computing</h1>
         <p>In-depth scientific computing architecture covering NumPy memory layouts, Pandas optimization, Xarray NetCDF climate processing, PySpark/Delta Lake, and Slurm HPC orchestration.</p>
-        <div class="hero-tags"><span class="hero-tag">Python</span><span class="hero-tag">Data Science</span><span class="hero-tag">HPC</span><span class="hero-tag">JASMIN</span><span class="hero-tag">NumPy</span><span class="hero-tag">Pandas</span><span class="hero-tag">PySpark</span><span class="hero-tag">Delta Lake</span><span class="hero-tag">Slurm</span></div>
+        <div class="hero-tags"><span class="hero-tag">Python</span><span class="hero-tag">Data Science</span><span class="hero-tag">HPC</span><span class="hero-tag">HPC Clusters</span><span class="hero-tag">NumPy</span><span class="hero-tag">Pandas</span><span class="hero-tag">PySpark</span><span class="hero-tag">Delta Lake</span><span class="hero-tag">Slurm</span></div>
     </div>
 </div>
 <div class="container">
@@ -458,7 +458,7 @@
             <li><a href="#pandas-opt">High-Performance Pandas: Memory, Indexing & GroupBy Pipelines</a></li>
             <li><a href="#xarray-climate">Atmospheric & Earth Observation Data with Xarray / NetCDF</a></li>
             <li><a href="#spark-delta">Distributed Big Data with PySpark & Delta Lake (ACID)</a></li>
-            <li><a href="#slurm-hpc">Slurm HPC Cluster Orchestration (JASMIN / LOTUS)</a></li>
+            <li><a href="#slurm-hpc">Slurm HPC Cluster Orchestration & Supercomputing</a></li>
             <li><a href="#mlops-sklearn">Production ML Pipelines with Scikit-Learn & MLflow</a></li>
             <li><a href="#hpc-case-studies">End-to-End Scientific Computing Case Studies</a></li>
         </ul>
@@ -585,7 +585,7 @@ processed_df = (
     <div class="section" id="xarray-climate">
         <h2 class="section-title">🌍 Atmospheric & Earth Observation Data with Xarray & NetCDF</h2>
         <p class="lead-text">
-            Climate and earth observation data at research centers such as CEDA / JASMIN are stored in multidimensional, self-describing 
+            Climate and earth observation data at national research centers and supercomputing facilities are stored in multidimensional, self-describing 
             <strong>NetCDF</strong> and <strong>GRIB</strong> formats. <code>xarray</code> introduces labels in the form of dimensions, coordinates, 
             and attributes on top of raw NumPy-like multidimensional arrays.
         </p>
@@ -596,7 +596,7 @@ import numpy as np
 
 # Open multidimensional atmospheric dataset lazily using Dask
 ds = xr.open_mfdataset(
-    "/badc/ecmwf-era5/data/oper/an_sfc/2024/*/*.nc",
+    "/data/climate/ecmwf-era5/data/oper/an_sfc/2024/*/*.nc",
     parallel=True,
     chunks={"time": 720, "latitude": 180, "longitude": 180}
 )
@@ -714,9 +714,9 @@ print(f"Historical record count at Version 2: {historical_snapshot.count()}")
 
     <!-- 5. SLURM HPC -->
     <div class="section" id="slurm-hpc">
-        <h2 class="section-title">🖥️ Slurm HPC Cluster Job Orchestration (JASMIN / LOTUS)</h2>
+        <h2 class="section-title">🖥️ Slurm HPC Cluster Job Orchestration & Supercomputing</h2>
         <p class="lead-text">
-            Scientific computing infrastructures like the STFC Hartree Centre and JASMIN rely on the <strong>Slurm Workload Manager</strong> 
+            High-performance scientific computing infrastructures and supercomputing centers rely on the <strong>Slurm Workload Manager</strong> 
             to dispatch parallel computations across thousands of bare-metal CPU/GPU compute nodes.
         </p>
 
@@ -729,8 +729,8 @@ print(f"Historical record count at Version 2: {historical_snapshot.count()}")
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 #SBATCH --time=04:00:00
-#SBATCH --output=/gws/nopw/j04/user_logs/slurm_%j.out
-#SBATCH --error=/gws/nopw/j04/user_logs/slurm_%j.err
+#SBATCH --output=/scratch/hpc/user_logs/slurm_%j.out
+#SBATCH --error=/scratch/hpc/user_logs/slurm_%j.err
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=chaminuka.mbanje@research.org
 
@@ -740,7 +740,7 @@ echo "Starting job execution at: $(date)"
 
 # Load the verified scientific Python environment module
 module purge
-module load jaspy/3.10/r20230718
+module load python/3.10-scientific
 
 # Set threading limits to prevent over-subscription
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -748,7 +748,7 @@ export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OPENBLAS_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 # Execute Python scientific workload
-python3 /gws/nopw/j04/scripts/process_climate_ensemble.py     --input-dir /badc/ecmwf-era5/data/oper/an_sfc/     --output-dir /work/scratch-nopw/cmbanje/processed_era5/     --threads $SLURM_CPUS_PER_TASK
+python3 /shared/hpc/scripts/process_climate_ensemble.py     --input-dir /data/climate/ecmwf-era5/data/oper/an_sfc/     --output-dir /scratch/hpc/cmbanje/processed_era5/     --threads $SLURM_CPUS_PER_TASK
 
 echo "Job execution completed successfully at: $(date)"
 </code></pre>
