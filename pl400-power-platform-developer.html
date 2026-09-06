@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PL-400: Power Platform Developer Associate | Chami's Learning Hub</title>
+    <title>PL-400 Microsoft Power Platform Developer Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,34 +442,442 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>PL-400: Microsoft Power Platform Developer Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>PL-400: Microsoft Power Platform Developer</span>
         </div>
-        <h1>PL-400: Microsoft Power Platform Developer Guide</h1>
-        <p>In-depth developer guide for extending Power Platform: C# Dataverse Plug-ins, JavaScript Form Scripts, PCF Components, Webhooks, and Azure Integration.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam PL-400</span><span class="hero-tag">Power Platform Developer</span><span class="hero-tag">Dataverse Plugins</span><span class="hero-tag">PCF Controls</span><span class="hero-tag">Client Scripting</span><span class="hero-tag">Webhooks</span></div>
+        <h1>PL-400: Microsoft Power Platform Developer</h1>
+        <p>In-depth developer certification guide covering Dataverse Event Pipeline (C#), Client Scripting (JavaScript), PCF Component development with TypeScript, and Azure Webhooks.</p>
+        <div class="hero-tags"><span class="hero-tag">PL-400</span><span class="hero-tag">Power Platform</span><span class="hero-tag">C#</span><span class="hero-tag">JavaScript</span><span class="hero-tag">PCF</span><span class="hero-tag">TypeScript</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Webhooks</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">⚙️ Exam Blueprint: PL-400</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Study Modules</div>
+        <ul class="toc-list">
+            <li><a href="#pl400-scope">Exam Scope & Domain Breakdown</a></li>
+            <li><a href="#plugin-pipeline">Dataverse Event Execution Pipeline & C# Plugins</a></li>
+            <li><a href="#client-scripting">Client-Side Scripting with JavaScript & Web API</a></li>
+            <li><a href="#pcf-components">Power Apps Component Framework (PCF) & TypeScript</a></li>
+            <li><a href="#integrations">Webhooks, Azure Functions & Custom Connectors</a></li>
+            <li><a href="#pl400-scenarios">Exam Practice Scenarios & Deep Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="pl400-scope">
+        <h2 class="section-title">📘 Exam PL-400 Scope & Architecture</h2>
         <p class="lead-text">
-            Exam <strong>PL-400: Microsoft Power Platform Developer</strong> tests extending Power Platform using code: 
-            Dataverse custom plug-ins (C#), Client scripting (JavaScript), Power Apps component framework (PCF), custom connectors, and Azure integrations.
+            Exam <strong>PL-400: Microsoft Power Platform Developer</strong> validates expert developer capabilities in extending Microsoft Power Platform 
+            using code. Focus areas include C# server-side Dataverse plug-ins, custom workflow activities, client-side JavaScript web resources, 
+            Power Apps Component Framework (PCF) controls, custom connectors, and enterprise cloud integration patterns with Azure.
         </p>
-        <div class="grid-3">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Weight</th>
+                    <th>Core Development Deliverables</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Create a technical design</strong></td>
+                    <td>10–15%</td>
+                    <td>Designing data models, extension strategies (code vs no-code), API limits, licensing, and security architecture.</td>
+                </tr>
+                <tr>
+                    <td><strong>Configure Microsoft Dataverse</strong></td>
+                    <td>15–20%</td>
+                    <td>Custom business logic, complex relationships, service endpoints, and virtual tables.</td>
+                </tr>
+                <tr>
+                    <td><strong>Create and configure Power Apps</strong></td>
+                    <td>10–15%</td>
+                    <td>Model-driven app command bar extensions (Power Fx and JavaScript), canvas app formula optimization.</td>
+                </tr>
+                <tr>
+                    <td><strong>Configure business process automation</strong></td>
+                    <td>10–15%</td>
+                    <td>Power Automate cloud flow error handling, child flows, custom connectors with OpenAPI.</td>
+                </tr>
+                <tr>
+                    <td><strong>Extend the user experience (PCF)</strong></td>
+                    <td>15–20%</td>
+                    <td>Building, packaging, and deploying Power Apps Component Framework (PCF) controls with TypeScript and React.</td>
+                </tr>
+                <tr>
+                    <td><strong>Extend the platform (C# Plug-ins & APIs)</strong></td>
+                    <td>20–25%</td>
+                    <td>Developing C# plug-ins, pre/post images, execution context, webhooks, Azure Service Bus, and Azure Functions.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. PLUGINS -->
+    <div class="section" id="plugin-pipeline">
+        <h2 class="section-title">⚡ Dataverse Event Execution Pipeline & C# Plug-ins</h2>
+        <p class="lead-text">
+            The Dataverse event execution pipeline processes all database operations through strict sequential stages. 
+            Understanding stage numbers, database transaction boundaries, and context images is essential for passing PL-400.
+        </p>
+
+        <h3 class="sub-title">1. Pipeline Stages & Execution Flow</h3>
+        <div class="diagram-box">
+Incoming Request (Create / Update / Delete)
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Stage 10: Pre-Validation (Outside Database Transaction)    │  ◄── Security checks, third-party calls
+└─────────────────────────────┬───────────────────────────────┘
+                              │
+          ┌───────────────────▼───────────────────┐
+          │ START DATABASE TRANSACTION             │
+          ├───────────────────────────────────────┤
+          │ Stage 20: Pre-Operation               │  ◄── Modify Target values BEFORE commit to SQL
+          ├───────────────────────────────────────┤
+          │ Stage 30: Main Operation (Internal)   │  ◄── Dataverse creates/updates SQL row
+          ├───────────────────────────────────────┤
+          │ Stage 40: Post-Operation (Synchronous)│  ◄── Child records, post-images, rollback on error
+          ├───────────────────────────────────────┤
+          │ COMMIT DATABASE TRANSACTION           │
+          └───────────────────┬───────────────────┘
+                              │
+┌─────────────────────────────▼───────────────────────────────┐
+│ Stage 50: Post-Operation (Asynchronous - System Job Queue) │  ◄── Non-blocking external sync, webhooks
+└─────────────────────────────────────────────────────────────┘
+        </div>
+
+        <h3 class="sub-title">2. Complete Production C# Plug-in Implementation</h3>
+        <p>
+            The following plug-in intercepts <code>Create</code> and <code>Update</code> messages on the <code>Account</code> table. 
+            It prevents infinite recursion via <code>context.Depth</code>, validates credit limits, uses <code>ITracingService</code>, 
+            and safely reads from <code>PreEntityImages</code>:
+        </p>
+
+        <pre><code class="language-csharp">using System;
+using Microsoft.Xrm.Sdk;
+
+namespace Contoso.PowerPlatform.Plugins
+{
+    public class AccountCreditLimitValidator : IPlugin
+    {
+        public void Execute(IServiceProvider serviceProvider)
+        {
+            // 1. Extract the execution context and tracing service
+            var tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+            var context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
+            var serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+            var service = serviceFactory.CreateOrganizationService(context.UserId);
+
+            tracingService.Trace("AccountCreditLimitValidator initiated. Stage: {0}, Message: {1}", context.Stage, context.MessageName);
+
+            // 2. Prevent infinite loops / recursive execution
+            if (context.Depth > 1)
+            {
+                tracingService.Trace("Execution depth is {0}. Terminating to prevent recursion.", context.Depth);
+                return;
+            }
+
+            // 3. Verify Target entity exists and matches expected type
+            if (!context.InputParameters.Contains("Target") || !(context.InputParameters["Target"] is Entity targetEntity))
+            {
+                tracingService.Trace("Target is missing or invalid. Exiting.");
+                return;
+            }
+
+            if (targetEntity.LogicalName != "account")
+            {
+                tracingService.Trace("Plugin invoked on unexpected entity: {0}", targetEntity.LogicalName);
+                return;
+            }
+
+            try
+            {
+                decimal newCreditLimit = 0;
+
+                // Check if Credit Limit is provided in the target update
+                if (targetEntity.Contains("creditlimit") && targetEntity["creditlimit"] != null)
+                {
+                    newCreditLimit = ((Money)targetEntity["creditlimit"]).Value;
+                }
+                else if (context.MessageName.Equals("Update", StringComparison.OrdinalIgnoreCase))
+                {
+                    // If updating other fields, retrieve current credit limit from Pre-Image
+                    if (context.PreEntityImages.Contains("PreImage") && context.PreEntityImages["PreImage"].Contains("creditlimit"))
+                    {
+                        newCreditLimit = ((Money)context.PreEntityImages["PreImage"]["creditlimit"]).Value;
+                    }
+                }
+
+                // 4. Business Validation Rule: Credit limit cannot exceed £250,000 without VP approval
+                if (newCreditLimit > 250000m)
+                {
+                    bool isApproved = false;
+                    if (targetEntity.Contains("contoso_vpapproved"))
+                        isApproved = (bool)targetEntity["contoso_vpapproved"];
+                    else if (context.PreEntityImages.Contains("PreImage") && context.PreEntityImages["PreImage"].Contains("contoso_vpapproved"))
+                        isApproved = (bool)context.PreEntityImages["PreImage"]["contoso_vpapproved"];
+
+                    if (!isApproved)
+                    {
+                        tracingService.Trace("Validation Failed: Credit limit {0} requires VP Approval.", newCreditLimit);
+                        throw new InvalidPluginExecutionException(
+                            "Credit Limit cannot exceed £250,000 without prior Vice President executive authorization."
+                        );
+                    }
+                }
+
+                // 5. If in Pre-Operation (Stage 20), we can directly modify Target attributes before SQL write
+                if (context.Stage == 20)
+                {
+                    targetEntity["contoso_lastverifiedon"] = DateTime.UtcNow;
+                    tracingService.Trace("Set contoso_lastverifiedon to current UTC timestamp.");
+                }
+            }
+            catch (InvalidPluginExecutionException)
+            {
+                throw; // Rethrow to rollback transaction and present error message to user UI
+            }
+            catch (Exception ex)
+            {
+                tracingService.Trace("Unexpected Plugin Exception: {0}", ex.ToString());
+                throw new InvalidPluginExecutionException("An error occurred during account credit limit processing.", ex);
+            }
+        }
+    }
+}</code></pre>
+    </div>
+
+    <!-- 3. CLIENT SCRIPTING -->
+    <div class="section" id="client-scripting">
+        <h2 class="section-title">🌐 Client-Side Scripting with JavaScript & Xrm.WebApi</h2>
+        <p class="lead-text">
+            Client-side logic runs inside the user browser session on Model-Driven form events (<code>OnLoad</code>, <code>OnChange</code>, <code>OnSave</code>). 
+            Modern scripts must never access DOM elements directly (e.g. <code>document.getElementById</code>); they must use the official Client API.
+        </p>
+
+        <h3 class="sub-title">Complete Client Script: `AccountFormScripts.js`</h3>
+        <pre><code class="language-javascript">var Contoso = window.Contoso || {};
+Contoso.Account = {
+    // 1. Form OnLoad Event Handler
+    onLoad: function (executionContext) {
+        var formContext = executionContext.getFormContext();
+        
+        // Add OnChange event handler dynamically or lock fields based on role
+        var creditLimitControl = formContext.getControl("creditlimit");
+        if (creditLimitControl) {
+            formContext.getAttribute("creditlimit").addOnChange(Contoso.Account.onCreditLimitChange);
+        }
+
+        // Check user security privileges asynchronously
+        var userSettings = Xrm.Utility.getGlobalContext().userSettings;
+        console.log("Current user ID: " + userSettings.userId);
+    },
+
+    // 2. Field OnChange Event Handler
+    onCreditLimitChange: function (executionContext) {
+        var formContext = executionContext.getFormContext();
+        var creditLimitAttr = formContext.getAttribute("creditlimit");
+        var creditLimitVal = creditLimitAttr.getValue();
+
+        var vpApprovalControl = formContext.getControl("contoso_vpapproved");
+
+        if (creditLimitVal > 250000) {
+            // Display form notification and require VP approval
+            formContext.ui.setFormNotification(
+                "High Credit Limit Warning: VP Approval is mandatory before saving this account.", 
+                "WARNING", 
+                "high_credit_notice"
+            );
+            if (vpApprovalControl) {
+                vpApprovalControl.setVisible(true);
+            }
+        } else {
+            formContext.ui.clearFormNotification("high_credit_notice");
+            if (vpApprovalControl) {
+                vpApprovalControl.setVisible(false);
+            }
+        }
+    },
+
+    // 3. Form OnSave Event Handler (Supports PreventDefault)
+    onSave: function (executionContext) {
+        var formContext = executionContext.getFormContext();
+        var eventArgs = executionContext.getEventArgs();
+        var creditLimitVal = formContext.getAttribute("creditlimit").getValue();
+        var vpApproved = formContext.getAttribute("contoso_vpapproved") ? formContext.getAttribute("contoso_vpapproved").getValue() : false;
+
+        if (creditLimitVal > 250000 && !vpApproved) {
+            // Block save operation
+            eventArgs.preventDefault();
+            Xrm.Navigation.openAlertDialog({
+                title: "Save Blocked",
+                text: "You cannot save this Account until the Vice President Approval checkbox is confirmed."
+            });
+        }
+    },
+
+    // 4. Asynchronous Dataverse Web API Retrieval
+    fetchParentRevenue: async function (formContext, parentAccountId) {
+        try {
+            var result = await Xrm.WebApi.retrieveRecord(
+                "account", 
+                parentAccountId, 
+                "?$select=revenue,name&$expand=primarycontactid($select=fullname,emailaddress1)"
+            );
+            console.log("Parent Account Name: " + result.name + ", Revenue: " + result.revenue);
+            if (result.primarycontactid) {
+                console.log("Primary Contact: " + result.primarycontactid.fullname);
+            }
+        } catch (error) {
+            console.error("Error retrieving parent account: " + error.message);
+        }
+    }
+};</code></pre>
+    </div>
+
+    <!-- 4. PCF -->
+    <div class="section" id="pcf-components">
+        <h2 class="section-title">🧩 Power Apps Component Framework (PCF) & TypeScript</h2>
+        <p class="lead-text">
+            PCF allows professional developers to build custom HTML/TypeScript/React controls that render natively inside Model-Driven apps, 
+            Canvas apps, and Power Pages, replacing standard textboxes and dropdowns with rich UI controls.
+        </p>
+
+        <h3 class="sub-title">1. Control Manifest (`ControlManifest.Input.xml`)</h3>
+        <pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;manifest&gt;
+  &lt;control namespace="Contoso.Controls" 
+           constructor="PercentageProgressBar" 
+           version="1.0.0" 
+           display-name-key="PercentageProgressBar" 
+           description-key="Interactive percentage progress bar control" 
+           control-type="standard"&gt;
+    
+    &lt;property name="percentValue" 
+              display-name-key="Percentage Value" 
+              description-key="Current percentage (0-100)" 
+              of-type="Decimal" 
+              usage="bound" 
+              required="true" /&gt;
+    
+    &lt;resources&gt;
+      &lt;code path="index.ts" order="1"/&gt;
+      &lt;css path="css/progressbar.css" order="1"/&gt;
+    &lt;/resources&gt;
+  &lt;/control&gt;
+&lt;/manifest&gt;</code></pre>
+
+        <h3 class="sub-title">2. TypeScript Component Lifecycle (`index.ts`)</h3>
+        <pre><code class="language-typescript">import { IInputs, IOutputs } from "./generated/ManifestTypes";
+
+export class PercentageProgressBar implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+    private _container: HTMLDivElement;
+    private _bar: HTMLDivElement;
+    private _value: number;
+    private _notifyOutputChanged: () => void;
+
+    public init(
+        context: ComponentFramework.Context<IInputs>, 
+        notifyOutputChanged: () => void, 
+        state: ComponentFramework.Dictionary, 
+        container: HTMLDivElement
+    ): void {
+        this._container = container;
+        this._notifyOutputChanged = notifyOutputChanged;
+        this._value = context.parameters.percentValue.raw || 0;
+
+        // Create UI elements
+        const track = document.createElement("div");
+        track.className = "progress-track";
+
+        this._bar = document.createElement("div");
+        this._bar.className = "progress-fill";
+        this._bar.style.width = `${Math.min(100, Math.max(0, this._value))}%`;
+
+        track.appendChild(this._bar);
+        this._container.appendChild(track);
+    }
+
+    public updateView(context: ComponentFramework.Context<IInputs>): void {
+        this._value = context.parameters.percentValue.raw || 0;
+        this._bar.style.width = `${Math.min(100, Math.max(0, this._value))}%`;
+        this._bar.innerText = `${this._value.toFixed(0)}%`;
+    }
+
+    public getOutputs(): IOutputs {
+        return {
+            percentValue: this._value
+        };
+    }
+
+    public destroy(): void {
+        // Cleanup DOM and unbind event listeners
+        while (this._container.firstChild) {
+            this._container.removeChild(this._container.firstChild);
+        }
+    }
+}</code></pre>
+    </div>
+
+    <!-- 5. INTEGRATIONS -->
+    <div class="section" id="integrations">
+        <h2 class="section-title">☁️ Webhooks, Azure Functions & Custom Connectors</h2>
+        <div class="grid-2">
             <div class="card">
-                <h4>Dataverse Plug-ins</h4>
-                <p>Event pipeline execution stages (10 PreValidation, 20 PreOperation, 40 PostOperation). <code>IPluginExecutionContext</code>, Images, and Sandboxing.</p>
+                <h4>Dataverse Webhook Registration</h4>
+                <p>Register webhooks using the <strong>Plugin Registration Tool (PRT)</strong>:</p>
+                <ul>
+                    <li><strong>Authentication:</strong> WebhookKey (query string parameter) or HttpHeader (e.g. <code>x-functions-key</code>).</li>
+                    <li><strong>Payload:</strong> Posts a JSON serialized <code>RemoteExecutionContext</code> containing input parameters and entity images.</li>
+                    <li><strong>Azure Function Consumption:</strong> Azure Functions running in isolated worker process receive the POST request, validate signature, and process asynchronously.</li>
+                </ul>
             </div>
             <div class="card">
-                <h4>PCF Controls</h4>
-                <p>Custom UI components built with TypeScript, React, and PAC CLI (<code>pac pcf init</code>, <code>pac pcf push</code>).</p>
+                <h4>Custom Connectors</h4>
+                <p>Wraps RESTful APIs for use in Power Automate and Canvas apps:</p>
+                <ul>
+                    <li><strong>OpenAPI Definition:</strong> Define endpoints, schemas, path parameters, and query parameters via Swagger 2.0 / OpenAPI 3.0.</li>
+                    <li><strong>Authentication:</strong> API Key, Basic, OAuth 2.0 (Azure AD, Generic OAuth).</li>
+                    <li><strong>Policy Templates:</strong> Transform HTTP headers, rewrite host URLs, or route requests dynamically without writing Azure API Management layers.</li>
+                </ul>
             </div>
-            <div class="card">
-                <h4>Custom Connectors & Webhooks</h4>
-                <p>Wrapping REST APIs using OpenAPI definitions and calling external Azure Functions via registered Dataverse webhooks.</p>
-            </div>
+        </div>
+    </div>
+
+    <!-- 6. SCENARIOS -->
+    <div class="section" id="pl400-scenarios">
+        <h2 class="section-title">📝 Realistic PL-400 Exam Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Infinite Loop Prevention in Post-Operation Plugins</h4>
+            <p>
+                A developer registers a synchronous C# plug-in on the <code>Post-Operation (Stage 40)</code> of the <code>Update</code> message for the <code>Contact</code> entity. 
+                Inside the plug-in, the code calculates an aggregate score and updates the Contact using <code>service.Update(contactToUpdate)</code>. 
+                Upon testing, the system crashes with a stack overflow error.
+            </p>
+            <p><strong>Question:</strong> What is the root cause, and how must the developer fix the issue?</p>
+            <ul class="qa-options">
+                <li>A) Stage 40 does not permit database updates; move the code to Stage 10 Pre-Validation.</li>
+                <li>B) Calling <code>service.Update()</code> triggers another Update message, causing infinite recursion. Fix by checking <code>context.Depth > 1</code> or moving calculation to Stage 20 Pre-Operation modifying <code>context.InputParameters["Target"]</code>.</li>
+                <li>C) The user lacks system administrator privileges to call the Organization Service.</li>
+                <li>D) The organization service must be initialized using the System User ID instead of InitiatingUserId.</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Calling service.Update() triggers recursion; check context.Depth or move to Stage 20 Pre-Operation)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> When an Update plug-in calls <code>service.Update()</code> on the same entity without checking execution depth, it initiates a new execution pipeline cycle. Each cycle increments <code>context.Depth</code>. If unhandled, Dataverse halts execution when depth reaches 16. The best practice is either to guard with <code>if (context.Depth > 1) return;</code> or perform the update in <strong>Stage 20 (Pre-Operation)</strong> by setting the attribute directly on <code>context.InputParameters["Target"]</code>, which commits to SQL in the same transaction with zero additional Update calls.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Stage 10 occurs outside the database transaction and cannot rollback transactional changes.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Stack overflow is a runtime recursion defect, not a security privilege fault.</li>
+                    <li><strong>Option D is INCORRECT:</strong> User ID changes do not prevent recursive pipeline triggering.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -380,7 +904,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

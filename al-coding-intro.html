@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro to AL Coding for Business Central | Chami's Learning Hub</title>
+    <title>Intro to AL Coding for Business Central | Architecture & Reference | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,143 +442,589 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>Intro to AL Coding in Dynamics 365 Business Central</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>Introduction to AL Coding for Dynamics 365 Business Central</span>
         </div>
-        <h1>Intro to AL Coding in Dynamics 365 Business Central</h1>
-        <p>Modern Business Central development guide: Extensions 2.0, VS Code AL Language, Event Subscribers, Table/Page Extensions, and Docker Sandboxes.</p>
-        <div class="hero-tags"><span class="hero-tag">Business Central</span><span class="hero-tag">AL Language</span><span class="hero-tag">Extensions 2.0</span><span class="hero-tag">VS Code</span><span class="hero-tag">Docker Sandbox</span><span class="hero-tag">MB-820</span></div>
+        <h1>Introduction to AL Coding for Dynamics 365 Business Central</h1>
+        <p>Modern AL extensibility architecture, complete production code examples, Event Subscribers, FlowFields, Docker sandbox setups, and performance optimization.</p>
+        <div class="hero-tags"><span class="hero-tag">AL</span><span class="hero-tag">Business Central</span><span class="hero-tag">ERP</span><span class="hero-tag">Extensions</span><span class="hero-tag">Docker</span><span class="hero-tag">BcContainerHelper</span><span class="hero-tag">EventSubscribers</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">💻 Modern Business Central Extensibility</h2>
-        <p class="lead-text">
-            In modern Dynamics 365 Business Central, customization has evolved from modifying base C/AL source code to the 
-            <strong>Extensions 2.0</strong> model. All customizations are written in <strong>AL Language</strong> using Visual Studio Code, 
-            packaged into isolated <code>.app</code> files that subscribe to events without modifying standard platform code.
-        </p>
-        <div class="highlight-box">
-            <strong>Key Benefit of Extensions:</strong> Zero-friction monthly and major platform updates from Microsoft, 
-            as custom code lives in its own sandboxed layer.
-        </div>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & AL Technical Modules</div>
+        <ul class="toc-list">
+            <li><a href="#al-architecture">Modern AL Extensibility & Runtime Architecture</a></li>
+            <li><a href="#al-objects">Object Types: Tables, Pages, Codeunits & Enums</a></li>
+            <li><a href="#al-full-module">Full Production Code: Equipment Tracking Module</a></li>
+            <li><a href="#al-events">Event Subscribers & Custom Integration Events</a></li>
+            <li><a href="#al-performance">Performance Optimization & Record Operations</a></li>
+            <li><a href="#al-docker">Docker Sandbox Setup with BcContainerHelper</a></li>
+            <li><a href="#al-scenarios">Coding Scenarios & Best Practices</a></li>
+        </ul>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🛠️ Development Environment Setup</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h4>1. Visual Studio Code</h4>
-                <p>Install VS Code and the official <strong>AL Language</strong> extension from the Visual Studio Marketplace.</p>
-            </div>
-            <div class="card">
-                <h4>2. Local Docker Container</h4>
-                <p>Run local BC artifacts in Docker using PowerShell <code>BcContainerHelper</code> for rapid compile and debug loops.</p>
-            </div>
-            <div class="card">
-                <h4>3. Project Manifest</h4>
-                <p>Configure <code>app.json</code> (App ID, Name, Publisher, Dependencies) and <code>launch.json</code> (Dev Server Endpoint).</p>
-            </div>
+    <!-- 1. ARCHITECTURE -->
+    <div class="section" id="al-architecture">
+        <h2 class="section-title">⚙️ Modern AL Extensibility & Runtime Architecture</h2>
+        <p class="lead-text">
+            In modern Dynamics 365 Business Central development, the legacy C/SIDE environment and C/AL code modifications have been completely 
+            replaced by the <strong>AL (Application Language)</strong> extension model. Core platform code is immutable; all modifications, customizations, 
+            and new business functionality must be implemented as non-intrusive <strong>Extensions</strong>.
+        </p>
+
+        <h3 class="sub-title">1. Layered Application Architecture</h3>
+        <div class="diagram-box">
+┌─────────────────────────────────────────────────────────────┐
+│             Per-Tenant Extensions (PTE)                     │  ◄── Custom code for specific customer
+├─────────────────────────────────────────────────────────────┤
+│             AppSource ISV Solutions                         │  ◄── Commercial marketplace add-ons
+├─────────────────────────────────────────────────────────────┤
+│             Base Application (W1 / Localized)               │  ◄── Microsoft standard business logic
+├─────────────────────────────────────────────────────────────┤
+│             System Application & Platform Modules           │  ◄── Low-level system services
+├─────────────────────────────────────────────────────────────┤
+│             Business Central Server Runtime (.NET Core)     │
+└─────────────────────────────────────────────────────────────┘
         </div>
 
-        <h3>Configuration Manifest (app.json)</h3>
-        <pre><code>{
-  "id": "e93c873f-1854-4a21-9988-bc1001bc2025",
-  "name": "Chami VIP Customer Extensions",
-  "publisher": "NPC Cloud Solutions",
+        <h3 class="sub-title">2. Anatomy of `app.json`</h3>
+        <p>Every AL extension project requires an <code>app.json</code> manifest file defining package identity, runtime target, and dependencies:</p>
+        <pre><code class="language-json">{
+  "id": "7d6438a2-8b45-4df3-8d39-fa19894e6c1a",
+  "name": "Contoso Equipment Maintenance",
+  "publisher": "Contoso Solutions Ltd",
   "version": "1.0.0.0",
-  "brief": "Extends Customer table and pages with VIP loyalty tiers",
-  "target": "Cloud",
+  "brief": "Equipment maintenance tracking and automated service warranty logging.",
+  "description": "Adds comprehensive equipment tracking linked to customer accounts.",
+  "privacyStatement": "https://www.contoso.com/privacy",
+  "EULA": "https://www.contoso.com/eula",
+  "help": "https://www.contoso.com/help",
+  "url": "https://www.contoso.com",
+  "contextSensitiveHelpUrl": "https://www.contoso.com/help/{0}",
+  "showMyCode": true,
   "runtime": "13.0",
+  "target": "Cloud",
   "idRanges": [
-    { "from": 50100, "to": 50149 }
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "63ca2fa4-4f03-4123-80e0-1c05a1e08410",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "24.0.0.0"
+    },
+    {
+      "id": "438870a4-b27b-4b2a-84c4-fb70025d1192",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "24.0.0.0"
+    }
+  ],
+  "features": [
+    "TranslationFile",
+    "ModernDevApp"
   ]
 }</code></pre>
+        <div class="warning-box">
+            <strong>ID Range Governance:</strong> Per-Tenant Extensions (PTE) developed for single client tenants use the ID range <strong>50,000 to 99,999</strong>. 
+            AppSource ISV applications must purchase an assigned proprietary range from Microsoft (typically in the 1,000,000+ or 70,000,000+ ranges).
+        </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🧱 Core AL Objects & Syntax</h2>
+    <!-- 2. AL OBJECT TYPES -->
+    <div class="section" id="al-objects">
+        <h2 class="section-title">🧱 AL Object Types & Declarative Programming Model</h2>
+        <p class="lead-text">
+            AL is a strongly typed, declarative programming language where system components are defined through structured objects.
+        </p>
+
         <div class="grid-2">
             <div class="card">
-                <h3>Table & Table Extension</h3>
-                <p>Define new relational database schemas or extend existing standard Business Central tables with new fields.</p>
-                <pre><code>table 50100 "Loyalty Tier"
-{
-    DataClassification = CustomerContent;
-    
-    fields
-    {
-        field(1; "Tier Code"; Code[20])
-        {
-            Caption = 'Tier Code';
-            NotBlank = true;
-        }
-        field(2; "Discount %"; Decimal)
-        {
-            Caption = 'Discount %';
-            MinValue = 0;
-            MaxValue = 100;
-        }
-    }
-    keys
-    {
-        key(PK; "Tier Code") { Clustered = true; }
-    }
-}</code></pre>
+                <h4>Core Physical Objects</h4>
+                <ul>
+                    <li><strong>Table:</strong> Defines physical database table schema, fields, clustered/secondary keys, validation triggers, and FlowFields.</li>
+                    <li><strong>Page:</strong> UI interface objects: Card, List, Document, ListPart, CardPart, and Worksheet.</li>
+                    <li><strong>Codeunit:</strong> Business logic containers, function libraries, event subscribers, and Web API handlers.</li>
+                    <li><strong>Report:</strong> Data processing pipelines and document generation (Word, RDLC, Excel layouts).</li>
+                    <li><strong>Query:</strong> High-performance read-only SQL queries performing joins and aggregations (OData / Power BI).</li>
+                    <li><strong>Enum:</strong> Type-safe extensible option sets supporting interface implementations.</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Page Extension</h3>
-                <p>Extend standard Business Central UI cards, lists, and factboxes by adding controls, actions, or group layouts.</p>
-                <pre><code>pageextension 50101 "CustomerCardExt" extends "Customer Card"
+                <h4>Extension Objects</h4>
+                <ul>
+                    <li><strong>TableExtension:</strong> Adds custom fields, secondary keys, or triggers to existing Base Application tables (e.g. Customer, Item, Vendor).</li>
+                    <li><strong>PageExtension:</strong> Injects fields, FastTabs, FactBoxes, or actions into existing pages using declarative anchoring (`addafter`, `addlast`).</li>
+                    <li><strong>ReportExtension:</strong> Adds additional DataItems, columns, or layout customizations to standard reports without cloning.</li>
+                    <li><strong>EnumExtension:</strong> Injects additional custom enum values into extensible standard enums.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="sub-title">Advanced Field Concept: FlowFields and FlowFilters</h3>
+        <p>
+            A <strong>FlowField</strong> is a virtual, dynamically calculated field that does not store data on the physical SQL table. 
+            Instead, it computes values on-the-fly using a <code>CalcFormula</code> query across related tables.
+        </p>
+        <pre><code class="language-al">field(50105; "Total Service Invoiced"; Decimal)
+{
+    Caption = 'Total Service Invoiced';
+    FieldClass = FlowField;
+    CalcFormula = Sum("Cust. Ledger Entry"."Sales (LCY)" 
+                      WHERE("Customer No." = FIELD("No."), 
+                            "Document Type" = FILTER(Invoice | "Credit Memo")));
+    Editable = false;
+}</code></pre>
+        <div class="tip-box">
+            <strong>FlowField Execution Rule:</strong> In AL code, FlowFields evaluate to 0 by default until you explicitly call 
+            <code>Record.CalcFields("Total Service Invoiced")</code> or pre-load them using <code>Record.SetAutoCalcFields(...)</code>.
+        </div>
+    </div>
+
+    <!-- 3. FULL PRODUCTION CODE -->
+    <div class="section" id="al-full-module">
+        <h2 class="section-title">💻 Complete Production Code: Equipment Tracking Module</h2>
+        <p class="lead-text">
+            Below is a complete, copy-pasteable custom module demonstrating tables, pages, table extensions, page extensions, and codeunits.
+        </p>
+
+        <h3 class="sub-title">1. Equipment Table (`EquipmentItem.Table.al`)</h3>
+        <pre><code class="language-al">table 50100 "Equipment Item"
+{
+    Caption = 'Equipment Item';
+    DataClassification = CustomerContent;
+    LookupPageId = "Equipment Item List";
+    DrillDownPageId = "Equipment Item List";
+
+    fields
+    {
+        field(1; "No."; Code[20])
+        {
+            Caption = 'No.';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                if "No." <> xRec."No." then begin
+                    NoSeriesMgt.TestManual(GetNoSeriesCode());
+                    "No. Series" := '';
+                end;
+            end;
+        }
+        field(2; Description; Text[100])
+        {
+            Caption = 'Description';
+            DataClassification = CustomerContent;
+        }
+        field(3; "Customer No."; Code[20])
+        {
+            Caption = 'Customer No.';
+            TableRelation = Customer."No.";
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            var
+                Cust: Record Customer;
+            begin
+                if Cust.Get("Customer No.") then
+                    "Customer Name" := Cust.Name
+                else
+                    "Customer Name" := '';
+            end;
+        }
+        field(4; "Customer Name"; Text[100])
+        {
+            Caption = 'Customer Name';
+            Editable = false;
+            DataClassification = CustomerContent;
+        }
+        field(5; "Serial No."; Text[50])
+        {
+            Caption = 'Serial No.';
+            DataClassification = CustomerContent;
+        }
+        field(6; "Installation Date"; Date)
+        {
+            Caption = 'Installation Date';
+            DataClassification = CustomerContent;
+
+            trigger OnValidate()
+            begin
+                if "Installation Date" > Today() then
+                    Error(FutureDateErr);
+                
+                // Automatically set 1-year warranty default
+                if "Warranty Expiry Date" = 0D then
+                    "Warranty Expiry Date" := CalcDate('<+1Y>', "Installation Date");
+            end;
+        }
+        field(7; "Warranty Expiry Date"; Date)
+        {
+            Caption = 'Warranty Expiry Date';
+            DataClassification = CustomerContent;
+        }
+        field(8; Status; Enum "Equipment Status")
+        {
+            Caption = 'Status';
+            DataClassification = CustomerContent;
+        }
+        field(9; "Service Count"; Integer)
+        {
+            Caption = 'Service Count';
+            FieldClass = FlowField;
+            CalcFormula = Count("Service Header" WHERE("Bill-to Customer No." = FIELD("Customer No.")));
+            Editable = false;
+        }
+        field(10; "No. Series"; Code[20])
+        {
+            Caption = 'No. Series';
+            TableRelation = "No. Series";
+            DataClassification = SystemMetadata;
+        }
+    }
+
+    keys
+    {
+        key(PK; "No.")
+        {
+            Clustered = true;
+        }
+        key(CustomerKey; "Customer No.", Status)
+        {
+        }
+    }
+
+    var
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        FutureDateErr: Label 'Installation date cannot be in the future.';
+
+    local procedure GetNoSeriesCode(): Code[20]
+    begin
+        exit('EQUIP');
+    end;
+}</code></pre>
+
+        <h3 class="sub-title">2. Equipment Status Enum (`EquipmentStatus.Enum.al`)</h3>
+        <pre><code class="language-al">enum 50100 "Equipment Status"
+{
+    Extensible = true;
+
+    value(0; Operational)
+    {
+        Caption = 'Operational';
+    }
+    value(1; Maintenance)
+    {
+        Caption = 'Under Maintenance';
+    }
+    value(2; Decommissioned)
+    {
+        Caption = 'Decommissioned';
+    }
+}</code></pre>
+
+        <h3 class="sub-title">3. Equipment Card Page (`EquipmentCard.Page.al`)</h3>
+        <pre><code class="language-al">page 50100 "Equipment Item Card"
+{
+    PageType = Card;
+    ApplicationArea = All;
+    SourceTable = "Equipment Item";
+    Caption = 'Equipment Item Card';
+
+    layout
+    {
+        area(Content)
+        {
+            group(General)
+            {
+                Caption = 'General';
+                field("No."; Rec."No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the unique identification code.';
+                }
+                field(Description; Rec.Description)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the equipment description.';
+                }
+                field("Serial No."; Rec."Serial No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies manufacturer serial number.';
+                }
+                field(Status; Rec.Status)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the current operational condition.';
+                }
+            }
+            group(CustomerDetails)
+            {
+                Caption = 'Customer Assignment';
+                field("Customer No."; Rec."Customer No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the customer owning or hosting this asset.';
+                }
+                field("Customer Name"; Rec."Customer Name")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Displays the linked customer business name.';
+                }
+                field("Installation Date"; Rec."Installation Date")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies initial site commissioning date.';
+                }
+                field("Warranty Expiry Date"; Rec."Warranty Expiry Date")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies manufacturer warranty expiration.';
+                }
+                field("Service Count"; Rec."Service Count")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Displays total related service orders recorded.';
+                }
+            }
+        }
+    }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(CheckWarranty)
+            {
+                Caption = 'Verify Warranty Status';
+                Image = WarrantyLedger;
+                ApplicationArea = All;
+                ToolTip = 'Validates if equipment is currently under active warranty.';
+
+                trigger OnAction()
+                begin
+                    if Rec."Warranty Expiry Date" >= Today() then
+                        Message('Equipment %1 is UNDER ACTIVE WARRANTY until %2.', Rec."No.", Rec."Warranty Expiry Date")
+                    else
+                        Message('Warning: Equipment %1 warranty EXPIRED on %2.', Rec."No.", Rec."Warranty Expiry Date");
+                end;
+            }
+        }
+    }
+}</code></pre>
+
+        <h3 class="sub-title">4. Extending Customer Card (`CustomerCardExt.PageExt.al`)</h3>
+        <pre><code class="language-al">pageextension 50100 "Customer Card Extension" extends "Customer Card"
 {
     layout
     {
         addafter(General)
         {
-            group(Loyalty)
+            group("Equipment Management")
             {
-                Caption = 'Loyalty & Rewards';
-                field("VIP Tier"; Rec."VIP Tier")
+                Caption = 'Installed Equipment';
+                
+                part(EquipmentList; "Equipment Item Subpage")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies customer VIP status.';
+                    SubPageLink = "Customer No." = FIELD("No.");
+                    UpdatePropagation = Both;
                 }
             }
         }
     }
+
+    actions
+    {
+        addlast(Navigation)
+        {
+            action(ViewEquipmentAssets)
+            {
+                Caption = 'View Installed Equipment';
+                Image = MachineCenter;
+                ApplicationArea = All;
+                RunObject = Page "Equipment Item List";
+                RunPageLink = "Customer No." = FIELD("No.");
+                ToolTip = 'Opens all equipment assets installed at this customer location.';
+            }
+        }
+    }
 }</code></pre>
+    </div>
+
+    <!-- 4. EVENT SUBSCRIBERS -->
+    <div class="section" id="al-events">
+        <h2 class="section-title">⚡ Event Subscribers & Extensible Architecture</h2>
+        <p class="lead-text">
+            Because core code cannot be modified, business logic is injected using <strong>Event Subscribers</strong> listening to 
+            standard Publisher Events published by the Base Application.
+        </p>
+
+        <h3 class="sub-title">Hooking into Sales Post Pipeline</h3>
+        <p>The codeunit below automatically creates or updates equipment warranty records when a sales order containing serialized items is posted:</p>
+        <pre><code class="language-al">codeunit 50100 "Equipment Sales Handler"
+{
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterPostSalesDoc', '', false, false)]
+    local procedure OnAfterPostSalesDocHandler(
+        var SalesHeader: Record "Sales Header"; 
+        var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; 
+        SalesInvHdrNo: Code[20]; 
+        SalesCrMemoHdrNo: Code[20])
+    var
+        SalesInvLine: Record "Sales Invoice Line";
+        EquipmentItem: Record "Equipment Item";
+    begin
+        // Only process posted sales invoices
+        if SalesInvHdrNo = '' then
+            exit;
+
+        SalesInvLine.SetRange("Document No.", SalesInvHdrNo);
+        SalesInvLine.SetRange(Type, SalesInvLine.Type::Item);
+        if SalesInvLine.FindSet() then
+            repeat
+                // If the item has a serial number recorded, register equipment asset
+                if SalesInvLine."Item Shpt. Entry No." <> 0 then begin
+                    EquipmentItem.Init();
+                    EquipmentItem."No." := 'EQ-' + SalesInvLine."Document No." + '-' + Format(SalesInvLine."Line No.");
+                    EquipmentItem.Description := SalesInvLine.Description;
+                    EquipmentItem."Customer No." := SalesHeader."Sell-to Customer No.";
+                    EquipmentItem."Installation Date" := Today();
+                    EquipmentItem."Warranty Expiry Date" := CalcDate('<+1Y>', Today());
+                    EquipmentItem.Status := EquipmentItem.Status::Operational;
+                    EquipmentItem.Insert(true);
+                end;
+            until SalesInvLine.Next() = 0;
+    end;
+}</code></pre>
+        <div class="highlight-box">
+            <strong>EventSubscriber Signature Rule:</strong> Event subscribers must specify:
+            <code>[EventSubscriber(ObjectType::&lt;Type&gt;, &lt;ObjectId&gt;, '&lt;EventName&gt;', '&lt;Element&gt;', &lt;SkipOnMissingLicense&gt;, &lt;SkipOnMissingPermission&gt;)]</code>. 
+            Keep <code>SkipOnMissingLicense</code> and <code>SkipOnMissingPermission</code> set to <code>false</code> unless writing optional telemetry.
+        </div>
+    </div>
+
+    <!-- 5. PERFORMANCE -->
+    <div class="section" id="al-performance">
+        <h2 class="section-title">🚀 Performance Optimization & Record Set Operations</h2>
+        <p class="lead-text">
+            Writing high-performance AL requires understanding how the Business Central Data Access Layer translates AL statements into SQL Server queries.
+        </p>
+
+        <h3 class="sub-title">1. Record Retrieval Best Practices</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>AL Method</th>
+                    <th>SQL Translation & Behavior</th>
+                    <th>When to Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Record.Get(PK1, PK2)</code></td>
+                    <td><code>SELECT TOP 1 ... WHERE PK1=@p1 AND PK2=@p2</code></td>
+                    <td>Always use when querying a record by its exact Primary Key. Most efficient call.</td>
+                </tr>
+                <tr>
+                    <td><code>Record.FindFirst()</code></td>
+                    <td><code>SELECT TOP 1 ...</code></td>
+                    <td>Use only when you strictly need the first record matching a filter and will NOT iterate.</td>
+                </tr>
+                <tr>
+                    <td><code>Record.FindSet()</code></td>
+                    <td><code>SELECT ... (Caches 50 to 500 rows)</code></td>
+                    <td>Mandatory when looping through filtered records (<code>repeat ... until Record.Next() = 0</code>).</td>
+                </tr>
+                <tr>
+                    <td><code>Record.IsEmpty()</code></td>
+                    <td><code>SELECT 1 WHERE EXISTS(...)</code></td>
+                    <td>Check existence without reading fields into memory. Never do <code>if Record.Count() > 0</code>!</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">2. High-Performance Bulk Operations</h3>
+        <p>Never loop through thousands of records modifying one field per record. Use bulk set-based operations:</p>
+        <div class="grid-2">
+            <div>
+                <h4>Anti-Pattern (Slow Iteration)</h4>
+                <pre><code class="language-al">// Inefficient: Generates 1,000 separate SQL UPDATE statements
+Customer.SetRange("Customer Posting Group", 'DOMESTIC');
+if Customer.FindSet() then
+    repeat
+        Customer."Payment Terms Code" := '30D';
+        Customer.Modify();
+    until Customer.Next() = 0;</code></pre>
+            </div>
+            <div>
+                <h4>Optimized Pattern (Bulk SQL)</h4>
+                <pre><code class="language-al">// Optimized: Single SQL UPDATE statement
+Customer.SetRange("Customer Posting Group", 'DOMESTIC');
+Customer.ModifyAll("Payment Terms Code", '30D');</code></pre>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">⚡ Event-Driven Programming in AL</h2>
-        <p>Instead of modifying core posting code, AL developers subscribe to integration and business events published by Microsoft:</p>
-        <pre><code>codeunit 50105 "Loyalty Event Handler"
-{
-    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterInsertEvent', '', true, true)]
-    local procedure ApplyVipDiscountOnOrderCreated(var Rec: Record "Sales Header")
-    var
-        Cust: Record Customer;
-    begin
-        if Cust.Get(Rec."Sell-to Customer No.") then begin
-            if Cust."VIP Tier" <> '' then begin
-                // Execute business logic without touching core Sales Post logic
-                Message('VIP Customer %1 detected! Loyalty rules applied.', Cust.Name);
-            end;
-        end;
-    end;
-}</code></pre>
+    <!-- 6. DOCKER ENVIRONMENT -->
+    <div class="section" id="al-docker">
+        <h2 class="section-title">🐳 Docker Sandbox Setup with BcContainerHelper</h2>
+        <p class="lead-text">
+            Professional Business Central developers work inside isolated container sandboxes matching production build versions.
+        </p>
+
+        <h3 class="sub-title">PowerShell Command to Spin up a BC Sandbox</h3>
+        <pre><code class="language-powershell"># Install the official container management module
+Install-Module -Name BcContainerHelper -Force
+
+# Create a local development container matching BC 2024 Wave 1 (v24)
+New-BcContainer `
+    -accept_eula `
+    -containerName "BC24Dev" `
+    -artifactUrl (Get-BCArtifactUrl -country "gb" -version "24.0" -select "Latest") `
+    -auth "UserPassword" `
+    -myScripts @() `
+    -updateHosts `
+    -includeAL
+
+# Check status and open Web Client
+Get-BcContainerAppInfo -containerName "BC24Dev"</code></pre>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">📋 Essential AL Developer Best Practices</h2>
-        <div class="tip-box">
-            <ul>
-                <li><strong>Always use SetRange() over SetFilter():</strong> <code>SetRange()</code> is heavily optimized by SQL Server for index seeks.</li>
-                <li><strong>Use CalcFields() wisely:</strong> FlowFields are calculated on demand; only call <code>CalcFields()</code> on fields you specifically need.</li>
-                <li><strong>Clean Transactions:</strong> Never perform UI interactions (e.g., <code>Confirm()</code> or <code>Dialog()</code>) inside database write transactions or automated background jobs.</li>
+    <!-- 7. SCENARIOS -->
+    <div class="section" id="al-scenarios">
+        <h2 class="section-title">📝 Business Central AL Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Table Extension Field Numbering & Integrity</h4>
+            <p>
+                A developer creates a Per-Tenant Extension to add a custom field <code>"Credit Approved By"</code> to the standard <code>Customer</code> table. 
+                Which field number and syntax must be used?
+            </p>
+            <ul class="qa-options">
+                <li>A) <code>field(50100; "Credit Approved By"; Code[50])</code> inside a <code>tableextension</code> object.</li>
+                <li>B) <code>field(10; "Credit Approved By"; Code[50])</code> directly inside the standard <code>table 18 Customer</code> object.</li>
+                <li>C) <code>field(100000; "Credit Approved By"; Code[50])</code> inside a <code>pageextension</code> object.</li>
+                <li>D) Modifying the SQL Server table <code>dbo.[CRONUS UK$Customer]</code> using SQL Management Studio.</li>
             </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: A (field 50100 in tableextension)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option A is CORRECT:</strong> Per-Tenant Extensions must use IDs between 50000 and 99999, and base application tables are modified using <code>tableextension</code> objects.</li>
+                    <li><strong>Option B is INCORRECT:</strong> Standard base tables cannot be directly modified in AL; IDs below 50000 are reserved for Microsoft.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Page extensions add UI controls, not physical data fields.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Direct SQL modifications violate cloud support agreements and corrupt Business Central's schema sync state.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -489,7 +1051,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

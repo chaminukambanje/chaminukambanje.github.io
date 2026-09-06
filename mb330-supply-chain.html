@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MB-330: Dynamics 365 Supply Chain Management | Chami's Learning Hub</title>
+    <title>MB-330 Dynamics 365 Supply Chain Management Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,34 +442,230 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>MB-330: Dynamics 365 Supply Chain Management Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>MB-330: Microsoft Dynamics 365 Supply Chain Management</span>
         </div>
-        <h1>MB-330: Dynamics 365 Supply Chain Management Guide</h1>
-        <p>Enterprise supply chain consulting: Product Information Management, Advanced Warehousing (WMS), Inventory Costing, and Master Planning.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam MB-330</span><span class="hero-tag">Supply Chain</span><span class="hero-tag">Dynamics 365</span><span class="hero-tag">Warehouse Management</span><span class="hero-tag">Master Planning</span><span class="hero-tag">Costing</span></div>
+        <h1>MB-330: Microsoft Dynamics 365 Supply Chain Management</h1>
+        <p>Comprehensive enterprise study guide covering Product Information Management, Advanced WMS, Location Directives, Planning Optimization (MRP), and 3-way matching.</p>
+        <div class="hero-tags"><span class="hero-tag">MB-330</span><span class="hero-tag">Supply Chain</span><span class="hero-tag">Dynamics 365</span><span class="hero-tag">WMS</span><span class="hero-tag">MRP</span><span class="hero-tag">Planning Optimization</span><span class="hero-tag">Procurement</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">📦 Exam Blueprint: MB-330</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Supply Chain Modules</div>
+        <ul class="toc-list">
+            <li><a href="#mb330-scope">Exam Scope & Functional Architecture</a></li>
+            <li><a href="#pim">Product Information Management & Dimensions</a></li>
+            <li><a href="#wms">Advanced Warehouse Management (WMS) & Topology</a></li>
+            <li><a href="#mrp">Master Planning & Material Requirements (Planning Optimization)</a></li>
+            <li><a href="#procurement">Procurement, Sourcing & Quality Governance</a></li>
+            <li><a href="#mb330-scenarios">Exam Practice Scenarios & Detailed Rationales</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="mb330-scope">
+        <h2 class="section-title">📘 Exam MB-330 Scope & Enterprise SCM Architecture</h2>
         <p class="lead-text">
-            Exam <strong>MB-330: Microsoft Dynamics 365 Supply Chain Management</strong> certifies functional consulting across 
-            product information management, inventory costing, warehouse management, transportation, and master planning.
+            Exam <strong>MB-330: Microsoft Dynamics 365 Supply Chain Management</strong> validates functional consulting expertise 
+            in enterprise logistics, product life-cycle configuration, inventory valuation, advanced warehouse management (WMS), 
+            and hyperscale Material Requirements Planning (MRP) using Planning Optimization.
         </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Weight</th>
+                    <th>Core Enterprise Functional Areas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Implement Product Information Management</strong></td>
+                    <td>20–25%</td>
+                    <td>Product masters, variants, storage/tracking dimensions, item model groups (FIFO/Standard Cost), life-cycle states.</td>
+                </tr>
+                <tr>
+                    <td><strong>Implement Inventory Management</strong></td>
+                    <td>15–20%</td>
+                    <td>Inventory journals, counting (cycle counting), batch/serial tracking, reservation hierarchies, quality orders.</td>
+                </tr>
+                <tr>
+                    <td><strong>Implement Supply Chain Processes</strong></td>
+                    <td>15–20%</td>
+                    <td>Procurement & sourcing, purchase requisitions, 3-way matching, trade agreements, sales orders, return orders.</td>
+                </tr>
+                <tr>
+                    <td><strong>Implement Warehouse Management (WMS)</strong></td>
+                    <td>25–30%</td>
+                    <td>Warehouse setup, zones/locations, License Plates, work templates, location directives, mobile device menus.</td>
+                </tr>
+                <tr>
+                    <td><strong>Implement Master Planning (MRP)</strong></td>
+                    <td>15–20%</td>
+                    <td>Planning Optimization service, static vs dynamic plans, coverage groups, positive/negative days, firming.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. PIM -->
+    <div class="section" id="pim">
+        <h2 class="section-title">📦 Product Information Management (PIM) & Inventory Dimensions</h2>
+        <p class="lead-text">
+            Products in Dynamics 365 Supply Chain Management are structured into Shared Products (global definitions) 
+            and Released Products (company-specific operational entities).
+        </p>
+
+        <h3 class="sub-title">1. Dimension Groups Architecture</h3>
         <div class="grid-3">
             <div class="card">
-                <h4>Inventory & Costing</h4>
-                <p>Configuring item model groups (FIFO, LIFO, Weighted Average, Standard Cost), inventory closing, and tracking dimensions.</p>
+                <h4>Product Dimensions</h4>
+                <p>Differentiates physical variants of a product master:</p>
+                <ul>
+                    <li><strong>Configuration:</strong> Custom build combinations.</li>
+                    <li><strong>Size:</strong> Small, Medium, Large, XL.</li>
+                    <li><strong>Color:</strong> Red, Blue, Black.</li>
+                    <li><strong>Style:</strong> Casual, Executive, Heavy-Duty.</li>
+                    <li><strong>Version:</strong> Hardware revision (v1.0, v2.1).</li>
+                </ul>
             </div>
             <div class="card">
-                <h4>Warehouse Management (WMS)</h4>
-                <p>Location directives, work templates, wave processing, mobile device menu items, and license plate tracking.</p>
+                <h4>Storage Dimensions</h4>
+                <p>Governs physical storage location hierarchy:</p>
+                <ul>
+                    <li><strong>Site:</strong> Geographic facility (Mandatory).</li>
+                    <li><strong>Warehouse:</strong> Physical building under a Site.</li>
+                    <li><strong>Location:</strong> Specific bin, shelf, or bay.</li>
+                    <li><strong>Inventory Status:</strong> Available, Damaged, Blocked.</li>
+                    <li><strong>License Plate:</strong> Pallet/tote identifier.</li>
+                </ul>
             </div>
             <div class="card">
-                <h4>Master Planning</h4>
-                <p>Demand forecasting, coverage groups, planned orders, safety stock levels, and procurement sourcing.</p>
+                <h4>Tracking Dimensions</h4>
+                <p>Enforces regulatory batch & serial traceability:</p>
+                <ul>
+                    <li><strong>Batch Number:</strong> Tracks production lots with expiration, shelf life, and quarantine dates.</li>
+                    <li><strong>Serial Number:</strong> Tracks discrete physical serialized units (Active in inventory vs only during sales issue).</li>
+                </ul>
             </div>
+        </div>
+
+        <h3 class="sub-title">2. Item Model Groups & Inventory Costing</h3>
+        <p>Item Model Groups control how transactions post financially to the General Ledger and how cost prices are calculated:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Costing Method</th>
+                    <th>Calculation Mechanics</th>
+                    <th>Business Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FIFO (First In, First Out)</strong></td>
+                    <td>The earliest received inventory costs are settled first against sales issues.</td>
+                    <td>Consumer goods, retail, standard manufacturing with perishable stock.</td>
+                </tr>
+                <tr>
+                    <td><strong>LIFO (Last In, First Out)</strong></td>
+                    <td>The most recently acquired inventory costs are settled first.</td>
+                    <td>Permitted in US GAAP; prohibited under international IFRS standards.</td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Cost</strong></td>
+                    <td>Predefined fixed cost per item; variances post to Purchase Price Variance (PPV) accounts.</td>
+                    <td>High-volume discrete manufacturing, automotive, electronics assembly.</td>
+                </tr>
+                <tr>
+                    <td><strong>Weighted Average</strong></td>
+                    <td>Calculates an average unit cost weighted by inventory quantities received.</td>
+                    <td>Commodities, raw materials, bulk liquids, chemical processing.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3. WMS -->
+    <div class="section" id="wms">
+        <h2 class="section-title">🏭 Advanced Warehouse Management (WMS)</h2>
+        <p class="lead-text">
+            Advanced WMS manages high-volume distribution centers using License Plate tracking, mobile RF scanning devices, 
+            and automated directed work.
+        </p>
+
+        <h3 class="sub-title">1. WMS Directed Work Execution Core Pair: Work Template & Location Directive</h3>
+        <div class="diagram-box">
+Work Creation Trigger (Sales Order Release to Warehouse)
+          │
+          ▼
+┌─────────────────────────────────────────────────────────────┐
+│ Location Directive (Strategy Engine)                       │  ◄── Determines WHERE to pick and WHERE to put
+│ Query: Find nearest bin with matching FIFO batch expiration│
+└─────────────────────────────┬───────────────────────────────┘
+                              │
+┌─────────────────────────────▼───────────────────────────────┐
+│ Work Template (Step Engine)                                │  ◄── Determines WHAT actions worker performs
+│ Line 1: PICK from Location [A-01-02-01] (License Plate LP1) │
+│ Line 2: PUT into Location [BAYDOOR-01]                     │
+└─────────────────────────────┬───────────────────────────────┘
+                              │
+┌─────────────────────────────▼───────────────────────────────┐
+│ Mobile Device App (Worker UI)                              │  ◄── Worker scans LP, verifies pick, moves to dock
+└─────────────────────────────────────────────────────────────┘
+        </div>
+    </div>
+
+    <!-- 4. MRP -->
+    <div class="section" id="mrp">
+        <h2 class="section-title">⏱️ Master Planning & Planning Optimization (MRP)</h2>
+        <p class="lead-text">
+            The <strong>Planning Optimization Add-in</strong> is a dedicated cloud microservice running in Azure that generates 
+            Material Requirements Planning (MRP) outputs in minutes rather than overnight batch runs.
+        </p>
+        <div class="tip-box">
+            <strong>Static vs Dynamic Master Plans:</strong> 
+            A <strong>Static Plan</strong> remains fixed during operational shifts and is used by purchasing teams to firm planned purchase orders. 
+            A <strong>Dynamic Plan</strong> automatically updates whenever unplanned sales orders or inventory adjustments occur, giving real-time visibility into stock availability.
+        </div>
+    </div>
+
+    <!-- 5. SCENARIOS -->
+    <div class="section" id="mb330-scenarios">
+        <h2 class="section-title">📝 Realistic MB-330 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Three-Way Matching Failure in Procurement</h4>
+            <p>
+                A procurement clerk receives a vendor invoice for 100 industrial pumps at £1,200 per unit. 
+                The original Purchase Order was confirmed for 100 pumps at £1,000 per unit. 
+                The system blocks posting with a matching variance error.
+            </p>
+            <p><strong>Question:</strong> Which three documents are compared during Dataverse/D365 Three-Way Invoice Matching?</p>
+            <ul class="qa-options">
+                <li>A) Purchase Order lines, Product Receipt lines, and Vendor Invoice lines</li>
+                <li>B) Sales Order lines, Picking List lines, and Customer Invoice lines</li>
+                <li>C) Bill of Materials, Route operations, and Production Order lines</li>
+                <li>D) Vendor Quotation, Purchase Requisition, and Bank Statement</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: A (Purchase Order lines, Product Receipt lines, and Vendor Invoice lines)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option A is CORRECT:</strong> Three-Way Matching validates:
+                        1) The pricing and quantity on the approved <strong>Purchase Order</strong>,
+                        2) The physical quantity delivered on the warehouse <strong>Product Receipt</strong>, and
+                        3) The final price and quantities billed on the <strong>Vendor Invoice</strong>. 
+                        If the price variance exceeds the company's price tolerance percentage, the invoice is blocked until approved by authorized management.</li>
+                    <li><strong>Option B is INCORRECT:</strong> These are customer-facing outbound sales documents.</li>
+                    <li><strong>Option C is INCORRECT:</strong> These are shop-floor manufacturing production entities.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Bank statements reconcile cash, not procurement line item variances.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -380,7 +692,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

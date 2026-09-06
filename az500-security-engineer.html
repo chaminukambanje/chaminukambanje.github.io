@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZ-500: Azure Security Engineer Associate | Chami's Learning Hub</title>
+    <title>AZ-500 Microsoft Azure Security Technologies Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,36 +442,119 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-500: Azure Security Engineer Associate Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-500: Microsoft Azure Security Technologies</span>
         </div>
-        <h1>AZ-500: Azure Security Engineer Associate Guide</h1>
-        <p>Cloud security mastery: Entra ID Conditional Access, PIM, Network Perimeters, Key Vault, Defender for Cloud, and Microsoft Sentinel SIEM/SOAR.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam AZ-500</span><span class="hero-tag">Azure Security</span><span class="hero-tag">Zero Trust</span><span class="hero-tag">PIM</span><span class="hero-tag">Microsoft Sentinel</span><span class="hero-tag">Defender for Cloud</span></div>
+        <h1>AZ-500: Microsoft Azure Security Technologies</h1>
+        <p>In-depth cloud security engineering guide covering Zero Trust, Conditional Access, Azure Firewall, WAF, Private Link, Microsoft Defender for Cloud, and Sentinel KQL hunting.</p>
+        <div class="hero-tags"><span class="hero-tag">AZ-500</span><span class="hero-tag">Security</span><span class="hero-tag">Zero Trust</span><span class="hero-tag">Firewall</span><span class="hero-tag">WAF</span><span class="hero-tag">Private Link</span><span class="hero-tag">Sentinel</span><span class="hero-tag">Defender</span><span class="hero-tag">KQL</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🛡️ Exam Blueprint: AZ-500</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Security Modules</div>
+        <ul class="toc-list">
+            <li><a href="#az500-scope">Exam Scope & Zero Trust Strategy</a></li>
+            <li><a href="#identity-security">Identity: Conditional Access, PIM & Risk Policies</a></li>
+            <li><a href="#network-perimeter">Network Security: Azure Firewall, WAF & Private Link</a></li>
+            <li><a href="#cloud-defense">Cloud Defense: Microsoft Defender for Cloud & CSPM</a></li>
+            <li><a href="#sentinel-siem">Microsoft Sentinel: KQL Analytics & Logic App Playbooks</a></li>
+            <li><a href="#az500-scenarios">Exam Practice Scenarios & Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="az500-scope">
+        <h2 class="section-title">📘 Exam AZ-500 Scope & Security Architecture</h2>
         <p class="lead-text">
-            Exam <strong>AZ-500: Microsoft Azure Security Technologies</strong> assesses cybersecurity architecture across identities, 
-            network perimeters, data protection, and enterprise threat detection with Microsoft Sentinel.
+            Exam <strong>AZ-500: Microsoft Azure Security Technologies</strong> validates capabilities in implementing security controls, 
+            maintaining posture, identity governance, threat protection, and data encryption across cloud and hybrid environments.
         </p>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Identity & Access Security</h3>
+    </div>
+
+    <!-- 2. NETWORK SECURITY -->
+    <div class="section" id="network-perimeter">
+        <h2 class="section-title">🏰 Perimeter Security: Azure Firewall vs Web Application Firewall (WAF)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Capability</th>
+                    <th>Azure Firewall (Network Layer)</th>
+                    <th>Web Application Firewall (Application Layer)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OSI Layer</strong></td>
+                    <td>Layer 3, 4 & 7 (FQDN network filtering)</td>
+                    <td>Layer 7 (HTTP/HTTPS Web Traffic Only)</td>
+                </tr>
+                <tr>
+                    <td><strong>Host Platforms</strong></td>
+                    <td>Centralized Hub VNet appliance</td>
+                    <td>Integrated into Azure Application Gateway or Azure Front Door</td>
+                </tr>
+                <tr>
+                    <td><strong>Inspection Rules</strong></td>
+                    <td>IP addresses, ports, protocols, outbound FQDN rules, Threat Intel</td>
+                    <td>OWASP Top 10 rule sets (CRS 3.2), SQL Injection, Cross-Site Scripting (XSS), Rate limiting</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3. SENTINEL -->
+    <div class="section" id="sentinel-siem">
+        <h2 class="section-title">🛡️ Microsoft Sentinel: KQL Analytics & Automated Threat Hunting</h2>
+        <pre><code class="language-kql">// KQL Rule: Detect Brute Force Login followed by Successful Azure Portal Sign-in
+let timeframe = 1h;
+let failed_threshold = 10;
+SigninLogs
+| where TimeGenerated >= ago(timeframe)
+| where ResultType in ("50126", "50053") // Invalid password / locked account
+| summarize FailedCount = count() by UserPrincipalName, IPAddress, bin(TimeGenerated, 5m)
+| where FailedCount >= failed_threshold
+| join kind=inner (
+    SigninLogs
+    | where TimeGenerated >= ago(timeframe)
+    | where ResultType == "0" // Successful login
+    | project SuccessTime = TimeGenerated, UserPrincipalName, IPAddress, AppDisplayName
+) on UserPrincipalName, IPAddress
+| where SuccessTime > TimeGenerated
+| project SuccessTime, UserPrincipalName, IPAddress, FailedCount, AppDisplayName</code></pre>
+    </div>
+
+    <!-- 4. SCENARIOS -->
+    <div class="section" id="az500-scenarios">
+        <h2 class="section-title">📝 Realistic AZ-500 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Securing Azure PaaS Storage from Data Exfiltration</h4>
+            <p>
+                A financial organization mandates that backend Azure Storage accounts containing customer PII must be completely inaccessible 
+                from the public internet. Furthermore, application compute instances running inside Azure VNets must access storage through 
+                private IP addresses, guaranteeing that all traffic remains strictly on the Microsoft backbone network.
+            </p>
+            <p><strong>Question:</strong> Which architecture provides the highest security isolation?</p>
+            <ul class="qa-options">
+                <li>A) Storage Account Firewall configuring public IP allowlists</li>
+                <li>B) Azure Private Endpoints (Private Link) with private DNS zone integration</li>
+                <li>C) Service Endpoints without disabling public network access</li>
+                <li>D) Encrypting blobs with customer-managed keys (CMK)</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Azure Private Endpoints with private DNS zone integration)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
                 <ul>
-                    <li><strong>Privileged Identity Management (PIM):</strong> Just-in-time (JIT) role elevation with approval workflows and MFA.</li>
-                    <li><strong>Conditional Access:</strong> Real-time zero-trust policy engine evaluating user, risk level, device compliance, and location.</li>
+                    <li><strong>Option B is CORRECT:</strong> <strong>Azure Private Endpoints</strong> assign a dedicated private IP address from your VNet subnet to the Storage account service. By disabling public network access entirely, the storage account's public DNS name resolves to the private IP (via Azure Private DNS Zones). Traffic never leaves the private virtual network, completely preventing data exfiltration to unauthorized storage accounts.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Public IP allowlisting leaves the public storage endpoint exposed to the internet.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Service Endpoints route traffic across the Microsoft backbone, but the storage account still maintains a public IP address.</li>
+                    <li><strong>Option D is INCORRECT:</strong> CMK encrypts data at rest but does not restrict network perimeter transmission.</li>
                 </ul>
-            </div>
-            <div class="card">
-                <h3>Perimeter & Network Protection</h3>
-                <ul>
-                    <li><strong>Azure Firewall:</strong> Stateful network and application rule filtering with built-in threat intelligence.</li>
-                    <li><strong>DDoS Protection & WAF:</strong> Protects web applications from OWASP Top 10 vulnerabilities.</li>
-                </ul>
-            </div>
+            </details>
         </div>
     </div>
 
@@ -382,7 +581,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

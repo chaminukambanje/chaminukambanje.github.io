@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZ-400: DevOps Engineer Expert | Chami's Learning Hub</title>
+    <title>AZ-400 Microsoft DevOps Engineer Expert Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,82 +442,129 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-400: Microsoft Certified DevOps Engineer Expert</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-400: Microsoft DevOps Solutions Expert</span>
         </div>
-        <h1>AZ-400: Microsoft Certified DevOps Engineer Expert</h1>
-        <p>End-to-end DevOps engineering: CI/CD with YAML pipelines & GitHub Actions, Infrastructure as Code (Bicep/Terraform), branching strategies, and SRE.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam AZ-400</span><span class="hero-tag">DevOps Expert</span><span class="hero-tag">CI/CD Pipelines</span><span class="hero-tag">GitHub Actions</span><span class="hero-tag">Infrastructure as Code</span><span class="hero-tag">SRE</span></div>
+        <h1>AZ-400: Microsoft DevOps Solutions Expert</h1>
+        <p>In-depth DevOps engineering guide covering GitFlow vs Trunk-based branching, multi-stage YAML pipelines, automated deployment gates, SonarQube SAST, and Bicep IaC.</p>
+        <div class="hero-tags"><span class="hero-tag">AZ-400</span><span class="hero-tag">DevOps</span><span class="hero-tag">CI/CD</span><span class="hero-tag">YAML</span><span class="hero-tag">Git</span><span class="hero-tag">Pipelines</span><span class="hero-tag">Bicep</span><span class="hero-tag">Security</span><span class="hero-tag">SRE</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🚀 Exam Blueprint: AZ-400</h2>
-        <p class="lead-text">
-            Exam <strong>AZ-400: Designing and Implementing Microsoft DevOps Solutions</strong> certifies expert proficiency in combining people, 
-            process, and technologies to continuously deliver valuable products and services across Azure DevOps and GitHub Enterprise.
-        </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Domain</th>
-                    <th>Weight</th>
-                    <th>Core Focus</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Design for security and compliance</strong></td>
-                    <td>10–15%</td>
-                    <td>Secret management, SonarQube, Snyk, Dependabot, Container vulnerability scanning</td>
-                </tr>
-                <tr>
-                    <td><strong>Manage source control</strong></td>
-                    <td>10–15%</td>
-                    <td>Git branch policies, Trunk-based development, Pull Request validation hooks</td>
-                </tr>
-                <tr>
-                    <td><strong>Continuous Integration (CI)</strong></td>
-                    <td>20–25%</td>
-                    <td>YAML multi-stage pipelines, Hosted vs Self-hosted agents, Artifact generation</td>
-                </tr>
-                <tr>
-                    <td><strong>Continuous Delivery & Release Management (CD)</strong></td>
-                    <td>40–45%</td>
-                    <td>Deployment gates, Canary & Blue/Green deployments, IaC (Bicep / Terraform)</td>
-                </tr>
-                <tr>
-                    <td><strong>Instrumentation and SRE strategy</strong></td>
-                    <td>10–15%</td>
-                    <td>Application Insights, SLI/SLO metrics, Failure mode analysis, Chaos engineering</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & DevOps Modules</div>
+        <ul class="toc-list">
+            <li><a href="#az400-scope">Exam Scope & DevOps Transformation</a></li>
+            <li><a href="#git-branching">Git Branching Strategies & Protection Policies</a></li>
+            <li><a href="#yaml-pipelines">Multi-Stage YAML Pipelines & Environment Gates</a></li>
+            <li><a href="#shift-left-sec">Shift-Left Security: SAST, Container Scanning & Secrets</a></li>
+            <li><a href="#iac-bicep">Infrastructure as Code: Bicep & Drift Detection</a></li>
+            <li><a href="#az400-scenarios">Exam Practice Scenarios & Explanations</a></li>
+        </ul>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">📦 Infrastructure as Code (IaC) with Bicep & Pipelines</h2>
-        <pre><code># Multi-stage Azure DevOps YAML Pipeline
-trigger:
-  - main
+    <!-- 1. SCOPE -->
+    <div class="section" id="az400-scope">
+        <h2 class="section-title">📘 Exam AZ-400 Scope & DevOps Expert Competencies</h2>
+        <p class="lead-text">
+            Exam <strong>AZ-400: Designing and Implementing Microsoft DevOps Solutions</strong> validates elite capabilities in combining people, 
+            processes, and technologies to continuously deliver value across source control, CI/CD, dependency management, security, and SRE.
+        </p>
+    </div>
+
+    <!-- 2. YAML PIPELINE -->
+    <div class="section" id="yaml-pipelines">
+        <h2 class="section-title">🚀 Multi-Stage YAML CI/CD Pipeline Architecture</h2>
+        <p class="lead-text">
+            Production pipelines decouple build artifacts from release deployments across distinct stages with automated governance gates.
+        </p>
+
+        <pre><code class="language-yaml">trigger:
+  branches:
+    include:
+      - main
+      - release/*
 
 stages:
-- stage: Build
+- stage: BuildAndTest
+  displayName: 'Stage 1: Build, Test & Scan'
   jobs:
-  - job: BuildAndTest
+  - job: CompileApp
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - script: dotnet build --configuration Release
-      displayName: 'Compile Application'
-    - task: AzureCLI@2
+    - task: DotNetCoreCLI@2
+      displayName: 'Compile .NET Solution'
       inputs:
-        azureSubscription: 'Azure-Production-ServiceConnection'
-        scriptType: 'bash'
-        scriptLocation: 'inlineScript'
-        inlineScript: |
-          az bicep build --file infra/main.bicep
-          az deployment group validate --resource-group rg-prod --template-file infra/main.bicep</code></pre>
+        command: 'build'
+        configuration: 'Release'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Execute Unit Tests'
+      inputs:
+        command: 'test'
+        projects: '**/*Tests.csproj'
+        arguments: '--configuration Release --collect:"Code Coverage"'
+
+    - task: SonarCloudPrepare@1
+      displayName: 'Prepare Static Analysis'
+
+- stage: DeployStaging
+  displayName: 'Stage 2: Deploy to Staging'
+  dependsOn: BuildAndTest
+  jobs:
+  - deployment: DeployWeb
+    environment: 'Staging'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying containerized web app to Staging App Service"
+
+- stage: DeployProduction
+  displayName: 'Stage 3: Production Release'
+  dependsOn: DeployStaging
+  jobs:
+  - deployment: DeployProd
+    environment: 'Production' # Protected by manual approval gate & Azure Monitor alert checks
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to Production with zero-downtime swap"</code></pre>
+    </div>
+
+    <!-- 3. SCENARIOS -->
+    <div class="section" id="az400-scenarios">
+        <h2 class="section-title">📝 Realistic AZ-400 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Automated Release Approval Gates</h4>
+            <p>
+                An enterprise releases updates to an Azure Kubernetes Service (AKS) cluster. Management mandates that after deploying to production, 
+                the pipeline must monitor Azure Monitor application error rates for 30 minutes. If HTTP 500 error rates exceed 1%, the pipeline must trigger an automated rollback.
+            </p>
+            <p><strong>Question:</strong> Which Azure DevOps feature natively satisfies this requirement without manual intervention?</p>
+            <ul class="qa-options">
+                <li>A) Manual Intervention Task</li>
+                <li>B) Environment Deployment Gates configuring 'Query Azure Monitor Alerts' with evaluation duration</li>
+                <li>C) Sending an email to the on-call engineer</li>
+                <li>D) A bash script containing <code>sleep 1800</code> inside the build stage</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Environment Deployment Gates configuring 'Query Azure Monitor Alerts')</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> Azure DevOps <strong>Environment Gates</strong> allow automated evaluation of external health criteria (such as Azure Monitor alerts, Work Item queries, or REST APIs) before or after deployments. Setting a gate to query Azure Monitor alerts over an evaluation duration ensures that if error rates spike, the deployment fails and triggers automated rollback procedures.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Manual intervention pauses the pipeline waiting for a human click, violating automated continuous delivery principles.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Email notifications do not automatically control pipeline execution.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Sleeping a pipeline agent wastes billable minutes and cannot evaluate metric conditions dynamically.</li>
+                </ul>
+            </details>
+        </div>
     </div>
 
 </div>
@@ -427,7 +590,7 @@ stages:
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

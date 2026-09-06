@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PL-200: Power Platform Functional Consultant | Chami's Learning Hub</title>
+    <title>PL-200 Power Platform Functional Consultant Study Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,30 +442,246 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>PL-200: Power Platform Functional Consultant Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>PL-200: Microsoft Power Platform Functional Consultant</span>
         </div>
-        <h1>PL-200: Power Platform Functional Consultant Guide</h1>
-        <p>Functional consultant guide: Dataverse schema architecture, Model-driven and Canvas apps, Power Automate cloud flows, and Copilot Studio.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam PL-200</span><span class="hero-tag">Power Platform</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Power Apps</span><span class="hero-tag">Power Automate</span><span class="hero-tag">ALM Solutions</span></div>
+        <h1>PL-200: Microsoft Power Platform Functional Consultant</h1>
+        <p>Comprehensive blueprint covering Dataverse modeling, security role governance, Model-Driven vs Canvas Power Fx delegation, Power Automate enterprise patterns, and Copilot Studio.</p>
+        <div class="hero-tags"><span class="hero-tag">PL-200</span><span class="hero-tag">Power Platform</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Canvas Apps</span><span class="hero-tag">Model-Driven Apps</span><span class="hero-tag">Power Automate</span><span class="hero-tag">Copilot Studio</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">📋 Exam Blueprint: PL-200</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Study Modules</div>
+        <ul class="toc-list">
+            <li><a href="#pl200-overview">Exam Scope & Functional Consultant Role</a></li>
+            <li><a href="#dataverse-modeling">Dataverse Data Modeling: Tables, Columns & Relationships</a></li>
+            <li><a href="#security-governance">Enterprise Security: Business Units, Roles & Teams</a></li>
+            <li><a href="#model-vs-canvas">Model-Driven Apps vs Canvas Apps Architecture</a></li>
+            <li><a href="#power-automate">Power Automate: Cloud Flows, Triggers & Error Handling</a></li>
+            <li><a href="#copilot-studio">Copilot Studio & Power Pages Portals</a></li>
+            <li><a href="#pl200-scenarios">Exam Practice Scenarios & In-Depth Solutions</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="section" id="pl200-overview">
+        <h2 class="section-title">📘 Exam PL-200 Scope & Domains</h2>
         <p class="lead-text">
-            Exam <strong>PL-200: Microsoft Power Platform Functional Consultant</strong> covers discovering requirements, configuring Dataverse, 
-            building Model-driven and Canvas apps, orchestrating Power Automate flows, and deploying Copilot Studio chatbots.
+            Exam <strong>PL-200: Microsoft Power Platform Functional Consultant</strong> validates the ability to perform discovery, 
+            capture requirements, design data models, build canvas and model-driven applications, configure automated business processes, 
+            and implement secure governance across environments.
         </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Weight</th>
+                    <th>Core Functional Competencies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Configure Microsoft Dataverse</strong></td>
+                    <td>25–30%</td>
+                    <td>Tables, columns (Choice vs Choices), relationships, cascading rules, rollup/calculated columns, business rules.</td>
+                </tr>
+                <tr>
+                    <td><strong>Create apps by using Power Apps</strong></td>
+                    <td>25–30%</td>
+                    <td>Model-driven forms/views/charts/sitemaps, Canvas app Power Fx formulas, delegation, collections, components.</td>
+                </tr>
+                <tr>
+                    <td><strong>Manage process automation</strong></td>
+                    <td>20–25%</td>
+                    <td>Power Automate cloud flows (automated, instant, scheduled), error handling, BPF stages and conditions.</td>
+                </tr>
+                <tr>
+                    <td><strong>Implement Power Pages & Copilot Studio</strong></td>
+                    <td>10–15%</td>
+                    <td>Power Pages table permissions, web roles, Copilot Studio topics, entities, generative AI answers.</td>
+                </tr>
+                <tr>
+                    <td><strong>Environment Management & Solutions</strong></td>
+                    <td>10–15%</td>
+                    <td>ALM, managed vs unmanaged solutions, solution layers, environment variables, connection references.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. DATAVERSE MODELING -->
+    <div class="section" id="dataverse-modeling">
+        <h2 class="section-title">📊 Dataverse Data Modeling: Tables, Columns & Advanced Attributes</h2>
+        <p class="lead-text">
+            Dataverse is not just a database; it is a full relational data service with built-in business logic, auditing, and role-based security.
+        </p>
+
+        <h3 class="sub-title">1. Column Types & Mathematical Computation</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Type</th>
+                    <th>Evaluation Mechanics</th>
+                    <th>Key Constraints & Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Choice (Single-Select)</strong></td>
+                    <td>Stores a single selected integer code mapped to a localized string label.</td>
+                    <td>Can be Local (specific to one table) or Global (shared across multiple tables like 'Country Code').</td>
+                </tr>
+                <tr>
+                    <td><strong>Choices (Multi-Select)</strong></td>
+                    <td>Allows users to pick multiple options stored as a semicolon-delimited string of values.</td>
+                    <td>Cannot be used in Rollup calculated column criteria. Supported in Canvas apps via <code>Concat()</code>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Calculated Columns</strong></td>
+                    <td>Computed on-the-fly at the time of retrieval (read-time).</td>
+                    <td>Supports basic math, string manipulation (<code>CONCAT</code>, <code>TRIM</code>), and date math (<code>ADDDAYS</code>, <code>DIFFINDAYS</code>). Does not support aggregates.</td>
+                </tr>
+                <tr>
+                    <td><strong>Rollup Columns</strong></td>
+                    <td>Asynchronously aggregates child records across a 1:N relationship.</td>
+                    <td>Supports <code>SUM</code>, <code>COUNT</code>, <code>MIN</code>, <code>MAX</code>. Recalculated periodically (every 12 hours) or manually via Mass Calculate. Cannot reference another rollup column.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">2. Business Rules</h3>
+        <p>Business Rules allow functional consultants to implement client-side validation and form logic without writing JavaScript:</p>
+        <ul>
+            <li><strong>Scopes:</strong>
+                <ul>
+                    <li><em>Single Form:</em> Executes only on that specific form.</li>
+                    <li><em>All Forms:</em> Executes across all forms for that table in Model-Driven apps.</li>
+                    <li><em>Entity (Table):</em> Executes both on the client UI AND server-side (enforced during API/Power Automate updates).</li>
+                </ul>
+            </li>
+            <li><strong>Supported Actions:</strong> Set field value, Clear field value, Set field requirement level (Mandatory/Optional), Show error message, Lock/Unlock field, Set default value, Show/Hide field.</li>
+        </ul>
+    </div>
+
+    <!-- 3. SECURITY -->
+    <div class="section" id="security-governance">
+        <h2 class="section-title">🔒 Enterprise Security: Business Units, Teams & Roles</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>Dataverse Data Modeling</h3>
-                <p>Configuring relational tables, 1:N and N:N relationships, choice columns vs lookup tables, business rules, and security roles.</p>
+                <h4>Business Unit Architectures</h4>
+                <ul>
+                    <li><strong>Root Business Unit:</strong> Created automatically when the Dataverse environment is provisioned. Cannot be deleted.</li>
+                    <li><strong>Child Business Units:</strong> Represent regional divisions or business departments. Users belong to exactly one business unit.</li>
+                    <li><strong>Modern Matrix Ownership:</strong> Allows users in one BU to own records in another BU via security role assignments.</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Process Automation</h3>
-                <p>Power Automate cloud flows (Automated, Instant, Scheduled), Business Process Flows (BPFs), and Application Lifecycle Management (ALM) with Solutions.</p>
+                <h4>Team Collaboration Types</h4>
+                <ul>
+                    <li><strong>Owner Team:</strong> Can own records in Dataverse. Security roles can be assigned directly to the team.</li>
+                    <li><strong>Access Team:</strong> Cannot own records. Dynamically shares specific records with team members using an <em>Access Team Template</em> (Read, Write, Append privileges). Ideal when sharing fluctuates rapidly.</li>
+                </ul>
             </div>
+        </div>
+    </div>
+
+    <!-- 4. APPS ARCHITECTURE -->
+    <div class="section" id="model-vs-canvas">
+        <h2 class="section-title">📱 Model-Driven vs Canvas Apps: Architecture & Power Fx</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h4>Model-Driven Apps</h4>
+                <p>Component-focused design driven entirely by the Dataverse metadata model:</p>
+                <ul>
+                    <li><strong>Navigation:</strong> Modern App Designer configuring Areas, Groups, and SubAreas.</li>
+                    <li><strong>Forms:</strong> Main, Quick Create (fast side-panel creation), Quick View (read-only related record data), Card.</li>
+                    <li><strong>Views:</strong> Public views, System views, Personal views with customizable column ordering and sorting.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Canvas Apps & Power Fx</h4>
+                <p>Pixel-perfect custom UI connecting to 1,000+ connectors:</p>
+                <ul>
+                    <li><strong>Delegation:</strong> Offloading query execution to the server data source. Non-delegable functions (e.g. complex text matching or non-indexed operations) trigger delegation warnings and limit evaluation to the first 500–2,000 records.</li>
+                    <li><strong>Collections:</strong> In-memory client-side data caches populated via <code>ClearCollect(colOrders, Orders)</code>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="sub-title">Advanced Power Fx Patterns</h3>
+        <pre><code class="language-powerfx">// High-performance concurrent loading of master data on App Start
+Concurrent(
+    ClearCollect(colCustomers, Filter(Accounts, 'State/Province' = "London")),
+    ClearCollect(colProducts, Filter(Products, StateCode = 'StateCode (Products)'.Active)),
+    ClearCollect(colCurrencies, Currencies)
+);
+
+// Transactional Patch operation with error verification
+UpdateContext({locNewRecord: 
+    Patch(
+        Accounts, 
+        Defaults(Accounts), 
+        {
+            name: txtAccountName.Text,
+            telephone1: txtPhone.Text,
+            revenue: Value(txtRevenue.Text),
+            customertypecode: 'Customer Type (Accounts)'.Customer
+        }
+    )
+});
+
+If(
+    !IsEmpty(Errors(Accounts)),
+    Notify("Failed to save Account: " & First(Errors(Accounts)).Message, NotificationType.Error),
+    Notify("Account successfully registered!", NotificationType.Success); Navigate(scrDashboard)
+);</code></pre>
+    </div>
+
+    <!-- 5. POWER AUTOMATE -->
+    <div class="section" id="power-automate">
+        <h2 class="section-title">⚡ Power Automate Cloud Flows & Process Governance</h2>
+        <p class="lead-text">
+            Power Automate provides enterprise workflow automation with automated, instant, and scheduled cloud flows.
+        </p>
+        <div class="tip-box">
+            <strong>Enterprise Try-Catch Pattern:</strong> Group critical actions inside a <strong>Scope</strong> named <code>Scope - Try</code>. 
+            Add a following Scope named <code>Scope - Catch</code>, and configure its <em>Run After</em> condition to execute only if <code>Scope - Try</code> 
+            <em>has failed, timed out, or is skipped</em>. Inside Catch, log errors to Dataverse and alert administrators via Teams.
+        </div>
+    </div>
+
+    <!-- 6. SCENARIOS -->
+    <div class="section" id="pl200-scenarios">
+        <h2 class="section-title">📝 Realistic PL-200 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Delegation Warning in Canvas Apps</h4>
+            <p>
+                A consultant develops a Canvas App connected to an Azure SQL database containing 350,000 inventory transaction records. 
+                The app uses the following formula to display items: <code>Filter(Transactions, StartsWith(TransactionCode, "TX-2026") && Quantity > 50)</code>. 
+                Users complain that only a small subset of matches appear.
+            </p>
+            <p><strong>Question:</strong> What is causing this behavior and how can it be resolved?</p>
+            <ul class="qa-options">
+                <li>A) Canvas apps cannot query Azure SQL databases; data must be migrated to SharePoint lists.</li>
+                <li>B) A non-delegable formula causes Power Apps to pull only the first 500 (or up to 2,000) records locally for filtering. Resolve by using delegable predicates supported by the SQL connector or pre-filtering using a SQL View / Stored Procedure.</li>
+                <li>C) Increase the browser cache limit in Microsoft Edge.</li>
+                <li>D) Convert the app into a Model-Driven app; Canvas apps have a strict 2,000 record maximum limit.</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Formula non-delegability limits processing to local record limit)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> In Power Apps Canvas apps, if a query expression cannot be delegated to the underlying server engine, Power Apps fetches only the initial record batch (default 500, configurable up to 2,000) and executes the filter locally in client memory. Records beyond 2,000 are completely ignored. To resolve, ensure all functions are delegable for that specific connector, or create a SQL View / Stored Procedure in Azure SQL to execute server-side and return only the pre-filtered result set.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Azure SQL is a premier enterprise connector for Power Apps with far superior delegation capabilities compared to SharePoint.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Browser cache does not govern Power Apps connector query delegation.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Canvas apps can query millions of records provided formulas are fully delegable.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -376,7 +708,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

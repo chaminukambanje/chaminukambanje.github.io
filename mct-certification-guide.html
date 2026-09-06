@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft Certified Trainer (MCT) Guide | Chami's Learning Hub</title>
+    <title>Microsoft Certified Trainer (MCT) Comprehensive Guide | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,31 +442,95 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>Microsoft Certified Trainer (MCT) Methodology Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>Microsoft Certified Trainer (MCT) Technical Guide</span>
         </div>
-        <h1>Microsoft Certified Trainer (MCT) Methodology Guide</h1>
-        <p>Best practices, adult learning methodologies, lab preparation, and technical curriculum delivery from a veteran Microsoft Certified Trainer.</p>
-        <div class="hero-tags"><span class="hero-tag">MCT</span><span class="hero-tag">Microsoft Certified Trainer</span><span class="hero-tag">Technical Instruction</span><span class="hero-tag">MOC Courseware</span><span class="hero-tag">Lab Management</span></div>
+        <h1>Microsoft Certified Trainer (MCT) Technical Guide</h1>
+        <p>Professional handbook covering MCT qualification standards, Courseware Marketplace, Azure lab management, adult learning theory, and classroom excellence.</p>
+        <div class="hero-tags"><span class="hero-tag">MCT</span><span class="hero-tag">Trainer</span><span class="hero-tag">Pedagogy</span><span class="hero-tag">Courseware</span><span class="hero-tag">Azure Labs</span><span class="hero-tag">Certification</span><span class="hero-tag">Instructional Design</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🎓 The Microsoft Certified Trainer (MCT) Standard</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & MCT Modules</div>
+        <ul class="toc-list">
+            <li><a href="#mct-overview">MCT Program Scope & Prerequisites</a></li>
+            <li><a href="#mct-benefits">Exclusive MCT Benefits: Courseware, Azure Passes & Labs</a></li>
+            <li><a href="#adult-learning">Adult Learning Principles & Andragogy</a></li>
+            <li><a href="#lab-facilitation">Hands-on Cloud Lab Facilitation & Troubleshooting</a></li>
+            <li><a href="#virtual-mastery">Virtual Classroom Delivery & Engagement Strategies</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="section" id="mct-overview">
+        <h2 class="section-title">🎓 Microsoft Certified Trainer (MCT) Program Scope</h2>
         <p class="lead-text">
-            The <strong>Microsoft Certified Trainer (MCT)</strong> is Microsoft's premier technical certification credential awarded to professional trainers 
-            who deliver official Microsoft learning products (MOC) and empower technical workforces globally.
+            The <strong>Microsoft Certified Trainer (MCT)</strong> credential is the premier technical training certification awarded by Microsoft. 
+            MCTs are certified subject matter experts validated not only in technical domain excellence but also in instructional pedagogy 
+            and adult learning facilitation.
         </p>
-        <div class="grid-2">
+
+        <h3 class="sub-title">1. Qualification & Annual Renewal Matrix</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Requirement Phase</th>
+                    <th>Mandatory Deliverable</th>
+                    <th>Validation Mechanism</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Technical Excellence</strong></td>
+                    <td>Hold at least one qualifying premier role-based or specialty certification.</td>
+                    <td>Azure Solutions Architect, DevOps Expert, Data Engineer, Power Platform Developer, or Business Central Specialist.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Instructional Pedagogy</strong></td>
+                    <td>Demonstrate verified instructional skills through an accredited trainer program.</td>
+                    <td>CompTIA CTT+, Fourth Dimension Technologies, Friesen, Kaye and Associates, or accredited university teaching credentials.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Annual Renewal</strong></td>
+                    <td>Maintain active teaching status and top student evaluation scores.</td>
+                    <td>Deliver Microsoft Official Courseware (MOC) verified through Metrics That Matter (MTM) with an average satisfaction rating &ge; 4.0 out of 5.0.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. BENEFITS -->
+    <div class="section" id="mct-benefits">
+        <h2 class="section-title">💎 Exclusive MCT Resources & Cloud Sandboxes</h2>
+        <div class="grid-3">
             <div class="card">
-                <h3>Instructional Excellence</h3>
-                <p>Principles of adult learning, technical communication, real-world bridging from certification blueprints to enterprise production systems.</p>
+                <h4>Courseware Marketplace</h4>
+                <p>Full access to Microsoft Official Curriculum (MOC) trainer preparation guides, slide decks, syllabi, and student workbooks.</p>
             </div>
             <div class="card">
-                <h3>Lab & Environment Delivery</h3>
-                <p>Managing live hands-on lab environments (Skillable, Learn on Demand), guiding troubleshooting, and orchestrating cloud sandboxes.</p>
+                <h4>Monthly Azure Credits & Passes</h4>
+                <p>$100 to $150 monthly Azure subscription credits plus dedicated student lab Azure Passes for pre-class testing.</p>
+            </div>
+            <div class="card">
+                <h4>Exam Discounts & Beta Access</h4>
+                <p>50% discount vouchers on all Microsoft commercial certification exams and exclusive invitations to beta certification exams.</p>
             </div>
         </div>
+    </div>
+
+    <!-- 3. ANDRAGOGY -->
+    <div class="section" id="adult-learning">
+        <h2 class="section-title">🧠 Modern Technical Pedagogy: Adult Learning (Andragogy)</h2>
+        <p class="lead-text">
+            Teaching working software architects and systems engineers requires moving beyond rote memorization. 
+            MCTs apply Knowles' Principles of Andragogy:
+        </p>
+        <ul>
+            <li><strong>Self-Directed Learning:</strong> Experienced adult learners want to steer their problem-solving trajectories. Allow students to explore architectural trade-offs rather than dictating single paths.</li>
+            <li><strong>Immediate Problem Relevance:</strong> Adults engage deeply when technical concepts immediately solve real business pain points in their daily projects.</li>
+            <li><strong>Experience-Based Framing:</strong> Relate new cloud concepts to existing legacy knowledge (e.g., explaining Dataverse tables by comparing them to SQL Server tables, or comparing Docker containers to lightweight virtual machines).</li>
+        </ul>
     </div>
 
 </div>
@@ -376,7 +556,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

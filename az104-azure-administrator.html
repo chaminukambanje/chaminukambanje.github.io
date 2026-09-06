@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZ-104: Azure Administrator Associate | Chami's Learning Hub</title>
+    <title>AZ-104 Microsoft Azure Administrator Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,20 +442,33 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-104: Microsoft Azure Administrator Study Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-104: Microsoft Azure Administrator</span>
         </div>
-        <h1>AZ-104: Microsoft Azure Administrator Study Guide</h1>
-        <p>Complete technical preparation for AZ-104: Identity & Governance, Hybrid Networking, VM Compute & Scale Sets, Storage Lifecycle, and Monitoring.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam AZ-104</span><span class="hero-tag">Azure Administrator</span><span class="hero-tag">VNet Peering</span><span class="hero-tag">Entra ID</span><span class="hero-tag">Storage Lifecycle</span><span class="hero-tag">Azure Monitor</span></div>
+        <h1>AZ-104: Microsoft Azure Administrator</h1>
+        <p>In-depth infrastructure guide covering VNet peering, User-Defined Routes, NSG priority, Storage Lifecycle JSON, User Delegation SAS, Entra ID PIM, and VMSS autoscale.</p>
+        <div class="hero-tags"><span class="hero-tag">AZ-104</span><span class="hero-tag">Azure</span><span class="hero-tag">Networking</span><span class="hero-tag">VNet</span><span class="hero-tag">Storage</span><span class="hero-tag">Entra ID</span><span class="hero-tag">PIM</span><span class="hero-tag">Compute</span><span class="hero-tag">VMSS</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">☁️ Exam Blueprint: AZ-104</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Study Modules</div>
+        <ul class="toc-list">
+            <li><a href="#az104-scope">Exam Scope & Domain Breakdown</a></li>
+            <li><a href="#vnet-networking">Azure Networking: VNet Peering, UDRs & NSG Priority</a></li>
+            <li><a href="#storage-tiering">Storage Accounts: Tiering, Lifecycle & User Delegation SAS</a></li>
+            <li><a href="#entra-governance">Entra ID, PIM, RBAC & Azure Policy</a></li>
+            <li><a href="#vm-scaling">Compute: Availability Sets, Zones & VMSS Autoscale</a></li>
+            <li><a href="#az104-scenarios">Exam Practice Scenarios & Deep Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="az104-scope">
+        <h2 class="section-title">📘 Exam AZ-104 Scope & Enterprise Architecture</h2>
         <p class="lead-text">
-            Exam <strong>AZ-104: Microsoft Azure Administrator</strong> validates subject matter expertise in implementing, managing, and monitoring 
-            an organization’s Microsoft Azure environment, including virtual networks, storage, compute, identity, security, and governance.
+            Exam <strong>AZ-104: Microsoft Azure Administrator</strong> validates the foundational and intermediate skills required to implement, 
+            manage, and monitor an organization’s Microsoft Azure environment, covering virtual networks, identity, compute, storage, and governance.
         </p>
         <table>
             <thead>
@@ -353,78 +482,188 @@
                 <tr>
                     <td><strong>Manage Azure identities and governance</strong></td>
                     <td>20–25%</td>
-                    <td>Microsoft Entra ID, Users & Groups, PIM, RBAC roles, Azure Policy & Management Groups</td>
+                    <td>Entra ID users/groups, PIM, RBAC roles vs custom roles, Azure Policy initiatives, Resource Locks.</td>
                 </tr>
                 <tr>
                     <td><strong>Implement and manage storage</strong></td>
                     <td>15–20%</td>
-                    <td>Storage accounts, Blob access tiers, Lifecycle rules, Azure Files, Storage Sync Service</td>
+                    <td>Storage accounts, blob lifecycle management JSON, access tiers (Hot/Cool/Cold/Archive), SAS tokens, Azure Files.</td>
                 </tr>
                 <tr>
                     <td><strong>Deploy and manage Azure compute resources</strong></td>
                     <td>20–25%</td>
-                    <td>Virtual Machines, Availability Zones/Sets, Virtual Machine Scale Sets (VMSS), Azure Containers & AKS</td>
+                    <td>Virtual Machines, Availability Sets vs Zones, VMSS autoscale rules, Azure Container Instances (ACI), App Service plans.</td>
                 </tr>
                 <tr>
-                    <td><strong>Configure and manage virtual networking</strong></td>
+                    <td><strong>Implement and manage virtual networking</strong></td>
                     <td>20–25%</td>
-                    <td>VNets, Subnets, Peering, Network Security Groups (NSGs), Azure Bastion, VPN Gateway, DNS</td>
+                    <td>VNets, subnets, NSGs, ASGs, VNet peering, User-Defined Routes (UDR), Azure Bastion, Private Endpoints.</td>
                 </tr>
                 <tr>
                     <td><strong>Monitor and maintain Azure resources</strong></td>
                     <td>10–15%</td>
-                    <td>Azure Monitor, Log Analytics queries (KQL), Alerts, Action Groups, Azure Backup & Site Recovery</td>
+                    <td>Azure Monitor, Log Analytics workspaces, KQL queries, alerts, Recovery Services vaults, Azure Backup.</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🔑 Domain Deep Dive: Networking & Security</h2>
+    <!-- 2. NETWORKING -->
+    <div class="section" id="vnet-networking">
+        <h2 class="section-title">🌐 Azure Networking: Peering, Routing & Security</h2>
+        <p class="lead-text">
+            Virtual networking is the most heavily weighted and technically intricate domain on the AZ-104 exam.
+        </p>
+
+        <h3 class="sub-title">1. VNet Peering & Gateway Transit Architecture</h3>
+        <div class="diagram-box">
+┌───────────────────────────┐                    ┌───────────────────────────┐
+│     Hub VNet (10.0.0.0/16) │ ◄── Peering 1 ──► │   Spoke 1 (10.1.0.0/16)   │
+│  - Azure Firewall         │                    │   - Workload Subnet       │
+│  - VPN / ER Gateway       │                    │   - Use Remote Gateways   │
+│  - Allow Gateway Transit  │                    └───────────────────────────┘
+└─────────────┬─────────────┘
+              │ Peering 2
+              ▼
+┌───────────────────────────┐
+│   Spoke 2 (10.2.0.0/16)   │
+│   - Database Subnet       │
+│   - Use Remote Gateways   │
+└───────────────────────────┘
+        </div>
+        <p><strong>Critical Peering Rules:</strong></p>
+        <ul>
+            <li><strong>Non-Transitive:</strong> By default, Spoke 1 cannot communicate with Spoke 2 across Hub VNet peering. Traffic between spokes requires a Network Virtual Appliance (NVA) or Azure Firewall with User-Defined Routes (UDRs).</li>
+            <li><strong>Gateway Transit:</strong> To allow spokes to use the Hub's VPN/ExpressRoute gateway, enable <code>Allow gateway transit</code> on the Hub VNet peering and <code>Use remote gateways</code> on the Spoke VNet peering.</li>
+        </ul>
+
+        <h3 class="sub-title">2. Routing Priority & User-Defined Routes (UDR)</h3>
+        <p>When multiple routes exist for a destination IP, Azure selects the route using Longest Prefix Match (LPM). For identical prefixes, priority is evaluated as follows:</p>
+        <ol>
+            <li><strong>User-Defined Routes (UDR):</strong> Highest priority. Forces traffic through an NVA (e.g., Next Hop: Virtual Appliance 10.0.1.4).</li>
+            <li><strong>BGP Routes:</strong> Propagated via ExpressRoute or VPN gateways (unless route propagation is explicitly disabled).</li>
+            <li><strong>System Default Routes:</strong> Lowest priority (Local VNet, On-premises, Internet, None).</li>
+        </ol>
+
+        <h3 class="sub-title">3. Network Security Groups (NSGs) Evaluation Rules</h3>
+        <p>
+            NSG rules are processed in priority order from <strong>100 to 4096</strong>. As soon as traffic matches a rule, processing stops. 
+            Default rules (65000, 65001, 65500) cannot be deleted but can be overridden by creating rules with lower priority numbers.
+        </p>
+    </div>
+
+    <!-- 3. STORAGE -->
+    <div class="section" id="storage-tiering">
+        <h2 class="section-title">💾 Azure Storage: Lifecycle Management & SAS Tokens</h2>
+        
+        <h3 class="sub-title">1. Automated Lifecycle Management JSON Policy</h3>
+        <pre><code class="language-json">{
+  "rules": [
+    {
+      "enabled": true,
+      "name": "ArchiveAndPurgeLogs",
+      "type": "Lifecycle",
+      "definition": {
+        "actions": {
+          "baseBlob": {
+            "tierToCool": { "daysAfterModificationGreaterThan": 30 },
+            "tierToArchive": { "daysAfterModificationGreaterThan": 90 },
+            "delete": { "daysAfterModificationGreaterThan": 365 }
+          },
+          "snapshot": {
+            "delete": { "daysAfterCreationGreaterThan": 60 }
+          }
+        },
+        "filters": {
+          "blobTypes": [ "blockBlob" ],
+          "prefixMatch": [ "systemlogs/" ]
+        }
+      }
+    }
+  ]
+}</code></pre>
+
+        <h3 class="sub-title">2. Shared Access Signatures (SAS) Security</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>SAS Type</th>
+                    <th>Signing Mechanism</th>
+                    <th>Security Best Practice</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>User Delegation SAS</strong></td>
+                    <td>Signed using Entra ID (Azure AD) user credentials.</td>
+                    <td><strong>Most Secure (Recommended).</strong> Revoking the Entra ID user token or role assignment immediately revokes the SAS without rotating storage account keys.</td>
+                </tr>
+                <tr>
+                    <td><strong>Service SAS</strong></td>
+                    <td>Signed using Storage Account Access Keys. Scoped to a single resource.</td>
+                    <td>Should always be linked to a Stored Access Policy on blob containers to enable immediate revocation.</td>
+                </tr>
+                <tr>
+                    <td><strong>Account SAS</strong></td>
+                    <td>Signed using Storage Account Access Keys. Grants access to account-level operations.</td>
+                    <td>Least secure; rotating account keys invalidates all issued Account SAS tokens.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. ENTRA ID -->
+    <div class="section" id="entra-governance">
+        <h2 class="section-title">🛡️ Microsoft Entra ID, PIM & Governance</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>VNet Peering vs VPN Gateway</h3>
+                <h4>Privileged Identity Management (PIM)</h4>
                 <ul>
-                    <li><strong>VNet Peering:</strong> Low latency, high bandwidth private backbone connection between VNets. Traffic never touches the public internet. Supports global peering.</li>
-                    <li><strong>Gateway Transit:</strong> Allows a peered VNet to utilize the VPN or ExpressRoute gateway of a hub VNet.</li>
+                    <li><strong>Eligible vs Active:</strong> Users are assigned <em>Eligible</em> status, requiring step-up authentication (MFA, justification, approval ticket) to activate roles for a limited duration (e.g. 4 hours).</li>
+                    <li><strong>Access Reviews:</strong> Automated periodic certification of user access rights to maintain least-privilege compliance.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>NSGs & Application Security Groups (ASGs)</h3>
+                <h4>Azure Policy & Resource Hierarchy</h4>
                 <ul>
-                    <li><strong>NSG:</strong> Contains stateful 5-tuple security rules (Priority 100–4096). Applied at subnet or NIC level.</li>
-                    <li><strong>ASG:</strong> Allows grouping VMs under descriptive monikers (e.g., <code>WEB_SERVERS</code>, <code>DB_SERVERS</code>) inside NSG rules, eliminating manual IP maintenance.</li>
+                    <li><strong>Hierarchy:</strong> Root Management Group -> Child Management Groups -> Subscriptions -> Resource Groups -> Resources.</li>
+                    <li><strong>Policy Effects:</strong> <code>Deny</code> (blocks creation), <code>Audit</code> (logs non-compliance), <code>DeployIfNotExists</code> (automatically provisions missing extensions/monitoring).</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">💾 Storage Management & Lifecycle</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h4>Access Tiers</h4>
-                <p><strong>Hot:</strong> Frequently accessed data.<br><strong>Cool:</strong> Stored min 30 days.<br><strong>Cold:</strong> Stored min 90 days.<br><strong>Archive:</strong> Lowest storage cost, hours retrieval latency.</p>
-            </div>
-            <div class="card">
-                <h4>Replication Strategies</h4>
-                <p><strong>LRS:</strong> 3 copies in single datacenter.<br><strong>ZRS:</strong> Synchronous across 3 zones.<br><strong>GRS:</strong> 3 copies locally + 3 in secondary paired region.</p>
-            </div>
-            <div class="card">
-                <h4>Azure Files & Sync</h4>
-                <p>Server Message Block (SMB) and NFS file shares in the cloud. Azure File Sync caches cloud shares on on-premises Windows Servers.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">💡 Essential AZ-104 Exam Tips</h2>
-        <div class="tip-box">
-            <ul>
-                <li><strong>Role-Based Access Control (RBAC):</strong> Role assignments inherit down the hierarchy: Management Group &rarr; Subscription &rarr; Resource Group &rarr; Resource. Deny assignments always override allow assignments.</li>
-                <li><strong>Azure Bastion:</strong> Provides secure, seamless RDP/SSH access to VMs directly via the Azure portal over SSL (port 443), without exposing public IP addresses on the VMs.</li>
-                <li><strong>KQL Mastery:</strong> Learn basic Kusto Query Language syntax for querying <code>AzureDiagnostics</code> and <code>Perf</code> tables in Log Analytics.</li>
+    <!-- 5. SCENARIOS -->
+    <div class="section" id="az104-scenarios">
+        <h2 class="section-title">📝 Realistic AZ-104 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Non-Transitive VNet Peering Communication</h4>
+            <p>
+                An administrator establishes VNet peering between VNet-A and VNet-B, and between VNet-B and VNet-C. 
+                Virtual machines in VNet-A can communicate with VNet-B, and VNet-B can communicate with VNet-C. 
+                However, VMs in VNet-A cannot communicate with VMs in VNet-C.
+            </p>
+            <p><strong>Question:</strong> Why does this occur and how can direct connectivity be established?</p>
+            <ul class="qa-options">
+                <li>A) NSGs on VNet-C are blocking ICMP; add an allow rule for port 443.</li>
+                <li>B) VNet peering is non-transitive. To connect VNet-A and VNet-C directly, you must configure a direct VNet peering between VNet-A and VNet-C, or deploy an NVA in VNet-B with User-Defined Routes.</li>
+                <li>C) Gateway transit must be disabled on VNet-B.</li>
+                <li>D) Subnets across the three VNets have overlapping IP ranges.</li>
             </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (VNet peering is non-transitive; peer A and C directly or deploy NVA with UDRs)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> In Azure, VNet peering relationships are strictly non-transitive. Traffic will not route through an intermediate peered VNet without a routing device. Connectivity between VNet-A and VNet-C requires either: 1) A direct peering between VNet-A and VNet-C, or 2) Deploying a Network Virtual Appliance (NVA) / Azure Firewall in VNet-B and assigning User-Defined Route (UDR) route tables on VNet-A subnets setting Next Hop = Virtual Appliance (VNet-B NVA IP).</li>
+                    <li><strong>Option A is INCORRECT:</strong> Port 443 is HTTPS; ICMP uses protocol 1. Furthermore, routing must exist before NSGs are evaluated.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Gateway transit controls VPN/ExpressRoute gateway sharing, not spoke-to-spoke routing.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Azure prevents creation of VNet peering between VNets with overlapping IP address spaces.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -451,7 +690,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

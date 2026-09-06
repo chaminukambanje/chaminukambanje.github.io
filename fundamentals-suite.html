@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft Fundamentals: DP-900 & PL-900 | Chami's Learning Hub</title>
+    <title>DP-900 & PL-900 Cloud Fundamentals Comprehensive Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,43 +442,109 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>Microsoft Fundamentals: Azure Data (DP-900) & Power Platform (PL-900)</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>Azure Data & Power Platform Fundamentals Suite</span>
         </div>
-        <h1>Microsoft Fundamentals: Azure Data (DP-900) & Power Platform (PL-900)</h1>
-        <p>Essential foundations for modern cloud architectures: Relational & Non-relational cloud data, Azure Synapse, Power Apps, Power Automate, and Dataverse.</p>
-        <div class="hero-tags"><span class="hero-tag">DP-900</span><span class="hero-tag">PL-900</span><span class="hero-tag">Azure Data</span><span class="hero-tag">Power Platform</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Fundamentals</span></div>
+        <h1>Azure Data & Power Platform Fundamentals Suite</h1>
+        <p>Foundational mastery blueprint covering DP-900 (Azure SQL, Cosmos DB, Synapse) and PL-900 (Dataverse, Canvas/Model-Driven Apps, Power Automate RPA, Copilot Studio).</p>
+        <div class="hero-tags"><span class="hero-tag">DP-900</span><span class="hero-tag">PL-900</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Azure SQL</span><span class="hero-tag">Cosmos DB</span><span class="hero-tag">Power Apps</span><span class="hero-tag">Power Automate</span><span class="hero-tag">RPA</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🌟 Microsoft Fundamentals Suite: DP-900 & PL-900</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Fundamentals Modules</div>
+        <ul class="toc-list">
+            <li><a href="#dp900">DP-900: Azure Data Fundamentals Blueprint</a></li>
+            <li><a href="#pl900">PL-900: Microsoft Power Platform Fundamentals Blueprint</a></li>
+            <li><a href="#cross-fundamentals">Cross-Platform Synergies & Cloud Strategy</a></li>
+            <li><a href="#fundamentals-scenarios">Realistic Practice Scenarios & Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. DP-900 -->
+    <div class="section" id="dp900">
+        <h2 class="section-title">📊 DP-900: Microsoft Azure Data Fundamentals</h2>
         <p class="lead-text">
-            Foundational certifications establish the core architecture and shared terminology across Microsoft cloud solutions:
-            <strong>DP-900 (Azure Data Fundamentals)</strong> and <strong>PL-900 (Microsoft Power Platform Fundamentals)</strong>.
+            Validates core foundational knowledge of relational, non-relational, and analytical data services across Microsoft Azure.
         </p>
-        <div class="grid-2">
+
+        <h3 class="sub-title">1. Relational vs Non-Relational Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Relational (Azure SQL)</th>
+                    <th>Non-Relational (Cosmos DB / Blob)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Data Schema</strong></td>
+                    <td>Strict, predefined tabular schema with Primary & Foreign Keys. ACID transactions.</td>
+                    <td>Flexible, schema-on-read, JSON documents, key-value, columnar, or graph structures. BASE consistency.</td>
+                </tr>
+                <tr>
+                    <td><strong>Azure Services</strong></td>
+                    <td>Azure SQL Database, SQL Managed Instance, SQL Server on VMs, Azure Database for PostgreSQL / MySQL.</td>
+                    <td>Azure Cosmos DB (NoSQL, MongoDB, Cassandra, Gremlin, Table APIs), Azure Blob Storage, Azure Table Storage.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. PL-900 -->
+    <div class="section" id="pl900">
+        <h2 class="section-title">⚡ PL-900: Microsoft Power Platform Fundamentals</h2>
+        <p class="lead-text">
+            Validates foundational business value and technical capabilities across the five core Power Platform products.
+        </p>
+
+        <div class="grid-3">
             <div class="card">
-                <h3>DP-900: Azure Data Fundamentals</h3>
-                <p>Validates core data concepts and cloud data services:</p>
-                <ul>
-                    <li><strong>Relational Data in Azure:</strong> Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL / MySQL.</li>
-                    <li><strong>Non-Relational Data:</strong> Azure Cosmos DB (Core SQL, MongoDB, Cassandra, Gremlin APIs), Azure Table Storage, Azure Blob Storage.</li>
-                    <li><strong>Modern Analytics:</strong> Azure Synapse Analytics, Azure Data Factory, Azure Databricks, and Power BI reporting.</li>
-                </ul>
-                <a href="dp203-data-engineer.html" class="btn-action">Advance to DP-203 Guide &rarr;</a>
+                <h4>Power Apps</h4>
+                <p>Rapid application development: Canvas apps (pixel-perfect), Model-Driven apps (Dataverse-driven), and Power Pages (external portals).</p>
             </div>
             <div class="card">
-                <h3>PL-900: Power Platform Fundamentals</h3>
-                <p>Validates business value and technical capabilities of Power Platform:</p>
-                <ul>
-                    <li><strong>Power Apps:</strong> Canvas apps (pixel-perfect UI) and Model-driven apps (data-first, component-driven).</li>
-                    <li><strong>Power Automate:</strong> Automated, instant, and scheduled cloud flows, plus Desktop robotic process automation (RPA).</li>
-                    <li><strong>Dataverse:</strong> Standard and custom tables, business rules, columns, relationships, and role-based security.</li>
-                    <li><strong>Copilot Studio & Power Pages:</strong> AI conversational agents and secure external-facing websites.</li>
-                </ul>
-                <a href="pl200-power-platform-functional-consultant.html" class="btn-action">Advance to PL-200 Guide &rarr;</a>
+                <h4>Power Automate</h4>
+                <p>Multi-step process automation: Cloud flows (automated, instant, scheduled) and Desktop flows (Robotic Process Automation / RPA).</p>
             </div>
+            <div class="card">
+                <h4>Copilot Studio</h4>
+                <p>Low-code conversational AI chatbots grounded in organizational knowledge sources and Dataverse records.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. SCENARIOS -->
+    <div class="section" id="fundamentals-scenarios">
+        <h2 class="section-title">📝 Realistic Fundamentals Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Legacy Desktop Automation without Modern APIs</h4>
+            <p>
+                An accounting firm processes supplier invoices by typing data into a 25-year-old Windows desktop application that lacks any REST APIs. 
+                Management wants to automate this data entry from incoming email PDFs.
+            </p>
+            <p><strong>Question:</strong> Which Power Platform technology satisfies this requirement?</p>
+            <ul class="qa-options">
+                <li>A) Canvas App with an OData connector</li>
+                <li>B) Power Automate Desktop Flow (Robotic Process Automation / RPA) with UI recording</li>
+                <li>C) Power BI Paginated Report</li>
+                <li>D) Dataverse Virtual Table</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Power Automate Desktop Flow / RPA)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> <strong>Power Automate Desktop</strong> delivers Robotic Process Automation (RPA), allowing developers to record mouse clicks, keyboard strokes, and window interactions on legacy Windows applications that do not provide modern APIs. Combined with AI Builder Document Processing, it can extract PDF text and enter it automatically into legacy desktop screens.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Canvas apps connect to modern cloud or on-premise APIs, not legacy desktop UI windows.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Power BI is an analytical reporting engine.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Virtual tables connect to modern OData or SQL data sources.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -389,7 +571,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

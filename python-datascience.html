@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python for Data Science & HPC | Chami's Learning Hub</title>
+    <title>Python for Data Science & HPC | NumPy, Pandas, PySpark, Slurm | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -329,108 +445,415 @@
             <a href="index.html">Hub Home</a> &rsaquo; <span>Python for Data Science & High-Performance Computing</span>
         </div>
         <h1>Python for Data Science & High-Performance Computing</h1>
-        <p>Applied guide to scientific Python: NumPy, Pandas, Scikit-Learn, PySpark, Xarray, NetCDF, and running distributed workloads on Slurm & JASMIN HPC clusters.</p>
-        <div class="hero-tags"><span class="hero-tag">Python</span><span class="hero-tag">Data Science</span><span class="hero-tag">HPC</span><span class="hero-tag">JASMIN</span><span class="hero-tag">PySpark</span><span class="hero-tag">Machine Learning</span></div>
+        <p>In-depth scientific computing architecture covering NumPy memory layouts, Pandas optimization, Xarray NetCDF climate processing, PySpark/Delta Lake, and Slurm HPC orchestration.</p>
+        <div class="hero-tags"><span class="hero-tag">Python</span><span class="hero-tag">Data Science</span><span class="hero-tag">HPC</span><span class="hero-tag">JASMIN</span><span class="hero-tag">NumPy</span><span class="hero-tag">Pandas</span><span class="hero-tag">PySpark</span><span class="hero-tag">Delta Lake</span><span class="hero-tag">Slurm</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🔬 Data Science & Scientific Supercomputing</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Data Science Modules</div>
+        <ul class="toc-list">
+            <li><a href="#numpy-memory">NumPy Architecture: Strides, Memory Layout & Vectorization</a></li>
+            <li><a href="#pandas-opt">High-Performance Pandas: Memory, Indexing & GroupBy Pipelines</a></li>
+            <li><a href="#xarray-climate">Atmospheric & Earth Observation Data with Xarray / NetCDF</a></li>
+            <li><a href="#spark-delta">Distributed Big Data with PySpark & Delta Lake (ACID)</a></li>
+            <li><a href="#slurm-hpc">Slurm HPC Cluster Orchestration (JASMIN / LOTUS)</a></li>
+            <li><a href="#mlops-sklearn">Production ML Pipelines with Scikit-Learn & MLflow</a></li>
+            <li><a href="#hpc-case-studies">End-to-End Scientific Computing Case Studies</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. NUMPY -->
+    <div class="section" id="numpy-memory">
+        <h2 class="section-title">🔢 NumPy Architecture: Strides, Memory Layout & Vectorization</h2>
         <p class="lead-text">
-            Python is the premier language for data science, machine learning, and high-performance computing (HPC). 
-            From local data analysis with Pandas to petabyte-scale distributed processing on <strong>JASMIN</strong> and <strong>Azure Databricks</strong>, 
-            mastering the scientific Python stack is essential for modern technical leadership.
+            NumPy provides the high-performance backbone of scientific computing in Python. Understanding NumPy at a systems level 
+            requires mastering its memory layout, strides, universal functions (ufuncs), and memory views.
         </p>
-        <div class="highlight-box">
-            <strong>Author's Context:</strong> At the Centre for Environmental Data Analysis (CEDA) / JASMIN at STFC, 
-            researchers run parallel scientific workflows across petabytes of atmospheric, oceanographic, and climate datasets using this stack.
+
+        <h3 class="sub-title">1. Contiguity and Strides Explained</h3>
+        <p>
+            An <code>ndarray</code> is a continuous block of physical memory combined with metadata describing how to interpret it:
+            data type (dtype), shape, and <strong>strides</strong> (the number of bytes to step in each dimension to reach the next element).
+        </p>
+        <div class="diagram-box">
+Shape: (3, 4), Dtype: float64 (8 bytes per item)
+
+C-Contiguous (Row-Major - Default in C and Python):
+Row 0: [0, 1, 2, 3]  ──► Stride: (32, 8) 
+Row 1: [4, 5, 6, 7]  ──► To move 1 row down = jump 32 bytes (4 * 8)
+Row 2: [8, 9, 10, 11]──► To move 1 col right = jump 8 bytes (1 * 8)
+
+Fortran-Contiguous (Column-Major - Used in Fortran & R):
+Col 0: [0, 4, 8]     ──► Stride: (8, 24)
+Col 1: [1, 5, 9]     ──► To move 1 col right = jump 24 bytes (3 * 8)
         </div>
+
+        <pre><code class="language-python">import numpy as np
+
+# Create an array of shape (10000, 10000) of 64-bit floats (800 MB)
+arr_c = np.ones((10000, 10000), dtype=np.float64, order='C')
+arr_f = np.ones((10000, 10000), dtype=np.float64, order='F')
+
+# Performance benchmark: Row-summing on C-ordered array vs Column-ordered array
+# Row iteration on C-array is CPU cache-line friendly (L1/L2 hits)
+# %timeit arr_c.sum(axis=1)  --> ~28 ms
+# %timeit arr_f.sum(axis=1)  --> ~185 ms (6x slower due to CPU cache misses!)
+</code></pre>
+
+        <h3 class="sub-title">2. Broadcasting Semantics</h3>
+        <p>Broadcasting allows element-wise operations on arrays of different shapes without copying data in memory. Dimensions are compatible when:</p>
+        <ol>
+            <li>They are equal, OR</li>
+            <li>One of them is 1.</li>
+        </ol>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">📦 Core Scientific Python Ecosystem</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h4>NumPy</h4>
-                <p>N-dimensional array manipulation with fast C-backed vectorization, broadcasting, and linear algebra routines.</p>
-                <code>import numpy as np<br>arr = np.linspace(0, 10, 100)</code>
-            </div>
-            <div class="card">
-                <h4>Pandas</h4>
-                <p>High-performance tabular DataFrames, time series handling, aggregations, pivoting, and SQL-like join operations.</p>
-                <code>import pandas as pd<br>df = pd.read_csv('data.csv')</code>
-            </div>
-            <div class="card">
-                <h4>Scikit-Learn & ML</h4>
-                <p>Industry-standard algorithms for regression, classification, clustering, dimensionality reduction, and pipeline cross-validation.</p>
-            </div>
-        </div>
+    <!-- 2. PANDAS -->
+    <div class="section" id="pandas-opt">
+        <h2 class="section-title">🐼 High-Performance Pandas: Memory Optimization & Pipelines</h2>
+        <p class="lead-text">
+            Standard Pandas workflows often crash due to out-of-memory errors on large tabular datasets. 
+            Production data pipelines require proactive dtype downcasting and vectorized transformations.
+        </p>
 
-        <div class="grid-3">
-            <div class="card">
-                <h4>Xarray & NetCDF</h4>
-                <p>N-dimensional labeled arrays essential for climate models, satellite observations, and environmental data (NetCDF4, GRIB, HDF5).</p>
-            </div>
-            <div class="card">
-                <h4>Matplotlib & Seaborn</h4>
-                <p>Publication-ready 2D/3D visualizations, geographical plotting with Cartopy, and interactive dashboard charts.</p>
-            </div>
-            <div class="card">
-                <h4>Dask & PySpark</h4>
-                <p>Distributed computing scaling from multi-core workstations to thousands of nodes across cloud and Slurm clusters.</p>
-            </div>
-        </div>
+        <h3 class="sub-title">1. Memory Optimization Function</h3>
+        <pre><code class="language-python">import pandas as pd
+import numpy as np
+
+def optimize_dataframe_memory(df: pd.DataFrame, verbose: bool = True) -> pd.DataFrame:
+    '''Downcasts numeric types and converts repeated strings to Categorical.'''
+    start_mem = df.memory_usage(deep=True).sum() / 1024**2
+    
+    for col in df.columns:
+        col_type = df[col].dtype
+        
+        if col_type != object and not pd.api.types.is_categorical_dtype(col_type):
+            c_min = df[col].min()
+            c_max = df[col].max()
+            
+            # Downcast integers
+            if str(col_type).startswith('int'):
+                if c_min > np.iinfo(np.int8).min and c_max < np.iinfo(np.int8).max:
+                    df[col] = df[col].astype(np.int8)
+                elif c_min > np.iinfo(np.int16).min and c_max < np.iinfo(np.int16).max:
+                    df[col] = df[col].astype(np.int16)
+                elif c_min > np.iinfo(np.int32).min and c_max < np.iinfo(np.int32).max:
+                    df[col] = df[col].astype(np.int32)
+                elif c_min > np.iinfo(np.int64).min and c_max < np.iinfo(np.int64).max:
+                    df[col] = df[col].astype(np.int64)
+            # Downcast floats
+            else:
+                if c_min > np.finfo(np.float32).min and c_max < np.finfo(np.float32).max:
+                    df[col] = df[col].astype(np.float32)
+        elif col_type == object:
+            # If cardinality is low, convert to Categorical
+            num_unique = df[col].nunique()
+            num_total = len(df[col])
+            if num_unique / num_total < 0.5:
+                df[col] = df[col].astype('category')
+                
+    end_mem = df.memory_usage(deep=True).sum() / 1024**2
+    if verbose:
+        print(f"Memory reduced from {start_mem:.2f} MB to {end_mem:.2f} MB (-{(1 - end_mem/start_mem)*100:.1f}%)")
+    return df
+</code></pre>
+
+        <h3 class="sub-title">2. Method Chaining & GroupBy Aggregations</h3>
+        <pre><code class="language-python"># High performance method chaining with named aggregations
+processed_df = (
+    raw_df
+    .query("transaction_status == 'COMPLETED' and country in ['GB', 'DE', 'FR']")
+    .assign(
+        net_revenue=lambda d: d['gross_amount'] - d['tax_deduction'],
+        transaction_month=lambda d: d['timestamp'].dt.to_period('M')
+    )
+    .groupby(['country', 'transaction_month'])
+    .agg(
+        total_revenue=('net_revenue', 'sum'),
+        mean_order_value=('net_revenue', 'mean'),
+        active_customers=('customer_id', 'nunique'),
+        p95_order_val=('net_revenue', lambda x: np.percentile(x, 95))
+    )
+    .reset_index()
+)
+</code></pre>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">⚡ Scalable Data Processing Example (PySpark & Databricks)</h2>
-        <p>In high-throughput enterprise pipelines, PySpark processes data stored in Azure Data Lake Storage (ADLS Gen2) or Delta Lake:</p>
-        <pre><code>from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, when, avg
+    <!-- 3. XARRAY & NETCDF -->
+    <div class="section" id="xarray-climate">
+        <h2 class="section-title">🌍 Atmospheric & Earth Observation Data with Xarray & NetCDF</h2>
+        <p class="lead-text">
+            Climate and earth observation data at research centers such as CEDA / JASMIN are stored in multidimensional, self-describing 
+            <strong>NetCDF</strong> and <strong>GRIB</strong> formats. <code>xarray</code> introduces labels in the form of dimensions, coordinates, 
+            and attributes on top of raw NumPy-like multidimensional arrays.
+        </p>
 
-spark = SparkSession.builder \
-    .appName("JASMIN_Climate_Analysis") \
+        <h3 class="sub-title">Analyzing ERA5 Reanalysis Atmospheric Data</h3>
+        <pre><code class="language-python">import xarray as xr
+import numpy as np
+
+# Open multidimensional atmospheric dataset lazily using Dask
+ds = xr.open_mfdataset(
+    "/badc/ecmwf-era5/data/oper/an_sfc/2024/*/*.nc",
+    parallel=True,
+    chunks={"time": 720, "latitude": 180, "longitude": 180}
+)
+
+# Inspect dataset metadata
+print(ds)
+
+# 1. Coordinate slicing (Select European domain over July 2024)
+euro_temp = ds['2t'].sel(
+    time=slice('2024-07-01', '2024-07-31'),
+    latitude=slice(70.0, 35.0),    # ERA5 lat is decreasing
+    longitude=slice(-15.0, 30.0)
+)
+
+# 2. Convert from Kelvin to Celsius
+euro_temp_c = euro_temp - 273.15
+euro_temp_c.attrs['units'] = 'degC'
+
+# 3. Compute spatial mean temperature time series weighted by latitude cosine
+weights = np.cos(np.deg2rad(euro_temp_c.latitude))
+weights.name = "weights"
+weighted_temp = euro_temp_c.weighted(weights).mean(dim=["latitude", "longitude"])
+
+# 4. Compute daily max temperature and locate heatwaves
+daily_max = weighted_temp.resample(time='1D').max()
+print("Top 3 warmest days in Europe July 2024:")
+print(daily_max.to_series().nlargest(3))
+</code></pre>
+    </div>
+
+    <!-- 4. SPARK & DELTA LAKE -->
+    <div class="section" id="spark-delta">
+        <h2 class="section-title">⚡ Distributed Big Data with PySpark & Delta Lake (ACID)</h2>
+        <p class="lead-text">
+            When datasets exceed single-node RAM (hundreds of gigabytes to petabytes), PySpark distributes computation across a cluster of worker nodes. 
+            <strong>Delta Lake</strong> adds an ACID transactional storage layer over cloud object storage (ADLS Gen2 / AWS S3).
+        </p>
+
+        <h3 class="sub-title">1. Spark Architecture: Driver, Executors & Catalyst</h3>
+        <div class="diagram-box">
+                          ┌───────────────────────────┐
+                          │   Spark Driver Program    │
+                          │   (SparkSession / DAG)    │
+                          └─────────────┬─────────────┘
+                                        │ Cluster Manager (YARN / K8s)
+             ┌──────────────────────────┼──────────────────────────┐
+             ▼                          ▼                          ▼
+┌─────────────────────────┐┌─────────────────────────┐┌─────────────────────────┐
+│     Worker Node 1       ││     Worker Node 2       ││     Worker Node 3       │
+│  ┌───────────────────┐  ││  ┌───────────────────┐  ││  ┌───────────────────┐  │
+│  │    Executor 1     │  ││  │    Executor 2     │  ││  │    Executor 3     │  │
+│  │ Tasks | Cache     │  ││  │ Tasks | Cache     │  ││  │ Tasks | Cache     │  │
+│  └───────────────────┘  ││  └───────────────────┘  ││  └───────────────────┘  │
+└─────────────────────────┘└─────────────────────────┘└─────────────────────────┘
+        </div>
+
+        <h3 class="sub-title">2. Production PySpark ETL with Delta Lake Time Travel</h3>
+        <pre><code class="language-python">from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, to_date, sum as _sum, avg, current_timestamp
+from delta.tables import DeltaTable
+
+# Initialize SparkSession with Delta Lake extensions
+spark = (
+    SparkSession.builder
+    .appName("ClimateTelemetryPipeline")
+    .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
+    .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+    .config("spark.sql.shuffle.partitions", "200")
     .getOrCreate()
+)
 
-# Load petabyte-scale distributed parquet data
-df = spark.read.format("delta").load("/mnt/lake/environmental_metrics")
+# 1. Read raw IoT sensor streaming/telemetry logs
+raw_df = (
+    spark.read.format("parquet")
+    .load("abfss://raw-data@datalake.dfs.core.windows.net/iot_telemetry/2026/*/*.parquet")
+)
 
-# Transform: Aggregate anomaly detection
-anomalies = df.filter(col("temperature_celsius") > 35.0) \
-    .groupBy("station_id", "region") \
-    .agg(avg("humidity").alias("mean_humidity")) \
-    .orderBy(col("mean_humidity").desc())
+# 2. Clean, cast, and partition data
+curated_df = (
+    raw_df
+    .filter(col("reading_status") == "VALID")
+    .withColumn("reading_date", to_date(col("event_timestamp")))
+    .withColumn("ingestion_time", current_timestamp())
+    .repartition("reading_date")
+)
 
-anomalies.write.mode("overwrite").parquet("/mnt/lake/processed_anomalies")</code></pre>
+# 3. Write as Gold Delta Table with ACID guarantees
+delta_path = "abfss://gold-data@datalake.dfs.core.windows.net/delta/sensor_aggregates"
+(
+    curated_df.write
+    .format("delta")
+    .mode("append")
+    .partitionBy("reading_date")
+    .save(delta_path)
+)
+
+# 4. Perform Delta Lake Upsert (MERGE INTO) to handle idempotency
+gold_table = DeltaTable.forPath(spark, delta_path)
+gold_table.alias("tgt").merge(
+    curated_df.alias("src"),
+    "tgt.sensor_id = src.sensor_id AND tgt.event_timestamp = src.event_timestamp"
+).whenMatchedUpdateAll(
+).whenNotMatchedInsertAll(
+).execute()
+
+# 5. Query Time Travel snapshot (Auditing previous state)
+historical_snapshot = (
+    spark.read.format("delta")
+    .option("versionAsOf", 2)
+    .load(delta_path)
+)
+print(f"Historical record count at Version 2: {historical_snapshot.count()}")
+</code></pre>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🖥️ Running Python on Slurm HPC Clusters (JASMIN Pattern)</h2>
-        <p>To run large Python workflows on a supercomputing cluster like JASMIN, jobs are submitted using Slurm batch scripts:</p>
-        <pre><code>#!/bin/bash
-#SBATCH --job-name=python_hpc_job
-#SBATCH --partition=standard
+    <!-- 5. SLURM HPC -->
+    <div class="section" id="slurm-hpc">
+        <h2 class="section-title">🖥️ Slurm HPC Cluster Job Orchestration (JASMIN / LOTUS)</h2>
+        <p class="lead-text">
+            Scientific computing infrastructures like the STFC Hartree Centre and JASMIN rely on the <strong>Slurm Workload Manager</strong> 
+            to dispatch parallel computations across thousands of bare-metal CPU/GPU compute nodes.
+        </p>
+
+        <h3 class="sub-title">1. Production Slurm Batch Script (`run_climate_sim.sh`)</h3>
+        <pre><code class="language-bash">#!/bin/bash
+#SBATCH --job-name=era5_dask_proc
+#SBATCH --partition=short-serial
 #SBATCH --nodes=1
-#SBATCH --ntasks=8
-#SBATCH --mem=32G
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
 #SBATCH --time=04:00:00
-#SBATCH --output=/work/scratch/chami_%j.out
+#SBATCH --output=/gws/nopw/j04/user_logs/slurm_%j.out
+#SBATCH --error=/gws/nopw/j04/user_logs/slurm_%j.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=chaminuka.mbanje@research.org
 
-module load jaspy
-source activate my_scientific_env
+# Echo environment configuration
+echo "Job running on node: $(hostname)"
+echo "Starting job execution at: $(date)"
 
-python3 process_scientific_dataset.py --input /gws/nopw/j04/data --output /work/results</code></pre>
+# Load the verified scientific Python environment module
+module purge
+module load jaspy/3.10/r20230718
+
+# Set threading limits to prevent over-subscription
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OPENBLAS_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+# Execute Python scientific workload
+python3 /gws/nopw/j04/scripts/process_climate_ensemble.py     --input-dir /badc/ecmwf-era5/data/oper/an_sfc/     --output-dir /work/scratch-nopw/cmbanje/processed_era5/     --threads $SLURM_CPUS_PER_TASK
+
+echo "Job execution completed successfully at: $(date)"
+</code></pre>
+
+        <h3 class="sub-title">2. Embarrassingly Parallel Slurm Array Jobs</h3>
+        <p>When processing hundreds of independent simulation years or ensemble members, use Slurm job arrays:</p>
+        <pre><code class="language-bash">#SBATCH --array=1980-2024%5  # Process years 1980 to 2024, max 5 running concurrently
+
+YEAR=$SLURM_ARRAY_TASK_ID
+python3 process_single_year.py --year $YEAR
+</code></pre>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🎯 Summary Checklist for Python Data Practitioners</h2>
-        <div class="tip-box">
-            <ul>
-                <li><strong>Vectorize:</strong> Avoid Python <code>for</code> loops when working with NumPy and Pandas. Leverage vectorized C operations.</li>
-                <li><strong>Chunk Big Data:</strong> Use Dask or PySpark when data exceeds available system RAM.</li>
-                <li><strong>Reproducibility:</strong> Lock environment dependencies using <code>environment.yml</code> or containerize workloads with Docker/Singularity.</li>
+    <!-- 6. SCIKIT-LEARN & MLOPS -->
+    <div class="section" id="mlops-sklearn">
+        <h2 class="section-title">🧪 Production ML Pipelines with Scikit-Learn & MLflow</h2>
+        <p class="lead-text">
+            Building reliable, leakage-free machine learning systems requires strict decoupling of feature transformations 
+            using <code>ColumnTransformer</code> and unified <code>Pipeline</code> objects tracked by <strong>MLflow</strong>.
+        </p>
+
+        <pre><code class="language-python">import mlflow
+import mlflow.sklearn
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.metrics import classification_report, roc_auc_score
+
+# 1. Define Column Types
+numeric_features = ['temperature', 'pressure', 'humidity', 'wind_speed']
+categorical_features = ['sensor_model', 'geographic_region', 'power_mode']
+
+# 2. Build Preprocessors
+numeric_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='median')),
+    ('scaler', StandardScaler())
+])
+
+categorical_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+    ('encoder', OneHotEncoder(handle_unknown='ignore', sparse_output=False))
+])
+
+preprocessor = ColumnTransformer(transformers=[
+    ('num', numeric_transformer, numeric_features),
+    ('cat', categorical_transformer, categorical_features)
+])
+
+# 3. Create Full ML Pipeline
+full_pipeline = Pipeline(steps=[
+    ('preprocessor', preprocessor),
+    ('classifier', HistGradientBoostingClassifier(random_state=42))
+])
+
+# 4. Train with MLflow Experiment Tracking
+mlflow.set_experiment("Atmospheric_Fault_Detection")
+
+with mlflow.start_run(run_name="HistGradientBoosting_Baseline"):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y)
+    
+    full_pipeline.fit(X_train, y_train)
+    y_pred = full_pipeline.predict(X_test)
+    y_prob = full_pipeline.predict_proba(X_test)[:, 1]
+    
+    auc = roc_auc_score(y_test, y_prob)
+    mlflow.log_metric("roc_auc", auc)
+    mlflow.sklearn.log_model(full_pipeline, artifact_path="model")
+    print(f"Model trained. ROC-AUC: {auc:.4f}")
+</code></pre>
+    </div>
+
+    <!-- 7. SCENARIOS -->
+    <div class="section" id="hpc-case-studies">
+        <h2 class="section-title">📝 High-Performance Computing Coding Scenarios</h2>
+
+        <div class="qa-card">
+            <h4>Scenario 1: NumPy Memory Leak & Slice Views</h4>
+            <p>
+                A data scientist loads a 50 GB seismic survey dataset using NumPy: <code>full_data = np.fromfile('survey.dat', dtype=np.float32)</code>. 
+                They extract a small 10 KB subset: <code>sample = full_data[:2500]</code> and delete the original: <code>del full_data</code>. 
+                However, Python's memory usage does not drop by 50 GB.
+            </p>
+            <p><strong>Question:</strong> What causes this memory retention, and how is it resolved?</p>
+            <ul class="qa-options">
+                <li>A) The garbage collector is disabled; call <code>gc.collect()</code>.</li>
+                <li>B) Basic slicing returns a memory <strong>view</strong> sharing the original array's memory buffer; use <code>sample = full_data[:2500].copy()</code>.</li>
+                <li>C) NumPy arrays cannot be deallocated until Python process termination.</li>
+                <li>D) The array must be converted to a Python list before deletion.</li>
             </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Basic slicing returns a memory view; use .copy())</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> In NumPy, basic slicing creates a view whose <code>.base</code> attribute references the original large 50 GB memory buffer. As long as <code>sample</code> exists in scope, reference counting prevents Python/NumPy from deallocating the underlying 50 GB block. Calling <code>.copy()</code> allocates a dedicated 10 KB buffer, detaching from the base array and allowing immediate reclamation.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Reference counting handles deallocation immediately unless there are circular references; <code>gc.collect()</code> will not release memory still referenced by <code>sample.base</code>.</li>
+                    <li><strong>Option C is INCORRECT:</strong> NumPy arrays are standard C-allocated memory blocks released when reference counts reach zero.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Converting to a Python list would dramatically increase memory overhead.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -457,7 +880,7 @@ python3 process_scientific_dataset.py --input /gws/nopw/j04/data --output /work/
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

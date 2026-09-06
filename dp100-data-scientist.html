@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DP-100: Azure Data Scientist Associate | Chami's Learning Hub</title>
+    <title>DP-100 Azure Data Scientist Associate Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,70 +442,110 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>DP-100: Azure Data Scientist Associate Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>DP-100: Designing and Implementing a Data Science Solution on Azure</span>
         </div>
-        <h1>DP-100: Azure Data Scientist Associate Guide</h1>
-        <p>Machine learning engineering on Azure: Azure ML Workspace, MLflow tracking, Automated ML, Hyperparameter tuning, and Managed Online Endpoints.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam DP-100</span><span class="hero-tag">Data Science</span><span class="hero-tag">Azure ML</span><span class="hero-tag">AutoML</span><span class="hero-tag">MLflow</span><span class="hero-tag">Managed Endpoints</span></div>
+        <h1>DP-100: Designing and Implementing a Data Science Solution on Azure</h1>
+        <p>In-depth machine learning engineering guide covering Azure ML v2 SDK, MLflow tracking, AutoML, Managed Online Endpoints (Blue/Green), and Responsible AI.</p>
+        <div class="hero-tags"><span class="hero-tag">DP-100</span><span class="hero-tag">Data Science</span><span class="hero-tag">Azure ML</span><span class="hero-tag">Python</span><span class="hero-tag">MLflow</span><span class="hero-tag">AutoML</span><span class="hero-tag">Responsible AI</span><span class="hero-tag">Endpoints</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🧠 Exam Blueprint: DP-100</h2>
-        <p class="lead-text">
-            Exam <strong>DP-100: Designing and Implementing a Data Science Solution on Azure</strong> validates machine learning engineering skills, 
-            experiment tracking, compute management, model training, hyperparameter tuning, and deployment using Azure Machine Learning.
-        </p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Domain</th>
-                    <th>Weight</th>
-                    <th>Core Concepts</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Design and prepare a machine learning solution</strong></td>
-                    <td>20–25%</td>
-                    <td>Azure ML Workspaces, Compute Instances & Clusters, Datastores & Data assets</td>
-                </tr>
-                <tr>
-                    <td><strong>Explore data and train models</strong></td>
-                    <td>35–40%</td>
-                    <td>Automated ML (AutoML), MLflow tracking, Hyperdrive sweep, Custom training scripts</td>
-                </tr>
-                <tr>
-                    <td><strong>Prepare a model for deployment</strong></td>
-                    <td>20–25%</td>
-                    <td>Responsible AI dashboards, MLflow model registration, Model packaging</td>
-                </tr>
-                <tr>
-                    <td><strong>Deploy and retrain a model</strong></td>
-                    <td>10–15%</td>
-                    <td>Managed Online Endpoints (Real-time), Batch Endpoints, Model drift monitoring</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Data Science Modules</div>
+        <ul class="toc-list">
+            <li><a href="#dp100-scope">Exam Scope & Data Science Lifecycle</a></li>
+            <li><a href="#azureml-v2">Azure ML v2 Python SDK: Workspaces, Compute & Assets</a></li>
+            <li><a href="#mlflow-tracking">MLflow Experiment Tracking & Model Registry</a></li>
+            <li><a href="#automl-pipeline">Automated ML & Hyperparameter Tuning (Hyperdrive)</a></li>
+            <li><a href="#model-deployment">Managed Online Endpoints & Blue/Green Deployments</a></li>
+            <li><a href="#responsible-ai">Responsible AI: Error Analysis, SHAP & Data Drift</a></li>
+            <li><a href="#dp100-scenarios">Exam Practice Scenarios & Detailed Explanations</a></li>
+        </ul>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">⚙️ MLflow & Managed Endpoints in Azure ML</h2>
-        <p>Azure ML is standardized on open-source <strong>MLflow</strong> for logging parameters, metrics, and deploying artifacts:</p>
-        <pre><code>import mlflow
-from sklearn.ensemble import RandomForestClassifier
+    <!-- 1. SCOPE -->
+    <div class="section" id="dp100-scope">
+        <h2 class="section-title">📘 Exam DP-100 Scope & Cloud Data Science</h2>
+        <p class="lead-text">
+            Exam <strong>DP-100: Designing and Implementing a Data Science Solution on Azure</strong> validates machine learning engineering skills 
+            using the Azure Machine Learning v2 Python SDK, MLflow, distributed model training, responsible AI explainability, and containerized endpoint deployment.
+        </p>
+    </div>
 
-# Set Azure ML MLflow tracking URI
-mlflow.autolog()
+    <!-- 2. AZURE ML V2 -->
+    <div class="section" id="azureml-v2">
+        <h2 class="section-title">🧪 Azure ML v2 Python SDK: Architecture & Managed Endpoints</h2>
+        <pre><code class="language-python">from azure.ai.ml import MLClient
+from azure.ai.ml.entities import ManagedOnlineEndpoint, ManagedOnlineDeployment, Model, Environment
+from azure.identity import DefaultAzureCredential
 
-with mlflow.start_run():
-    clf = RandomForestClassifier(n_estimators=100, max_depth=5)
-    clf.fit(X_train, y_train)
-    
-    # Log custom metric and model artifact
-    mlflow.log_metric("f1_score", 0.94)
-    mlflow.sklearn.log_model(clf, "sentiment_rf_model")</code></pre>
+# 1. Connect to Azure ML Workspace
+ml_client = MLClient(
+    DefaultAzureCredential(), 
+    subscription_id="00000000-0000-0000-0000-000000000000",
+    resource_group_name="rg-datascience-prod",
+    workspace_name="aml-prod-workspace"
+)
+
+# 2. Define Production Managed Online Endpoint
+endpoint_name = "fraud-detection-endpoint"
+endpoint = ManagedOnlineEndpoint(
+    name=endpoint_name,
+    description="Real-time inferencing endpoint for credit card fraud classification",
+    auth_mode="key"
+)
+ml_client.online_endpoints.begin_create_or_update(endpoint).result()
+
+# 3. Deploy Model with Blue/Green Safe Rollout
+blue_deployment = ManagedOnlineDeployment(
+    name="blue",
+    endpoint_name=endpoint_name,
+    model=Model(path="./models/fraud_v1/"),
+    environment=Environment(image="mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"),
+    instance_type="Standard_DS3_v2",
+    instance_count=2
+)
+ml_client.online_deployments.begin_create_or_update(blue_deployment).result()
+
+# Route 100% traffic to blue
+endpoint.traffic = {"blue": 100}
+ml_client.online_endpoints.begin_create_or_update(endpoint).result()
+print("Managed endpoint and Blue deployment live!")</code></pre>
+    </div>
+
+    <!-- 3. SCENARIOS -->
+    <div class="section" id="dp100-scenarios">
+        <h2 class="section-title">📝 Realistic DP-100 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Blue/Green Model Deployment & Traffic Shifting</h4>
+            <p>
+                A data science team trains a new iteration of a customer churn model (version 2) with improved accuracy. 
+                They want to test the new model in production by routing 10% of real live traffic to version 2 while keeping 
+                90% on the existing version 1 model. If error rates remain normal after 48 hours, they will route 100% to version 2.
+            </p>
+            <p><strong>Question:</strong> Which Azure ML feature supports this traffic routing pattern natively?</p>
+            <ul class="qa-options">
+                <li>A) Azure API Management URL rewrite policies</li>
+                <li>B) Managed Online Endpoints with Blue/Green Deployments and percentage traffic allocation</li>
+                <li>C) Azure Batch Endpoints with round-robin job queues</li>
+                <li>D) Deploying two distinct workspaces and updating DNS records</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Managed Online Endpoints with Blue/Green Deployments and percentage traffic allocation)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> Azure ML <strong>Managed Online Endpoints</strong> allow multiple distinct deployments (e.g. <code>blue</code> and <code>green</code>) under a single endpoint URI. Administrators can allocate traffic dynamically using percentage weights (e.g. <code>{"blue": 90, "green": 10}</code>) without changing the client application endpoint URL or API key. Once validation passes, traffic can be shifted to 100% green with zero downtime.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Azure ML endpoints natively provide native traffic routing without external API Management proxies.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Batch endpoints are designed for asynchronous offline batch scoring of massive datasets, not low-latency real-time inference.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Workspace duplication is unnecessary and introduces excessive infrastructure complexity.</li>
+                </ul>
+            </details>
+        </div>
     </div>
 
 </div>
@@ -415,7 +571,7 @@ with mlflow.start_run():
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

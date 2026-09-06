@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZ-204: Azure Developer Associate | Chami's Learning Hub</title>
+    <title>AZ-204 Microsoft Azure Developer Associate Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -329,31 +445,144 @@
             <a href="index.html">Hub Home</a> &rsaquo; <span>AZ-204: Developing Solutions for Microsoft Azure</span>
         </div>
         <h1>AZ-204: Developing Solutions for Microsoft Azure</h1>
-        <p>Comprehensive developer guide: Azure Functions, Cosmos DB, Azure App Service, Event Grid, Service Bus, and Azure Key Vault integration.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam AZ-204</span><span class="hero-tag">Azure Developer</span><span class="hero-tag">Serverless</span><span class="hero-tag">Cosmos DB</span><span class="hero-tag">Service Bus</span><span class="hero-tag">Key Vault</span></div>
+        <p>Comprehensive cloud developer guide covering Azure Functions isolated worker bindings, Cosmos DB partition key optimization, Service Bus vs Event Grid, and Managed Identities.</p>
+        <div class="hero-tags"><span class="hero-tag">AZ-204</span><span class="hero-tag">Azure Developer</span><span class="hero-tag">Functions</span><span class="hero-tag">Cosmos DB</span><span class="hero-tag">Service Bus</span><span class="hero-tag">Event Grid</span><span class="hero-tag">MSAL</span><span class="hero-tag">Key Vault</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">⚡ Exam Blueprint: AZ-204</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Developer Modules</div>
+        <ul class="toc-list">
+            <li><a href="#az204-scope">Exam Scope & Developer Blueprint</a></li>
+            <li><a href="#functions-bindings">Azure Functions: Isolated Worker & Declarative Bindings</a></li>
+            <li><a href="#cosmos-db">Cosmos DB: Partition Keys, Change Feed & Consistency Levels</a></li>
+            <li><a href="#messaging-matrix">Messaging: Service Bus vs Event Grid vs Event Hubs</a></li>
+            <li><a href="#identity-msal">Security: MSAL, Managed Identities & Key Vault SDK</a></li>
+            <li><a href="#az204-scenarios">Exam Practice Scenarios & Deep Solutions</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="az204-scope">
+        <h2 class="section-title">📘 Exam AZ-204 Scope & Cloud Developer Architecture</h2>
         <p class="lead-text">
-            Exam <strong>AZ-204: Developing Solutions for Microsoft Azure</strong> validates software engineering skills in building 
-            scalable, cloud-native apps with Azure compute, storage, security, and messaging services.
+            Exam <strong>AZ-204: Developing Solutions for Microsoft Azure</strong> validates end-to-end cloud development capabilities across 
+            serverless functions, Cosmos DB, blob storage, containerized apps, asynchronous messaging, and Entra ID authentication.
         </p>
-        <div class="grid-3">
-            <div class="card">
-                <h4>Azure Functions</h4>
-                <p>Serverless event-driven compute with input/output bindings. Durable Functions for stateful workflows (Chaining, Fan-out/Fan-in).</p>
-            </div>
-            <div class="card">
-                <h4>Azure Cosmos DB</h4>
-                <p>Globally distributed multi-model NoSQL database. Mastering partition keys and the 5 consistency levels.</p>
-            </div>
-            <div class="card">
-                <h4>Messaging & Events</h4>
-                <p>Decoupling architectures using Azure Event Grid (reactive events), Event Hubs (telemetry streaming), and Service Bus (enterprise messaging).</p>
-            </div>
+    </div>
+
+    <!-- 2. FUNCTIONS -->
+    <div class="section" id="functions-bindings">
+        <h2 class="section-title">⚡ Azure Functions: Isolated Worker & Output Bindings</h2>
+        <pre><code class="language-csharp">using System.Net;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+
+namespace Contoso.Serverless
+{
+    public class OrderProcessingFunction
+    {
+        private readonly ILogger _logger;
+
+        public OrderProcessingFunction(ILoggerFactory loggerFactory)
+        {
+            _logger = loggerFactory.CreateLogger<OrderProcessingFunction>();
+        }
+
+        [Function("ProcessOrderQueueItem")]
+        [CosmosDBOutput("OrdersDB", "ProcessedOrders", Connection = "CosmosDBConnection", CreateIfNotExists = true)]
+        public OrderRecord Run(
+            [ServiceBusTrigger("order-intake-queue", Connection = "ServiceBusConnection")] OrderIncomingMessage incomingOrder)
+        {
+            _logger.LogInformation("Processing incoming order: {OrderId}", incomingOrder.OrderId);
+
+            return new OrderRecord
+            {
+                id = incomingOrder.OrderId,
+                CustomerName = incomingOrder.CustomerName,
+                TotalAmount = incomingOrder.Amount,
+                ProcessedAtUtc = DateTime.UtcNow,
+                Status = "VERIFIED"
+            };
+        }
+    }
+
+    public record OrderIncomingMessage(string OrderId, string CustomerName, decimal Amount);
+    public record OrderRecord
+    {
+        public string id { get; set; }
+        public string CustomerName { get; set; }
+        public decimal TotalAmount { get; set; }
+        public DateTime ProcessedAtUtc { get; set; }
+        public string Status { get; set; }
+    }
+}</code></pre>
+    </div>
+
+    <!-- 3. MESSAGING -->
+    <div class="section" id="messaging-matrix">
+        <h2 class="section-title">📨 Messaging Decision Matrix: Service Bus vs Event Grid vs Event Hubs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Type & Model</th>
+                    <th>Optimal Enterprise Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Azure Service Bus</strong></td>
+                    <td>High-Value Enterprise Messaging (Pull). Queues & Topics/Subscriptions.</td>
+                    <td>Financial transactions, order fulfillment, FIFO guaranteed sessions, duplicate detection, dead-lettering.</td>
+                </tr>
+                <tr>
+                    <td><strong>Azure Event Grid</strong></td>
+                    <td>Reactive Event Distribution (Push-Push). Discrete events.</td>
+                    <td>Reacting to Azure resource state changes (e.g. Blob created, VM started) triggering Azure Functions or webhooks.</td>
+                </tr>
+                <tr>
+                    <td><strong>Azure Event Hubs</strong></td>
+                    <td>Big Data Telemetry Streaming (Pull/Partitioned Consumer Groups).</td>
+                    <td>High-throughput ingestion (millions of events/sec) from IoT sensors or web clickstreams into Data Lake.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. SCENARIOS -->
+    <div class="section" id="az204-scenarios">
+        <h2 class="section-title">📝 Realistic AZ-204 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Cosmos DB Partition Key Selection</h4>
+            <p>
+                A developer is building an e-commerce order tracking API on Azure Cosmos DB using the NoSQL API. 
+                The system stores 20 million order documents per year. Queries frequently look up orders by <code>OrderId</code> 
+                or list orders for a specific <code>CustomerId</code>. The database experiences heavy write workloads evenly distributed throughout the day.
+            </p>
+            <p><strong>Question:</strong> Which column represents the optimal Partition Key?</p>
+            <ul class="qa-options">
+                <li>A) OrderStatus (e.g., 'Pending', 'Shipped', 'Delivered')</li>
+                <li>B) CustomerId</li>
+                <li>C) OrderYear (e.g., '2026')</li>
+                <li>D) ShippingPostalCode</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (CustomerId)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> An effective partition key requires <strong>high cardinality</strong> and an <strong>even distribution of storage and request units (RUs)</strong>. <code>CustomerId</code> has millions of distinct values, preventing hot partitions, and ensures all orders for a customer reside in the same logical partition, allowing single-partition reads.</li>
+                    <li><strong>Option A is INCORRECT:</strong> <code>OrderStatus</code> has very low cardinality (3–5 values). All orders would be funneled into 3–5 physical partitions, causing massive hot partition throttle errors (HTTP 429).</li>
+                    <li><strong>Option C is INCORRECT:</strong> <code>OrderYear</code> funnels all writes for an entire year into a single hot partition.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Postal codes exhibit severe geographic skew.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -380,7 +609,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

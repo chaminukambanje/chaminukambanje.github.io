@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DP-203: Azure Data Engineer Associate | Chami's Learning Hub</title>
+    <title>DP-203 Azure Data Engineer Certification Blueprint | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,94 +442,178 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>DP-203: Azure Data Engineer Associate Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>DP-203: Data Engineering on Microsoft Azure</span>
         </div>
-        <h1>DP-203: Azure Data Engineer Associate Guide</h1>
-        <p>Complete architecture guide for Azure Synapse Analytics, Databricks, Data Factory pipelines, Delta Lake, and high-scale stream processing.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam DP-203</span><span class="hero-tag">Data Engineering</span><span class="hero-tag">Synapse Analytics</span><span class="hero-tag">Databricks</span><span class="hero-tag">Delta Lake</span><span class="hero-tag">ADLS Gen2</span></div>
+        <h1>DP-203: Data Engineering on Microsoft Azure</h1>
+        <p>In-depth data engineering architecture covering Synapse MPP (60 distributions), Delta Lake Medallion design, Databricks Z-Ordering, and Stream Analytics windowing.</p>
+        <div class="hero-tags"><span class="hero-tag">DP-203</span><span class="hero-tag">Data Engineering</span><span class="hero-tag">Synapse</span><span class="hero-tag">Delta Lake</span><span class="hero-tag">Databricks</span><span class="hero-tag">PySpark</span><span class="hero-tag">ADF</span><span class="hero-tag">Stream Analytics</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">📊 Exam Blueprint: DP-203</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Data Engineering Modules</div>
+        <ul class="toc-list">
+            <li><a href="#dp203-scope">Exam Scope & Data Architecture</a></li>
+            <li><a href="#synapse-mpp">Synapse Dedicated SQL Pools: MPP & 60 Distributions</a></li>
+            <li><a href="#delta-medallion">Data Lake Storage Gen2 & Delta Lake Medallion Design</a></li>
+            <li><a href="#databricks-zorder">Azure Databricks: OPTIMIZE & Liquid Clustering</a></li>
+            <li><a href="#adf-pipelines">Azure Data Factory: Integration Runtimes & Triggers</a></li>
+            <li><a href="#stream-analytics">Stream Analytics: Tumbling, Hopping & Sliding Windows</a></li>
+            <li><a href="#dp203-scenarios">Exam Practice Scenarios & Deep Solutions</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="dp203-scope">
+        <h2 class="section-title">📘 Exam DP-203 Scope & Modern Data Platform</h2>
         <p class="lead-text">
-            Exam <strong>DP-203: Data Engineering on Microsoft Azure</strong> certifies expertise in integrating, transforming, and consolidating data 
-            from various structured and unstructured data systems into structures suitable for building analytics solutions.
+            Exam <strong>DP-203: Data Engineering on Microsoft Azure</strong> validates expertise in building scalable, resilient enterprise data platforms 
+            integrating Azure Synapse Analytics, Azure Data Lake Storage Gen2, Azure Databricks, Azure Data Factory, and Azure Stream Analytics.
         </p>
+    </div>
+
+    <!-- 2. SYNAPSE MPP -->
+    <div class="section" id="synapse-mpp">
+        <h2 class="section-title">🏛️ Synapse Dedicated SQL Pools: MPP & 60 Distributions</h2>
+        <p class="lead-text">
+            Synapse Dedicated SQL Pools leverage a Massively Parallel Processing (MPP) architecture dividing database storage into 
+            exactly <strong>60 fixed compute distributions</strong>.
+        </p>
+
+        <h3 class="sub-title">Table Distribution Strategies</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Domain</th>
-                    <th>Weight</th>
-                    <th>Key Architectural Concepts</th>
+                    <th>Distribution Type</th>
+                    <th>Storage Mechanism</th>
+                    <th>Optimal Workload & Table Size</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Design and implement data storage</strong></td>
-                    <td>15–20%</td>
-                    <td>ADLS Gen2, Partitioning, Delta Lake tables, Physical storage formats (Parquet, ORC, Avro)</td>
+                    <td><strong>Hash Distributed</strong></td>
+                    <td>Deterministic hash function assigns rows across the 60 distributions based on a single Distribution Column.</td>
+                    <td><strong>Large Fact Tables (> 60M rows).</strong> Eliminates data movement (shuffle) when joined on the hash column.</td>
                 </tr>
                 <tr>
-                    <td><strong>Design and develop data processing</strong></td>
-                    <td>40–45%</td>
-                    <td>Azure Synapse Analytics, Apache Spark pools, Dedicated SQL pools, Databricks, Data Factory</td>
+                    <td><strong>Replicated</strong></td>
+                    <td>A complete copy of the table is maintained on each compute node.</td>
+                    <td><strong>Small Dimension Tables (< 2 GB).</strong> Completely eliminates data broadcast overhead during star-schema joins.</td>
                 </tr>
                 <tr>
-                    <td><strong>Design and implement data security</strong></td>
-                    <td>10–15%</td>
-                    <td>Data masking, Row/Column-Level Security, Azure Key Vault, Private Endpoints, RBAC</td>
+                    <td><strong>Round-Robin</strong></td>
+                    <td>Rows are distributed uniformly and sequentially across the 60 distributions.</td>
+                    <td><strong>Staging Tables.</strong> Fastest possible data ingestion speed before transformation into permanent hash tables.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Choosing a Hash Distribution Column:</strong> 
+            Select a column with <em>high cardinality</em> (many distinct values), <em>no data skew</em> (values evenly distributed), 
+            and <em>zero NULLs</em> (all NULL rows land in distribution 1, creating severe performance bottlenecks).
+        </div>
+    </div>
+
+    <!-- 3. DELTA MEDALLION -->
+    <div class="section" id="delta-medallion">
+        <h2 class="section-title">🥉🥈🥇 Data Lake Gen2 & Delta Lake Medallion Architecture</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Bronze Layer (Raw)</h4>
+                <p>Append-only landing zone capturing raw transactional data, IoT JSON payloads, and log files in their original format.</p>
+            </div>
+            <div class="card">
+                <h4>Silver Layer (Cleaned)</h4>
+                <p>Enriched, cleansed, deduplicated, and typed Delta tables with schema enforcement and evolution.</p>
+            </div>
+            <div class="card">
+                <h4>Gold Layer (Aggregated)</h4>
+                <p>Optimized star-schema business data marts serving Power BI dashboards and executive analytics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. DATABRICKS -->
+    <div class="section" id="databricks-zorder">
+        <h2 class="section-title">⚡ Azure Databricks: OPTIMIZE & Z-Ordering</h2>
+        <pre><code class="language-sql">-- Optimize Delta table file sizes and co-locate related data to maximize data skipping
+OPTIMIZE silver_sales_transactions
+ZORDER BY (TransactionDate, CustomerRegion);</code></pre>
+        <p>
+            Z-Ordering creates a multidimensional space-filling curve, organizing data into Parquet files such that queries filtering 
+            on <code>TransactionDate</code> or <code>CustomerRegion</code> can skip over 90% of file reads based on column min/max statistics.
+        </p>
+    </div>
+
+    <!-- 5. STREAM ANALYTICS -->
+    <div class="section" id="stream-analytics">
+        <h2 class="section-title">🌊 Azure Stream Analytics Windowing Functions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Window Type</th>
+                    <th>Behavior & Characteristics</th>
+                    <th>SQL Example Syntax</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tumbling Window</strong></td>
+                    <td>Fixed length, non-overlapping, contiguous time segments.</td>
+                    <td><code>GROUP BY TumblingWindow(minute, 5)</code></td>
                 </tr>
                 <tr>
-                    <td><strong>Monitor and optimize data storage & processing</strong></td>
-                    <td>10–15%</td>
-                    <td>Synapse monitoring, Spark shuffle optimization, Dedicated SQL distribution & skew resolution</td>
+                    <td><strong>Hopping Window</strong></td>
+                    <td>Fixed length, overlapping time segments hopping forward by a specified interval.</td>
+                    <td><code>GROUP BY HoppingWindow(minute, 10, minute, 2)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Sliding Window</strong></td>
+                    <td>Produces output only when an event enters or exits the window.</td>
+                    <td><code>HAVING COUNT(*) > 3 AND SlidingWindow(minute, 1)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Session Window</strong></td>
+                    <td>Groups events arriving together, closing when an inactivity gap threshold is reached.</td>
+                    <td><code>GROUP BY SessionWindow(minute, 5, minute, 15)</code></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🏛️ Azure Synapse Dedicated SQL Pool Architecture</h2>
-        <p>Dedicated SQL pools utilize Massively Parallel Processing (MPP) distributed across 60 compute nodes:</p>
-        <div class="grid-3">
-            <div class="card">
-                <h4>Hash Distributed Tables</h4>
-                <p>Distributes rows across 60 distributions based on a hash of a single key column. Ideal for large fact tables (greater than 100M rows).</p>
-            </div>
-            <div class="card">
-                <h4>Round-Robin Tables</h4>
-                <p>Distributes rows evenly and sequentially across all distributions. Used for initial staging tables before transformation.</p>
-            </div>
-            <div class="card">
-                <h4>Replicated Tables</h4>
-                <p>Replicates a full copy of the table on every compute node. Eliminates expensive data movement (shuffle) when joining small dimension tables.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">🔄 Stream Processing & Lambda Architecture</h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Azure Stream Analytics</h3>
-                <p>Real-time stream processing using a SQL-like dialect with windowing functions:</p>
+    <!-- 6. SCENARIOS -->
+    <div class="section" id="dp203-scenarios">
+        <h2 class="section-title">📝 Realistic DP-203 Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Synapse Table Distribution Selection</h4>
+            <p>
+                An enterprise data warehouse team is designing a star schema in Synapse Dedicated SQL Pools. 
+                The <code>FactSales</code> table contains 450 million rows and is frequently joined to <code>DimDate</code> (3,650 rows) 
+                and <code>DimCustomer</code> (120,000 rows).
+            </p>
+            <p><strong>Question:</strong> Which distribution strategy should be implemented for <code>FactSales</code> and <code>DimDate</code>?</p>
+            <ul class="qa-options">
+                <li>A) FactSales: Round-Robin; DimDate: Round-Robin</li>
+                <li>B) FactSales: Hash distributed on CustomerKey; DimDate: Replicated</li>
+                <li>C) FactSales: Replicated; DimDate: Hash distributed on DateKey</li>
+                <li>D) FactSales: Hash distributed on OrderDate; DimDate: Hash distributed on CustomerKey</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (FactSales: Hash distributed; DimDate: Replicated)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
                 <ul>
-                    <li><strong>Tumbling Window:</strong> Fixed, non-overlapping time intervals.</li>
-                    <li><strong>Hopping Window:</strong> Overlapping time windows hopping forward at set intervals.</li>
-                    <li><strong>Sliding Window:</strong> Evaluates events when an event occurs within a duration window.</li>
+                    <li><strong>Option B is CORRECT:</strong> Large fact tables (> 60M rows) should always use <strong>Hash Distribution</strong> to distribute rows evenly across the 60 compute nodes. Small dimension tables (< 2 GB, such as <code>DimDate</code> with only 3,650 rows) should use <strong>Replicated</strong> distribution. Replicating the small dimension table ensures that each compute node possesses a complete local copy, allowing joins to execute entirely in memory with zero network data movement (data broadcast or shuffle).</li>
+                    <li><strong>Option A is INCORRECT:</strong> Round-robin fact tables force expensive data shuffling during analytical joins.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Replicating a 450-million-row fact table across 60 distributions would exhaust storage and degrade write performance drastically.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Hash keys on fact and dimension tables must match the join condition to avoid data movement.</li>
                 </ul>
-            </div>
-            <div class="card">
-                <h3>Delta Lake & Medallion Architecture</h3>
-                <p>Multi-tier data lakehouse design:</p>
-                <ul>
-                    <li><strong>Bronze (Raw):</strong> Direct append-only ingestion from sources.</li>
-                    <li><strong>Silver (Cleansed):</strong> Filtered, standardized, enriched data.</li>
-                    <li><strong>Gold (Curated):</strong> Star-schema aggregates ready for Power BI reporting.</li>
-                </ul>
-            </div>
+            </details>
         </div>
     </div>
 
@@ -440,7 +640,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

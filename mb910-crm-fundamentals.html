@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MB-910: Dynamics 365 CRM Fundamentals | Chami's Learning Hub</title>
+    <title>MB-910 Dynamics 365 CRM Fundamentals Study Guide | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,153 +442,562 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>MB-910: Dynamics 365 Fundamentals (CRM)</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>MB-910: Dynamics 365 CRM Fundamentals</span>
         </div>
-        <h1>MB-910: Dynamics 365 Fundamentals (CRM)</h1>
-        <p>Complete study guide covering Customer Engagement: Marketing, Sales, Customer Service, Field Service, and Power Platform architecture.</p>
-        <div class="hero-tags"><span class="hero-tag">Exam MB-910</span><span class="hero-tag">Dynamics 365</span><span class="hero-tag">CRM</span><span class="hero-tag">Sales & Marketing</span><span class="hero-tag">Customer & Field Service</span></div>
+        <h1>MB-910: Dynamics 365 CRM Fundamentals</h1>
+        <p>In-depth technical certification blueprint covering Customer Insights (Marketing), Sales Lead-to-Cash, Customer Service SLAs, Field Service URS, and Dataverse architecture.</p>
+        <div class="hero-tags"><span class="hero-tag">MB-910</span><span class="hero-tag">Dynamics 365</span><span class="hero-tag">Dataverse</span><span class="hero-tag">Sales</span><span class="hero-tag">Customer Service</span><span class="hero-tag">Field Service</span><span class="hero-tag">Marketing</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">📘 Exam Overview & Scope</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & Study Modules</div>
+        <ul class="toc-list">
+            <li><a href="#exam-overview">Exam Overview & Weights</a></li>
+            <li><a href="#marketing">Customer Insights - Journeys (Marketing)</a></li>
+            <li><a href="#sales">Dynamics 365 Sales (Lead-to-Cash)</a></li>
+            <li><a href="#service">Dynamics 365 Customer Service & SLAs</a></li>
+            <li><a href="#field-service">Dynamics 365 Field Service & URS</a></li>
+            <li><a href="#dataverse-platform">Dataverse, Security & Power Platform</a></li>
+            <li><a href="#practice-scenarios">Exam Practice Scenarios & Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. EXAM OVERVIEW -->
+    <div class="section" id="exam-overview">
+        <h2 class="section-title">📘 Exam Scope & Certification Architecture</h2>
         <p class="lead-text">
-            Exam <strong>MB-910: Microsoft Dynamics 365 Fundamentals (CRM)</strong> validates foundational knowledge of customer engagement capabilities across 
-            Dynamics 365 Marketing, Sales, Customer Service, and Field Service, along with cross-application features and Power Platform integration.
+            Exam <strong>MB-910: Microsoft Dynamics 365 Fundamentals (CRM)</strong> measures your ability to understand customer engagement capabilities 
+            across Microsoft Dynamics 365. It covers foundational business processes across marketing automation, lead and opportunity qualification, 
+            customer service omnichannel escalation, and field technician dispatching, unified by Microsoft Dataverse and Microsoft Power Platform.
         </p>
+        
         <table>
             <thead>
                 <tr>
                     <th>Domain</th>
                     <th>Weight</th>
-                    <th>Core Key Areas</th>
+                    <th>Core Technical Focus & Key Entities</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>Describe Dynamics 365 Marketing</strong></td>
                     <td>15–20%</td>
-                    <td>Customer Insights - Journeys, Segments, Lead Scoring, Event Management</td>
+                    <td>Customer Insights - Journeys, Segments (behavioral vs demographic), Lead Scoring Models, Event Management, Personalization tokens.</td>
                 </tr>
                 <tr>
                     <td><strong>Describe Dynamics 365 Sales</strong></td>
                     <td>15–20%</td>
-                    <td>Leads, Opportunities, Quotes, Orders, Invoices, Sales Pipelines, Forecasting</td>
+                    <td>Lead lifecycle (Lead -> Account/Contact/Opportunity), Product Catalog (Price Lists, Unit Groups, Discount Lists), Quotes, Orders, Invoices, Sales Forecasting, Copilot in Sales.</td>
                 </tr>
                 <tr>
                     <td><strong>Describe Dynamics 365 Customer Service</strong></td>
                     <td>15–20%</td>
-                    <td>Cases, Knowledge Base, Queues, SLAs, Entitlements, Omnichannel</td>
+                    <td>Case lifecycle, Case Routing Rules, Queues (public vs private), Service Level Agreements (SLAs, warning & failure actions), Entitlements, Knowledge Base lifecycle, Omnichannel.</td>
                 </tr>
                 <tr>
                     <td><strong>Describe Dynamics 365 Field Service</strong></td>
                     <td>15–20%</td>
-                    <td>Work Orders, Schedule Board, Universal Resource Scheduling, Connected Field Service</td>
+                    <td>Work Orders (Incident Types, service tasks, products, services), Universal Resource Scheduling (URS, Schedule Board, Schedule Assistant), Field Service Mobile, Connected Field Service (IoT).</td>
                 </tr>
                 <tr>
                     <td><strong>Shared Features & Power Platform</strong></td>
                     <td>20–25%</td>
-                    <td>Dataverse tables, Power Automate, Microsoft Teams & Outlook integration, Copilot</td>
+                    <td>Microsoft Dataverse tables (Account, Contact, Activity), 1:N/N:N relationship cascading behaviors, Security Roles (privilege depths), Power Automate cloud flows, Teams/Outlook integration.</td>
                 </tr>
             </tbody>
         </table>
-    </div>
 
-    <div class="section">
-        <h2 class="section-title">🎯 Module 1: Dynamics 365 Marketing</h2>
-        <p>Dynamics 365 Marketing (now integrated with Customer Insights - Journeys) focuses on identifying, nurturing, and converting prospects.</p>
-        <div class="grid-2">
-            <div class="card">
-                <h3>Customer Journeys & Triggers</h3>
-                <p>Automated visual workflows triggered by user actions (e.g., website visit, email click) or scheduled intervals to send targeted communications.</p>
-                <ul>
-                    <li><strong>Real-Time Journeys:</strong> Responds instantaneously to customer actions.</li>
-                    <li><strong>Outbound Marketing:</strong> Batch-oriented campaign journeys.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Segments & Lead Scoring</h3>
-                <p>Audience targeting and prioritization based on demographic and behavioral data.</p>
-                <ul>
-                    <li><strong>Behavioral Segments:</strong> Customers who clicked a specific campaign link.</li>
-                    <li><strong>Lead Scoring Models:</strong> Adds points for engagement, decaying inactive leads.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">💼 Module 2: Dynamics 365 Sales</h2>
-        <p>Covers the complete B2B sales lifecycle from raw prospective lead to closed revenue.</p>
         <div class="highlight-box">
-            <strong>Standard Sales Process Lifecycle:</strong><br>
-            <code>Lead (Unqualified) &rarr; Qualifying Lead &rarr; Creates Account + Contact + Opportunity &rarr; Quote Generation &rarr; Order &rarr; Invoice</code>
-        </div>
-        <div class="grid-3">
-            <div class="card">
-                <h4>Pipeline Management</h4>
-                <p>Tracking opportunities by estimated revenue, probability, estimated close date, and visual sales pipeline funnels.</p>
-            </div>
-            <div class="card">
-                <h4>Product Catalog</h4>
-                <p>Defining price lists, unit groups, discount lists, and product bundles for sales quotes and orders.</p>
-            </div>
-            <div class="card">
-                <h4>Sales Copilot & Insights</h4>
-                <p>Generative AI meeting summaries, automated email drafts, and LinkedIn Sales Navigator integration.</p>
-            </div>
+            <strong>Key Architecture Insight:</strong> Dynamics 365 CRM applications do not store data in isolated silos. 
+            All first-party customer engagement apps run directly on <strong>Microsoft Dataverse</strong>. An Account or Contact record 
+            created in Dynamics 365 Sales is natively accessible to Customer Service, Marketing, and Field Service without custom data sync pipelines.
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🎧 Module 3: Dynamics 365 Customer Service</h2>
+    <!-- 2. MARKETING -->
+    <div class="section" id="marketing">
+        <h2 class="section-title">🎯 Dynamics 365 Marketing (Customer Insights - Journeys)</h2>
+        <p class="lead-text">
+            Dynamics 365 Customer Insights - Journeys (formerly Dynamics 365 Marketing) delivers targeted multichannel marketing campaigns 
+            across email, SMS, push notifications, and custom channels.
+        </p>
+
+        <h3 class="sub-title">1. Audience Segmentation</h3>
+        <p>Segments define the target audience for customer journeys. Unlike simple marketing lists, segments can dynamically evaluate complex Dataverse criteria in real time:</p>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Demographic & Firmographic</h4>
+                <p>Profiles attributes stored directly on Dataverse profile tables.</p>
+                <ul>
+                    <li><strong>Demographic:</strong> Contact age, job title, preferred language, city.</li>
+                    <li><strong>Firmographic:</strong> Company revenue, industry code, number of employees on Account.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Behavioral Segments</h4>
+                <p>Evaluates interaction data tracked by the marketing service engine.</p>
+                <ul>
+                    <li>Contacts who opened an email within the last 14 days.</li>
+                    <li>Contacts who clicked a specific CTA link or submitted an event registration form.</li>
+                    <li>Website visits tracked via marketing web tracking scripts.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Static vs. Dynamic</h4>
+                <p>Governs how membership is maintained over time.</p>
+                <ul>
+                    <li><strong>Dynamic:</strong> Members are automatically added or removed continuously as their attributes or behaviors change.</li>
+                    <li><strong>Static:</strong> Fixed snapshot of contacts selected manually at a specific point in time.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="sub-title">2. Customer Journeys & Trigger-Based Automation</h3>
+        <p>Customer Journeys orchestrate communications using visual drag-and-drop workflow canvases. There are two primary journey paradigms:</p>
+        <ul>
+            <li><strong>Segment-based Journeys (Outbound):</strong> Initiated on a scheduled cadence for a predefined batch segment of contacts (e.g., monthly newsletter or product launch).</li>
+            <li><strong>Trigger-based Journeys (Real-time):</strong> Responds instantly when a customer performs an action (e.g., abandoned cart, wifi connection, submitting a support ticket, or scanning a QR code). Uses event triggers defined via Dataverse business events or external APIs.</li>
+        </ul>
+
+        <div class="diagram-box">
+[Trigger: Customer Scans QR Code] 
+          │
+          ▼
+[Send Welcome SMS with Promo Code]
+          │
+          ▼
+[Wait Condition: Did customer redeem code within 48 Hours?]
+       ├─── YES ───► [Branch A: Tag as High-Value & Add to VIP Loyalty Journey]
+       └─── NO  ───► [Branch B: Send Follow-up Email with 5% Extra Incentive]
+        </div>
+
+        <h3 class="sub-title">3. Automated Lead Scoring Models</h3>
+        <p>
+            Lead scoring models assign scores (0 to 100+) to incoming leads to determine when a lead is qualified for sales outreach.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Scoring Rule Type</th>
+                    <th>Example Condition</th>
+                    <th>Score Adjustment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Explicit / Demographic</strong></td>
+                    <td>Job Title contains 'Director', 'VP', or 'Chief'</td>
+                    <td>+25 Points</td>
+                </tr>
+                <tr>
+                    <td><strong>Explicit / Demographic</strong></td>
+                    <td>Company Country equals 'United Kingdom'</td>
+                    <td>+10 Points</td>
+                </tr>
+                <tr>
+                    <td><strong>Implicit / Behavioral</strong></td>
+                    <td>Contact opened campaign email</td>
+                    <td>+5 Points</td>
+                </tr>
+                <tr>
+                    <td><strong>Implicit / Behavioral</strong></td>
+                    <td>Contact downloaded technical whitepaper</td>
+                    <td>+20 Points</td>
+                </tr>
+                <tr>
+                    <td><strong>Implicit / Behavioral</strong></td>
+                    <td>Contact visited Pricing Page</td>
+                    <td>+35 Points</td>
+                </tr>
+                <tr>
+                    <td><strong>Time Degradation (Decay)</strong></td>
+                    <td>No interactions over the past 30 days</td>
+                    <td>-20 Points (Prevents stale leads from remaining 'Sales Ready')</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="tip-box">
+            <strong>Sales-Ready Score Threshold:</strong> When the cumulative lead score exceeds the defined threshold (e.g., 100 points), 
+            the lead status updates to <em>Sales Ready</em>, triggering an automated assignment rule to a Sales Representative.
+        </div>
+
+        <h3 class="sub-title">4. Event Management Capabilities</h3>
+        <ul>
+            <li><strong>Hybrid & Virtual Events:</strong> Native integration with Microsoft Teams Webinars and Live Events to track attendee join times, duration, and post-event survey responses.</li>
+            <li><strong>Logistics & Hospitality:</strong> Track venues, buildings, rooms, room capacities, session schedules, speaker bios, and sponsor tiers.</li>
+            <li><strong>Event Portal:</strong> Self-service web registration where attendees register, select tracks, and receive QR code event passes.</li>
+        </ul>
+    </div>
+
+    <!-- 3. SALES -->
+    <div class="section" id="sales">
+        <h2 class="section-title">💼 Dynamics 365 Sales & The Lead-to-Cash Pipeline</h2>
+        <p class="lead-text">
+            Dynamics 365 Sales automates the end-to-end commercial lifecycle from initial customer inquiry through qualification, 
+            formal quote generation, order fulfillment, and invoicing.
+        </p>
+
+        <h3 class="sub-title">1. The Full Lead-to-Cash Lifecycle Walkthrough</h3>
+        <div class="diagram-box">
+┌─────────────┐    Qualify     ┌─────────────────┐    Generate    ┌─────────────┐
+│    LEAD     │ ─────────────► │   OPPORTUNITY   │ ─────────────► │    QUOTE    │
+└─────────────┘                └─────────────────┘                └─────────────┘
+       │                              │                                  │
+       ▼ (Disqualified)               ▼ (Close as Lost)                  ▼ (Activate & Win)
+ [Lost / Canceled]              [Competitor Won]                  ┌─────────────┐
+                                                                  │    ORDER    │
+                                                                  └─────────────┘
+                                                                         │
+                                                                         ▼ (Fulfill)
+                                                                  ┌─────────────┐
+                                                                  │   INVOICE   │
+                                                                  └─────────────┘
+        </div>
+
+        <p><strong>Detailed Stage Breakdown:</strong></p>
+        <ol>
+            <li><strong>Lead (Inquiry):</strong> Represents a prospective client or deal that has not been vetted. 
+                <ul>
+                    <li><em>Qualify:</em> When qualified, the system automatically creates three linked records: an <strong>Account</strong> (company), a <strong>Contact</strong> (person), and an <strong>Opportunity</strong> (revenue deal).</li>
+                    <li><em>Disqualify:</em> If invalid, the lead can be disqualified with status reasons: <em>Lost, Cannot Contact, No Longer Interested, or Canceled</em>.</li>
+                </ul>
+            </li>
+            <li><strong>Opportunity:</strong> The active revenue-bearing pipeline deal. Captures estimated revenue, close probability, estimated close date, competitors, and sales team members.</li>
+            <li><strong>Quotes:</strong> Formal price proposal provided to the client. Must be associated with a Price List.
+                <ul>
+                    <li>Quotes start in <strong>Draft</strong> status.</li>
+                    <li>Must be changed to <strong>Active</strong> before sending to the customer. When Active, it is read-only.</li>
+                    <li>If modifications are required, select <em>Revise</em> (creates a new revision number and sets status back to Draft).</li>
+                    <li>When the customer agrees, select <em>Create Order</em> (which marks the Quote as Won).</li>
+                </ul>
+            </li>
+            <li><strong>Order:</strong> Confirmation of the commercial agreement. Products can be reserved in inventory. Can be fulfilled partially or completely.</li>
+            <li><strong>Invoice:</strong> Financial document requesting payment. Once generated, prices are locked. Once payment arrives, the invoice is marked as <em>Paid</em>.</li>
+        </ol>
+
+        <h3 class="sub-title">2. Product Catalog Architecture</h3>
+        <p>To add line items to Opportunities, Quotes, Orders, or Invoices, the Dataverse Product Catalog must be configured in this mandatory order:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Purpose & Configuration Requirements</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Unit Group</strong></td>
+                    <td>Defines the units of measure in which a product is sold, starting with a Base Unit.</td>
+                    <td>Base Unit = 'Each'. Conversion: 'Box of 12' = 12 Eaches. 'Pallet' = 50 Boxes.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Products</strong></td>
+                    <td>The inventory or service item with SKU, description, default unit, and decimal precision.</td>
+                    <td>SKU: 'SRV-CONS-01', Name: 'Cloud Consulting Day'.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Price Lists</strong></td>
+                    <td>Represents pricing schedules based on customer tier, region, or currency.</td>
+                    <td>'UK Enterprise 2026 (GBP)', 'US Government Wholesale (USD)'.</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Price List Items</strong></td>
+                    <td>The intersection linking a specific Product to a specific Price List with a pricing method.</td>
+                    <td>Pricing Method: Currency Amount (£1,200), % of List, % Markup, or % Margin.</td>
+                </tr>
+                <tr>
+                    <td><strong>5. Discount Lists</strong></td>
+                    <td>Optional volume discounting based on quantities ordered.</td>
+                    <td>1–9 units = 0% discount; 10–49 units = 5% discount; 50+ units = 12% discount.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">3. Sales Forecasting & Copilot Integration</h3>
         <div class="grid-2">
             <div class="card">
-                <h3>Case Lifecycle & Queues</h3>
+                <h4>Pipeline Forecasting</h4>
+                <p>Supports org chart hierarchies or territory-based rollup forecasts. Sales managers define quotas and view commitments:</p>
                 <ul>
-                    <li><strong>Cases (Incidents):</strong> Central record tracking a customer's inquiry or issue.</li>
-                    <li><strong>Queues:</strong> Shared holding areas where incoming cases, emails, or activities are assigned and routed.</li>
-                    <li><strong>Knowledge Management:</strong> Searchable, versioned articles linked to cases for swift first-contact resolution.</li>
+                    <li><strong>Committed:</strong> High-confidence deals included in executive forecast.</li>
+                    <li><strong>Best Case:</strong> High-value opportunities with active engagement.</li>
+                    <li><strong>Pipeline:</strong> All open qualified deals in early stages.</li>
+                    <li><strong>Omitted:</strong> Low probability deals excluded from totals.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Service Level Agreements (SLAs) & Entitlements</h3>
+                <h4>Microsoft Copilot in Sales</h4>
+                <p>Generative AI embedded directly into Outlook, Teams, and Dynamics 365:</p>
                 <ul>
-                    <li><strong>Entitlements:</strong> Contractual agreements defining the amount and type of support a customer is eligible to receive (e.g., 50 hours or 20 cases).</li>
-                    <li><strong>SLAs:</strong> Key performance indicators tracking first response time, resolution time, and warning/escalation actions.</li>
+                    <li>Summarizes email threads and suggests customized customer reply drafts.</li>
+                    <li>Prepares pre-meeting prep briefs combining CRM opportunity data and recent emails.</li>
+                    <li>Captures meeting action items during Teams calls and writes notes directly into the Opportunity timeline.</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">🛠️ Module 4: Dynamics 365 Field Service</h2>
-        <p>Empowers mobile technicians to deliver on-site service with intelligent scheduling and IoT diagnostics.</p>
-        <div class="grid-3">
+    <!-- 4. CUSTOMER SERVICE -->
+    <div class="section" id="service">
+        <h2 class="section-title">🎧 Dynamics 365 Customer Service & SLA Governance</h2>
+        <p class="lead-text">
+            Dynamics 365 Customer Service provides case management, self-service portals, SLA tracking, knowledge base governance, 
+            and omnichannel customer support across chat, voice, email, and social messaging.
+        </p>
+
+        <h3 class="sub-title">1. Case Management & Routing Architecture</h3>
+        <p>A <strong>Case</strong> (incident entity) represents a customer inquiry, request, or technical defect.</p>
+        <ul>
+            <li><strong>Case Creation Channels:</strong> Manual entry, Automatic Record Creation rules from monitored shared support inboxes (Exchange), Web Portals (Power Pages), or Webhooks via Power Automate.</li>
+            <li><strong>Parent/Child Cases:</strong> When a major incident affects multiple users (e.g., data center power outage), multiple incoming tickets are linked as Child Cases to a single Parent Case. When the Parent Case is resolved, all Child Cases can be automatically closed.</li>
+            <li><strong>Case Routing Rules:</strong> Automatically assign cases to specific queues or agents based on criteria such as product category, account priority (VIP), or language skills.</li>
+        </ul>
+
+        <h3 class="sub-title">2. Service Level Agreements (SLAs) & Entitlements</h3>
+        <div class="grid-2">
             <div class="card">
-                <h4>Work Orders</h4>
-                <p>Defines the on-site service request: location, customer asset, incidents, required parts, skills, and estimated duration.</p>
+                <h4>SLA KPIs & Timers</h4>
+                <p>SLAs enforce contractual resolution deadlines:</p>
+                <ul>
+                    <li><strong>SLA KPIs:</strong> Standard metrics include <em>First Response By</em> and <em>Resolve By</em>.</li>
+                    <li><strong>Timer Controls:</strong> Visual countdown clocks displayed on the Case form changing color from green to yellow (warning) to red (breached).</li>
+                    <li><strong>Warning & Failure Actions:</strong> Automated notifications sent to team leads or priority escalation via Power Automate.</li>
+                    <li><strong>SLA Pausing:</strong> Timers automatically freeze when the Case status reason is set to <em>'Waiting on Customer'</em> or <em>'On Hold'</em>.</li>
+                </ul>
             </div>
             <div class="card">
-                <h4>Schedule Board & URS</h4>
-                <p>Universal Resource Scheduling (URS) dynamically matches work order requirements to technician skills, travel distance, and availability.</p>
-            </div>
-            <div class="card">
-                <h4>Connected Field Service (IoT)</h4>
-                <p>Connects IoT telemetry to Dataverse. Automatically detects equipment anomalies and generates preventive work orders before failure.</p>
+                <h4>Customer Entitlements</h4>
+                <p>Specifies the exact amount of support services a customer has purchased:</p>
+                <ul>
+                    <li><strong>Allocation Type:</strong> Number of Cases (e.g., 50 support tickets per year) or Number of Hours (e.g., 200 hours of technical support).</li>
+                    <li><strong>Decrease Remaining Terms:</strong> Deducts from the balance either on <em>Case Creation</em> or on <em>Case Resolution</em>.</li>
+                    <li><strong>Channel Restrictions:</strong> Entitlements can restrict support to specific channels (e.g., Web only, phone excluded).</li>
+                </ul>
             </div>
         </div>
+
+        <h3 class="sub-title">3. Knowledge Management & Omnichannel Unified Routing</h3>
+        <ul>
+            <li><strong>Knowledge Base Articles:</strong> Feature rich-text formatting, version control, language translation, approval workflows (Draft -> Under Review -> Approved -> Published), and AI semantic search inside the agent workspace.</li>
+            <li><strong>Omnichannel Unified Routing:</strong> Uses agent presence states (Available, Busy, DND, Away, Offline) and capacity profiles (e.g., an agent can handle up to 3 simultaneous chat conversations or 1 active voice call) to assign work automatically.</li>
+        </ul>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">💡 Pro-Tips for Exam Success</h2>
-        <div class="tip-box">
-            <ul>
-                <li><strong>Understand the Lead qualification outcome:</strong> Qualifying a Lead in Dynamics 365 Sales creates three records: Account, Contact, and Opportunity.</li>
-                <li><strong>SLAs vs Entitlements:</strong> Entitlements specify <em>how much</em> support a customer has purchased; SLAs define <em>how quickly</em> you must respond and resolve.</li>
-                <li><strong>Schedule Board:</strong> URS can be used not just for Field Service, but across any Dataverse table requiring resource booking.</li>
+    <!-- 5. FIELD SERVICE -->
+    <div class="section" id="field-service">
+        <h2 class="section-title">🔧 Dynamics 365 Field Service & Universal Resource Scheduling</h2>
+        <p class="lead-text">
+            Dynamics 365 Field Service delivers onsite service management, dispatching field technicians with appropriate skills, 
+            tools, and parts to customer locations using automated schedule optimization.
+        </p>
+
+        <h3 class="sub-title">1. The Work Order Lifecycle</h3>
+        <div class="diagram-box">
+┌────────────────────┐      Dispatch      ┌────────────────────┐     Travel & Begin    ┌────────────────────┐
+│  Open-Unscheduled  │ ─────────────────► │   Open-Scheduled   │ ────────────────────► │  Open-In Progress  │
+└────────────────────┘                    └────────────────────┘                       └────────────────────┘
+                                                                                                  │
+┌────────────────────┐     Manager Review ┌────────────────────┐       Finish Work                │
+│   Closed-Posted    │ ◄───────────────── │   Open-Completed   │ ◄────────────────────────────────┘
+└────────────────────┘                    └────────────────────┘
+        </div>
+        <p><strong>Core Work Order Building Blocks:</strong></p>
+        <ul>
+            <li><strong>Incident Types:</strong> Predefined service templates that automatically populate a Work Order with estimated duration, required <em>Service Tasks</em> (checklist items), required <em>Products</em> (replacement parts), and required <em>Services</em> (labor operations).</li>
+            <li><strong>Work Order Status vs Booking Status:</strong> Work Order Status tracks the macro state of the physical job; Booking Status tracks the micro state of the assigned field technician (Scheduled, Traveling, In Progress, On Break, Completed).</li>
+            <li><strong>Closed-Posted:</strong> Triggers financial posting, writing actual inventory deductions to the warehouse and generating a sales invoice in Dynamics 365 Finance or Business Central.</li>
+        </ul>
+
+        <h3 class="sub-title">2. Universal Resource Scheduling (URS)</h3>
+        <p>URS is the scheduling engine used across Field Service, Customer Service, and Project Operations:</p>
+        <ul>
+            <li><strong>Schedule Board:</strong> Visual Gantt chart showing technician schedules, work orders, travel routes, and map overlays.</li>
+            <li><strong>Schedule Assistant:</strong> Filters resources based on required skills (Characteristics), proficiency ratings (1 to 5), geographical service territory, work hour templates, and real-time travel duration calculation using Bing Maps.</li>
+            <li><strong>Resource Scheduling Optimization (RSO):</strong> Azure-based automated optimization add-in that computes optimal routes and appointments overnight to minimize travel miles and maximize technician utilization.</li>
+        </ul>
+
+        <h3 class="sub-title">3. Connected Field Service & IoT Telemetry</h3>
+        <p>
+            Integrates with <strong>Azure IoT Central</strong> or <strong>Azure IoT Hub</strong>. Connected physical devices (e.g., commercial chillers or smart meters) send telemetry. 
+            When temperature exceeds safety limits, an <em>IoT Alert</em> is created in Dynamics 365. The system can send an automated remote reboot command; if the fault persists, it automatically generates a Work Order and schedules a technician before the customer is even aware of the failure (Predictive Maintenance).
+        </p>
+    </div>
+
+    <!-- 6. DATAVERSE & POWER PLATFORM -->
+    <div class="section" id="dataverse-platform">
+        <h2 class="section-title">⚡ Microsoft Dataverse & Security Architecture</h2>
+        <p class="lead-text">
+            Microsoft Dataverse is the relational cloud data platform underlying all Dynamics 365 Customer Engagement applications.
+        </p>
+
+        <h3 class="sub-title">1. Table Relationships & Cascading Behaviors</h3>
+        <p>Dataverse supports 1:N (One-to-Many), N:1, and N:N (Many-to-Many) relationships. In 1:N parental relationships, actions on the parent table cascade down to child records:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Cascading Action</th>
+                    <th>Cascade Behavior Option</th>
+                    <th>Technical System Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Assign</strong></td>
+                    <td>Cascade All</td>
+                    <td>Reassigning an Account to another sales rep automatically reassigns all linked Contacts, Opportunities, and open Cases.</td>
+                </tr>
+                <tr>
+                    <td><strong>Assign</strong></td>
+                    <td>Cascade User-Owned</td>
+                    <td>Only child records owned by the original Account owner are reassigned; child records owned by other team members remain unchanged.</td>
+                </tr>
+                <tr>
+                    <td><strong>Delete</strong></td>
+                    <td>Restrict Delete</td>
+                    <td>Prevents deletion of the parent Account if active child records (e.g., open invoices or cases) exist.</td>
+                </tr>
+                <tr>
+                    <td><strong>Delete</strong></td>
+                    <td>Cascade All (Remove)</td>
+                    <td>Deleting the parent Account permanently deletes all linked child Contacts and Opportunities.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">2. Role-Based Security & Privileges</h3>
+        <p>Security roles govern record permissions using five hierarchical privilege depths represented by colored pie symbols:</p>
+        <ul>
+            <li><strong>None (Empty Circle):</strong> No access to this table operation.</li>
+            <li><strong>User (Quarter Circle):</strong> Access limited strictly to records owned by the user or shared directly with them.</li>
+            <li><strong>Business Unit (Half Circle):</strong> Access to all records owned by any user within the user's specific Business Unit.</li>
+            <li><strong>Parent: Child Business Unit (Three-Quarter Circle):</strong> Access to records in the user's BU plus all subordinate child BUs.</li>
+            <li><strong>Organization (Full Circle):</strong> Complete access to all records across the entire Dataverse environment tenant.</li>
+        </ul>
+    </div>
+
+    <!-- 7. PRACTICE SCENARIOS -->
+    <div class="section" id="practice-scenarios">
+        <h2 class="section-title">📝 Realistic MB-910 Exam Practice Scenarios</h2>
+        
+        <!-- Question 1 -->
+        <div class="qa-card">
+            <h4>Scenario Question 1: Sales Lead Lifecycle & Document Progression</h4>
+            <p>
+                A sales representative at Contoso Ltd enters an inquiry into Dynamics 365 Sales. After discussions, the prospect decides to evaluate products 
+                and requests an official price quote. The representative qualifies the lead.
+            </p>
+            <p><strong>Question:</strong> Which three records does Dataverse automatically create during the lead qualification action?</p>
+            <ul class="qa-options">
+                <li>A) Order, Quote, Invoice</li>
+                <li>B) Account, Contact, Opportunity</li>
+                <li>C) Product, Price List, Competitor</li>
+                <li>D) Work Order, Service Agreement, Entitlement</li>
             </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Account, Contact, Opportunity)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> Upon clicking <em>Qualify</em> on a Lead record, Dynamics 365 Sales creates an <strong>Account</strong> (the company), a <strong>Contact</strong> (the individual stakeholder), and an <strong>Opportunity</strong> (the active sales deal pipeline record), linking all three together.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Quotes, Orders, and Invoices are generated subsequent to opportunity progression, not during initial lead qualification.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Products and Price Lists are administrative catalog definitions configured beforehand in system settings.</li>
+                    <li><strong>Option D is INCORRECT:</strong> These are Field Service and Customer Service records.</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="qa-card">
+            <h4>Scenario Question 2: SLA Pause Governance in Customer Service</h4>
+            <p>
+                Contoso Support has an SLA KPI stating that customer defects must be resolved within 4 business hours. A support engineer responds to the client 
+                asking for log files. The customer takes 3 days to send the logs.
+            </p>
+            <p><strong>Question:</strong> How should the system be configured to ensure the engineer does not breach the SLA while waiting for the client?</p>
+            <ul class="qa-options">
+                <li>A) Delete the SLA KPI instance and recreate it when the customer replies.</li>
+                <li>B) Configure SLA Pausing in Service Management settings and set the Case Status Reason to 'Waiting on Customer'.</li>
+                <li>C) Manually increment the business hours calendar by 72 hours.</li>
+                <li>D) Close the case as Resolved and open a new case when the logs are received.</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Configure SLA Pausing in Service Management settings and set the Case Status Reason to 'Waiting on Customer')</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> Dynamics 365 Customer Service allows administrators to enable SLA Pausing for specific Case Status Reasons (such as 'On Hold' or 'Waiting on Customer'). While the case remains in that status, the countdown timer stops. When set back to 'In Progress', the timer resumes from where it paused.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Deleting SLA KPI instances corrupts audit trails and reporting metrics.</li>
+                    <li><strong>Option C is INCORRECT:</strong> The business hours calendar affects the entire organization's working schedule.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Closing and reopening cases artificially distorts First Contact Resolution (FCR) metrics and customer history.</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="qa-card">
+            <h4>Scenario Question 3: Universal Resource Scheduling (URS) Filtering</h4>
+            <p>
+                A dispatch manager needs to schedule an emergency repair for a commercial commercial HVAC unit. The job requires a technician with 
+                EPA Universal Certification and experience with Model X chillers, located within 15 miles of the site.
+            </p>
+            <p><strong>Question:</strong> Which tool within Dynamics 365 Field Service should the dispatcher use to immediately filter available resources based on these exact constraints?</p>
+            <ul class="qa-options">
+                <li>A) Power BI Pipeline Analytics</li>
+                <li>B) Connected Field Service IoT Alert Command</li>
+                <li>C) Schedule Assistant (Find Availability)</li>
+                <li>D) Entitlement Management Engine</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: C (Schedule Assistant / Find Availability)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option C is CORRECT:</strong> The <strong>Schedule Assistant</strong> evaluates Resource Requirements against resource attributes. It filters resources by skills (Characteristics), proficiency levels, location distance (using Bing Maps API), and working hours to display only qualified, available technicians.</li>
+                    <li><strong>Option A is INCORRECT:</strong> Power BI is an analytical reporting engine, not an operational dispatch scheduler.</li>
+                    <li><strong>Option B is INCORRECT:</strong> IoT Commands send telemetry messages to remote physical hardware.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Entitlements manage customer support contract balances.</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="qa-card">
+            <h4>Scenario Question 4: Customer Journey Audience Definition</h4>
+            <p>
+                A marketing team wants to launch an automated email nurture campaign targeting all prospective contacts who have visited the company's pricing page 
+                within the last 7 days AND whose parent account belongs to the 'Healthcare' industry. As new prospects meet these conditions daily, they must 
+                automatically enter the nurture flow.
+            </p>
+            <p><strong>Question:</strong> Which segment type must the marketing consultant build?</p>
+            <ul class="qa-options">
+                <li>A) Static Segment combining contact phone records</li>
+                <li>B) Dynamic Segment combining Behavioral interaction data with Firmographic account data</li>
+                <li>C) Subscription Marketing List</li>
+                <li>D) Manual Excel Import List</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: B (Dynamic Segment combining Behavioral interaction data with Firmographic account data)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option B is CORRECT:</strong> A <strong>Dynamic Segment</strong> automatically updates membership continuously. <em>Behavioral</em> conditions evaluate web tracking interactions (pricing page visit within 7 days), while <em>Firmographic</em> conditions query the related Account's industry field ('Healthcare').</li>
+                    <li><strong>Option A is INCORRECT:</strong> Static segments are frozen snapshots; new prospects would not be added automatically.</li>
+                    <li><strong>Option C is INCORRECT:</strong> Subscription lists manage customer opt-in/opt-out consent preferences.</li>
+                    <li><strong>Option D is INCORRECT:</strong> Manual Excel imports require manual human maintenance and cannot dynamically evaluate web interaction behavior.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -499,7 +1024,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 

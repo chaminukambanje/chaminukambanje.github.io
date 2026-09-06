@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCSA: SQL 2016 Database Development | Chami's Learning Hub</title>
+    <title>MCSA SQL 2016 Database Development Master Reference | Chami's Learning Hub</title>
     <style>
         :root {
             --primary: #0078d4;
@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             background-color: var(--light);
             color: var(--dark);
-            line-height: 1.65;
+            line-height: 1.68;
         }
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
@@ -111,7 +111,7 @@
         .hero p {
             font-size: 1.15rem;
             opacity: 0.92;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.6;
         }
         .hero-tags {
@@ -127,6 +127,39 @@
             border-radius: 16px;
             font-size: 0.82rem;
             font-weight: 600;
+        }
+
+        .toc-box {
+            background: #f3f2f1;
+            border: 1px solid #d2d0ce;
+            border-radius: 8px;
+            padding: 18px 24px;
+            margin-bottom: 30px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc-list {
+            list-style: none;
+            margin-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+        }
+        .toc-list a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .toc-list a:hover {
+            text-decoration: underline;
         }
 
         .section {
@@ -148,9 +181,15 @@
             align-items: center;
             gap: 10px;
         }
+        .sub-title {
+            font-size: 1.22rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
 
         .lead-text {
-            font-size: 1.08rem;
+            font-size: 1.05rem;
             color: #323130;
             line-height: 1.7;
             margin-bottom: 20px;
@@ -205,6 +244,15 @@
             color: #14532d;
             font-size: 0.96rem;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: #92400e;
+            font-size: 0.96rem;
+        }
 
         table {
             width: 100%;
@@ -216,6 +264,7 @@
             border: 1px solid #d2d0ce;
             padding: 12px 14px;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #f3f2f1;
@@ -236,12 +285,28 @@
             overflow-x: auto;
             margin: 18px 0;
             border: 1px solid #333;
+            line-height: 1.5;
         }
         code:not(pre code) {
             background: #f0f0f0;
             color: #c7254e;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.88em;
+        }
+
+        .diagram-box {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border: 1px solid #1e293b;
         }
 
         ul, ol {
@@ -249,6 +314,56 @@
             margin-bottom: 18px;
         }
         li { margin-bottom: 6px; }
+
+        details {
+            background: #fdfdfd;
+            border: 1px solid #d2d0ce;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 14px 0;
+        }
+        details summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary);
+            user-select: none;
+        }
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #d2d0ce;
+            padding-bottom: 8px;
+        }
+        .qa-card {
+            background: #ffffff;
+            border: 1px solid #e1dfdd;
+            border-left: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+        .qa-card h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .qa-options {
+            list-style: none;
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        .qa-options li {
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #edebe9;
+        }
+        .qa-options li.correct {
+            background: #ecfdf5;
+            border-color: #10b981;
+            font-weight: 600;
+            color: #065f46;
+        }
 
         .btn-action {
             display: inline-block;
@@ -295,8 +410,9 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .section { padding: 25px 18px; }
+            .section { padding: 22px 16px; }
             .nav-links { display: none; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
         }
 </style>
 </head>
@@ -326,34 +442,198 @@
 <div class="hero">
     <div class="container">
         <div class="hero-breadcrumb">
-            <a href="index.html">Hub Home</a> &rsaquo; <span>MCSA: SQL 2016 Database Development Guide</span>
+            <a href="index.html">Hub Home</a> &rsaquo; <span>MCSA SQL 2016: Database Development & Query Optimization</span>
         </div>
-        <h1>MCSA: SQL 2016 Database Development Guide</h1>
-        <p>Advanced relational database engineering: Transact-SQL, Query Optimization, Columnstore Indexing, Execution Plans, and Concurrency Control.</p>
-        <div class="hero-tags"><span class="hero-tag">MCSA SQL 2016</span><span class="hero-tag">Transact-SQL</span><span class="hero-tag">Query Optimization</span><span class="hero-tag">Indexing</span><span class="hero-tag">Execution Plans</span><span class="hero-tag">Database Design</span></div>
+        <h1>MCSA SQL 2016: Database Development & Query Optimization</h1>
+        <p>In-depth T-SQL engineering guide covering analytical window functions, Temporal Tables, Clustered Columnstore Indexes, In-Memory OLTP, and Query Store plan forcing.</p>
+        <div class="hero-tags"><span class="hero-tag">SQL Server</span><span class="hero-tag">T-SQL</span><span class="hero-tag">MCSA</span><span class="hero-tag">Columnstore</span><span class="hero-tag">In-Memory OLTP</span><span class="hero-tag">Query Store</span><span class="hero-tag">Temporal Tables</span></div>
     </div>
 </div>
 <div class="container">
 
-    <div class="section">
-        <h2 class="section-title">🗄️ SQL 2016 Database Development</h2>
+    <div class="toc-box">
+        <div class="toc-title">📑 Quick Navigation & SQL Modules</div>
+        <ul class="toc-list">
+            <li><a href="#sql-scope">Exam Scope & MCSA Blueprint</a></li>
+            <li><a href="#window-functions">Advanced Window Functions & CTE Recursion</a></li>
+            <li><a href="#temporal-tables">Temporal Tables & System-Versioned Auditing</a></li>
+            <li><a href="#columnstore-indexes">Clustered Columnstore Indexes (CCI)</a></li>
+            <li><a href="#in-memory-oltp">In-Memory OLTP & Memory-Optimized Tables</a></li>
+            <li><a href="#query-store">Query Store & Execution Plan Optimization</a></li>
+            <li><a href="#sql-scenarios">T-SQL Practice Scenarios & Deep Explanations</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. SCOPE -->
+    <div class="section" id="sql-scope">
+        <h2 class="section-title">📘 MCSA SQL 2016 Database Development Blueprint</h2>
         <p class="lead-text">
-            Mastering <strong>Transact-SQL (T-SQL)</strong>, relational database design, query optimization, indexing strategies, 
-            and transaction concurrency management in Microsoft SQL Server 2016 and Azure SQL Database.
+            Validates deep technical mastery of SQL Server 2016/2019/2022 database engine internals, advanced Transact-SQL programming, 
+            analytical windowing, In-Memory OLTP, Temporal Tables, Columnstore indexes, and performance troubleshooting with Query Store.
         </p>
-        <div class="grid-3">
-            <div class="card">
-                <h4>Advanced T-SQL</h4>
-                <p>Common Table Expressions (CTEs), Windowing functions (<code>ROW_NUMBER()</code>, <code>RANK()</code>, <code>LEAD()</code>), and dynamic pivot tables.</p>
-            </div>
-            <div class="card">
-                <h4>Indexing Architecture</h4>
-                <p>Clustered vs Non-Clustered B-Trees, Columnstore indexes for analytical OLAP workloads, and filtered indexes.</p>
-            </div>
-            <div class="card">
-                <h4>Execution Plans & Concurrency</h4>
-                <p>Diagnosing table scans, key lookups, memory grants, transaction isolation levels (Snapshot, Read Committed), and deadlock resolution.</p>
-            </div>
+    </div>
+
+    <!-- 2. WINDOW FUNCTIONS -->
+    <div class="section" id="window-functions">
+        <h2 class="section-title">🪟 Advanced T-SQL Window Functions & CTE Recursion</h2>
+        <p class="lead-text">
+            Window functions perform calculations across a set of table rows that are related to the current row without collapsing rows into a single group.
+        </p>
+
+        <h3 class="sub-title">1. Ranking & Offset Analytics</h3>
+        <pre><code class="language-sql">-- Advanced window partitioning with framing
+SELECT 
+    CustomerID,
+    OrderDate,
+    OrderAmount,
+    -- Running total calculated per customer ordered by date
+    SUM(OrderAmount) OVER(
+        PARTITION BY CustomerID 
+        ORDER BY OrderDate 
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS CumulativeSpend,
+    -- Compare current order with previous order amount
+    LAG(OrderAmount, 1, 0.00) OVER(
+        PARTITION BY CustomerID 
+        ORDER BY OrderDate
+    ) AS PriorOrderAmount,
+    -- Rank customers within their geographic territory
+    DENSE_RANK() OVER(
+        PARTITION BY TerritoryID 
+        ORDER BY OrderAmount DESC
+    ) AS TerritorySpendRank
+FROM Sales.SalesOrderHeader;</code></pre>
+
+        <h3 class="sub-title">2. Recursive CTE for Bill of Materials (BOM)</h3>
+        <pre><code class="language-sql">WITH ProductBOM_CTE AS (
+    -- Anchor member: Find top-level finished assembly product
+    SELECT 
+        ComponentID, 
+        ParentAssemblyID, 
+        QuantityPerAssembly, 
+        1 AS BOM_Level
+    FROM Production.BillOfMaterials
+    WHERE ParentAssemblyID IS NULL AND ComponentID = 707
+    
+    UNION ALL
+    
+    -- Recursive member: Traverse sub-components
+    SELECT 
+        bom.ComponentID, 
+        bom.ParentAssemblyID, 
+        bom.QuantityPerAssembly, 
+        cte.BOM_Level + 1
+    FROM Production.BillOfMaterials bom
+    INNER JOIN ProductBOM_CTE cte 
+        ON bom.ParentAssemblyID = cte.ComponentID
+)
+SELECT * FROM ProductBOM_CTE
+ORDER BY BOM_Level, ComponentID;</code></pre>
+    </div>
+
+    <!-- 3. TEMPORAL TABLES -->
+    <div class="section" id="temporal-tables">
+        <h2 class="section-title">⏳ Temporal Tables & System-Versioned Audit Trails</h2>
+        <p class="lead-text">
+            Temporal tables provide built-in time-travel querying. SQL Server automatically tracks historical row modifications 
+            in a linked historical table without requiring custom triggers.
+        </p>
+        <pre><code class="language-sql">-- 1. Create System-Versioned Temporal Table
+CREATE TABLE dbo.EmployeeSalary (
+    EmployeeID INT NOT NULL PRIMARY KEY CLUSTERED,
+    Salary DECIMAL(10,2) NOT NULL,
+    DepartmentCode VARCHAR(10) NOT NULL,
+    SysStartTime DATETIME2 GENERATED ALWAYS AS ROW START HIDDEN NOT NULL,
+    SysEndTime DATETIME2 GENERATED ALWAYS AS ROW END HIDDEN NOT NULL,
+    PERIOD FOR SYSTEM_TIME (SysStartTime, SysEndTime)
+)
+WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.EmployeeSalary_History));
+
+-- 2. Query historical salary as it was exactly on January 1st, 2026 at 09:00 UTC
+SELECT EmployeeID, Salary, DepartmentCode
+FROM dbo.EmployeeSalary
+FOR SYSTEM_TIME AS OF '2026-01-01T09:00:00Z'
+WHERE EmployeeID = 1042;</code></pre>
+    </div>
+
+    <!-- 4. COLUMNSTORE -->
+    <div class="section" id="columnstore-indexes">
+        <h2 class="section-title">📊 Clustered Columnstore Indexes (CCI) & Analytics</h2>
+        <p class="lead-text">
+            Columnstore indexes store data column-by-column rather than row-by-row. By combining dictionary encoding, bit-packing, 
+            and 10x data compression, analytical aggregations scan only the specific columns needed, skipping unneeded column segments.
+        </p>
+        <div class="highlight-box">
+            <strong>Rowgroup Architecture:</strong> Columnstore data is organized into rowgroups of up to 1,048,576 rows. 
+            Rows inserted via small transactional batches land in the row-based <em>Delta Store</em> (B-Tree). When the Delta Store reaches 1M rows, 
+            the background <strong>Tuple Mover</strong> compresses them into a columnar rowgroup.
+        </div>
+    </div>
+
+    <!-- 5. IN-MEMORY OLTP -->
+    <div class="section" id="in-memory-oltp">
+        <h2 class="section-title">🚀 In-Memory OLTP & Memory-Optimized Tables</h2>
+        <p class="lead-text">
+            In-Memory OLTP removes buffer pool overhead and latch contention by storing data entirely in non-paged memory, 
+            using lock-free multi-version concurrency control (MVCC).
+        </p>
+        <pre><code class="language-sql">-- Create memory-optimized table with Hash Index
+CREATE TABLE dbo.HighThroughputTelemetry (
+    DeviceID INT NOT NULL,
+    ReadingTimestamp DATETIME2 NOT NULL,
+    MetricValue FLOAT NOT NULL,
+    CONSTRAINT PK_Telemetry PRIMARY KEY NONCLUSTERED HASH (DeviceID, ReadingTimestamp)
+    WITH (BUCKET_COUNT = 2000000)
+)
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);</code></pre>
+        <div class="tip-box">
+            <strong>Bucket Count Rule:</strong> Sizing the <code>BUCKET_COUNT</code> parameter correctly is critical. 
+            Set <code>BUCKET_COUNT</code> to 1x to 2x the anticipated number of distinct key values. Sizing too low leads to hash chain collisions 
+            and slow sequential scans; sizing too high wastes memory.
+        </div>
+    </div>
+
+    <!-- 6. QUERY STORE -->
+    <div class="section" id="query-store">
+        <h2 class="section-title">📈 Query Store & Plan Regression Troubleshooting</h2>
+        <p class="lead-text">
+            Query Store captures query history, runtime statistics, and execution plans, enabling database administrators 
+            to diagnose plan regressions caused by parameter sniffing or statistic drift.
+        </p>
+        <pre><code class="language-sql">-- Forcing a specific execution plan to eliminate parameter sniffing regression
+EXEC sp_query_store_force_plan @query_id = 128, @plan_id = 45;</code></pre>
+    </div>
+
+    <!-- 7. SCENARIOS -->
+    <div class="section" id="sql-scenarios">
+        <h2 class="section-title">📝 Realistic MCSA SQL Practice Scenarios</h2>
+        
+        <div class="qa-card">
+            <h4>Scenario 1: Window Framing with ROWS vs RANGE</h4>
+            <p>
+                A database developer writes a query calculating running totals: <code>SUM(Amount) OVER(ORDER BY OrderDate)</code>. 
+                They notice severe performance degradation and high tempdb spill on a 10-million row table.
+            </p>
+            <p><strong>Question:</strong> Why does this occur, and what is the optimal query rewrite?</p>
+            <ul class="qa-options">
+                <li>A) The default framing is <code>RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code>, which creates an on-disk spool in tempdb to handle ties. Fix by specifying <code>ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code>.</li>
+                <li>B) Window functions cannot use indexes; the query must be rewritten as a cursor.</li>
+                <li>C) Replace <code>SUM</code> with <code>COUNT</code>.</li>
+                <li>D) Enable In-Memory OLTP on the table to bypass tempdb.</li>
+            </ul>
+            <details>
+                <summary>Click to view Answer & Detailed Technical Rationale</summary>
+                <div class="highlight-box">
+                    <strong>Correct Answer: A (Default RANGE framing creates tempdb spool; replace with ROWS)</strong>
+                </div>
+                <p><strong>Detailed Analysis:</strong></p>
+                <ul>
+                    <li><strong>Option A is CORRECT:</strong> In T-SQL, when <code>ORDER BY</code> is specified in an <code>OVER()</code> clause without an explicit window frame, the ANSI default is <code>RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code>. Because <code>RANGE</code> must account for duplicate values (ties), SQL Server allocates an on-disk worktable in tempdb. In contrast, <code>ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code> evaluates row-by-row sequentially in memory without allocating a tempdb spool, running up to 100x faster.</li>
+                    <li><strong>Option B is INCORRECT:</strong> Cursors are notoriously slow row-by-row procedural constructs.</li>
+                    <li><strong>Option C is INCORRECT:</strong> <code>COUNT</code> does not calculate a spend total.</li>
+                    <li><strong>Option D is INCORRECT:</strong> In-Memory OLTP does not alter ANSI window framing semantics.</li>
+                </ul>
+            </details>
         </div>
     </div>
 
@@ -380,7 +660,7 @@
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
             <a href="mct-certification-guide.html">MCT Guide</a>
         </div>
-        <p>&copy; 2025–2026 Chami's Learning Hub | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025–2026 Chami's Learning Hub | Authored by Chaminuka Mbanje (MCT, Solution Architect) &bull; Production Hosted on Docker</p>
     </div>
 </footer>
 
