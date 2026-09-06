@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chami's Learning Hub | Microsoft Certifications & Cloud Architecture</title>
+    <title>Python for Data Science & HPC | Chami's Learning Hub</title>
     <style>
-
         :root {
             --primary: #0078d4;
             --primary-dark: #005a9e;
@@ -299,53 +298,7 @@
             .section { padding: 25px 18px; }
             .nav-links { display: none; }
         }
-
-        .track-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 40px 0 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--border);
-        }
-        .track-header h2 {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin: 0;
-        }
-        .track-badge {
-            background: #eef6ff;
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-        .author-banner {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            border-left: 6px solid var(--primary);
-            flex-wrap: wrap;
-        }
-        .author-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .author-details { flex: 1; min-width: 280px; }
-        .author-tag { background: #eef6ff; color: var(--primary); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px; }
-        .author-name { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-        .author-title { font-size: 1rem; color: var(--gray); margin-bottom: 10px; font-weight: 500; }
-        .author-bio { font-size: 0.95rem; color: #484644; margin-bottom: 15px; }
-        .author-links { display: flex; gap: 12px; flex-wrap: wrap; }
-        .btn-author { background: var(--primary); color: white; padding: 9px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
-        .btn-author:hover { background: var(--primary-dark); }
-        .btn-cv { background: #f3f2f1; color: var(--dark); border: 1px solid #d2d0ce; padding: 9px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
-        .btn-cv:hover { background: #edebe9; }
-    </style>
+</style>
 </head>
 <body>
 
@@ -357,12 +310,12 @@
                 <span class="logo-text">Chami's Learning Hub</span>
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home Hub</a>
+                <a href="index.html">Home Hub</a>
                 <a href="bio.html">Bio & CV</a>
-                <a href="mb800-overview.html">MB-800 BC</a>
-                <a href="mb910-crm-fundamentals.html">MB-910 CRM</a>
-                <a href="al-coding-intro.html">AL Coding</a>
-                <a href="python-datascience.html">Python/HPC</a>
+                <a href="mb800-overview.html">MB-800</a>
+                <a href="mb910-crm-fundamentals.html" >MB-910</a>
+                <a href="al-coding-intro.html" >AL Coding</a>
+                <a href="python-datascience.html" class='active'>Python/HPC</a>
                 <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank">LinkedIn &nearr;</a>
                 <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="nav-btn">Download CV</a>
             </div>
@@ -372,150 +325,112 @@
 
 <div class="hero">
     <div class="container">
-        <h1>Welcome to Chami's Learning Hub</h1>
-        <p>Enterprise technical guides, Microsoft Dynamics 365, Azure Cloud Architecture, High-Performance Computing (HPC), and Developer Tracks authored by Chaminuka Mbanje (MCT).</p>
-        <div class="hero-tags">
-            <span class="hero-tag">🎓 Microsoft Certified Trainer (MCT)</span>
-            <span class="hero-tag">☁️ Azure & DevOps Architect</span>
-            <span class="hero-tag">💼 Dynamics 365 Business Central</span>
-            <span class="hero-tag">🔬 JASMIN / UKRI HPC Storage</span>
+        <div class="hero-breadcrumb">
+            <a href="index.html">Hub Home</a> &rsaquo; <span>Python for Data Science & High-Performance Computing</span>
         </div>
+        <h1>Python for Data Science & High-Performance Computing</h1>
+        <p>Applied guide to scientific Python: NumPy, Pandas, Scikit-Learn, PySpark, Xarray, NetCDF, and running distributed workloads on Slurm & JASMIN HPC clusters.</p>
+        <div class="hero-tags"><span class="hero-tag">Python</span><span class="hero-tag">Data Science</span><span class="hero-tag">HPC</span><span class="hero-tag">JASMIN</span><span class="hero-tag">PySpark</span><span class="hero-tag">Machine Learning</span></div>
     </div>
 </div>
-
 <div class="container">
 
-    <!-- Author Bio Card -->
-    <div class="author-banner">
-        <img src="chami_profile.jpg" alt="Chaminuka Mbanje" class="author-img">
-        <div class="author-details">
-            <span class="author-tag">Certified Instructor & Author</span>
-            <h2 class="author-name">Chaminuka Mbanje</h2>
-            <div class="author-title">Storage Operations Specialist (JASMIN / CEDA / UKRI) &bull; Microsoft Certified Trainer (MCT)</div>
-            <p class="author-bio">
-                With 25+ years across scientific supercomputing, enterprise cloud architecture, university IT management, and pedagogy, Chaminuka leads storage operations at JASMIN (UKRI-STFC) and delivers official Microsoft certification training globally.
-            </p>
-            <div class="author-links">
-                <a href="bio.html" class="btn-author">👤 Read Full Biography & Credentials &rarr;</a>
-                <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="btn-cv">📄 Download CV (PDF)</a>
-                <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank" class="btn-cv">🔗 LinkedIn Profile</a>
+    <div class="section">
+        <h2 class="section-title">🔬 Data Science & Scientific Supercomputing</h2>
+        <p class="lead-text">
+            Python is the premier language for data science, machine learning, and high-performance computing (HPC). 
+            From local data analysis with Pandas to petabyte-scale distributed processing on <strong>JASMIN</strong> and <strong>Azure Databricks</strong>, 
+            mastering the scientific Python stack is essential for modern technical leadership.
+        </p>
+        <div class="highlight-box">
+            <strong>Author's Context:</strong> At the Centre for Environmental Data Analysis (CEDA) / JASMIN at STFC, 
+            researchers run parallel scientific workflows across petabytes of atmospheric, oceanographic, and climate datasets using this stack.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">📦 Core Scientific Python Ecosystem</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h4>NumPy</h4>
+                <p>N-dimensional array manipulation with fast C-backed vectorization, broadcasting, and linear algebra routines.</p>
+                <code>import numpy as np<br>arr = np.linspace(0, 10, 100)</code>
+            </div>
+            <div class="card">
+                <h4>Pandas</h4>
+                <p>High-performance tabular DataFrames, time series handling, aggregations, pivoting, and SQL-like join operations.</p>
+                <code>import pandas as pd<br>df = pd.read_csv('data.csv')</code>
+            </div>
+            <div class="card">
+                <h4>Scikit-Learn & ML</h4>
+                <p>Industry-standard algorithms for regression, classification, clustering, dimensionality reduction, and pipeline cross-validation.</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <h4>Xarray & NetCDF</h4>
+                <p>N-dimensional labeled arrays essential for climate models, satellite observations, and environmental data (NetCDF4, GRIB, HDF5).</p>
+            </div>
+            <div class="card">
+                <h4>Matplotlib & Seaborn</h4>
+                <p>Publication-ready 2D/3D visualizations, geographical plotting with Cartopy, and interactive dashboard charts.</p>
+            </div>
+            <div class="card">
+                <h4>Dask & PySpark</h4>
+                <p>Distributed computing scaling from multi-core workstations to thousands of nodes across cloud and Slurm clusters.</p>
             </div>
         </div>
     </div>
 
-    <!-- TRACK 1: ERP & Business Central -->
-    <div class="track-header">
-        <h2>💼 Dynamics 365 ERP & Business Central Track</h2>
-        <span class="track-badge">Enterprise Applications</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>MB-800: Business Central Consultant</h4>
-            <p>The complete Functional Consultant study guide: Setup, Financials, Sales, Purchasing, Operations, and Migration Scenarios.</p>
-            <a href="mb800-overview.html" class="btn-action">Explore MB-800 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>Intro to AL Coding</h4>
-            <p>Modern Business Central developer guide: Extensions 2.0, VS Code, Event Subscribers, Table/Page extensions, and Docker sandboxes.</p>
-            <a href="al-coding-intro.html" class="btn-action">Start AL Coding &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>MB-330: Supply Chain Management</h4>
-            <p>Product Information, Advanced Warehouse Management (WMS), Inventory Costing (FIFO/Std), and Master Planning.</p>
-            <a href="mb330-supply-chain.html" class="btn-action">Explore MB-330 Guide &rarr;</a>
-        </div>
+    <div class="section">
+        <h2 class="section-title">⚡ Scalable Data Processing Example (PySpark & Databricks)</h2>
+        <p>In high-throughput enterprise pipelines, PySpark processes data stored in Azure Data Lake Storage (ADLS Gen2) or Delta Lake:</p>
+        <pre><code>from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, when, avg
+
+spark = SparkSession.builder \
+    .appName("JASMIN_Climate_Analysis") \
+    .getOrCreate()
+
+# Load petabyte-scale distributed parquet data
+df = spark.read.format("delta").load("/mnt/lake/environmental_metrics")
+
+# Transform: Aggregate anomaly detection
+anomalies = df.filter(col("temperature_celsius") > 35.0) \
+    .groupBy("station_id", "region") \
+    .agg(avg("humidity").alias("mean_humidity")) \
+    .orderBy(col("mean_humidity").desc())
+
+anomalies.write.mode("overwrite").parquet("/mnt/lake/processed_anomalies")</code></pre>
     </div>
 
-    <!-- TRACK 2: CRM & Customer Engagement -->
-    <div class="track-header">
-        <h2>🎧 Customer Engagement & Power Platform Track</h2>
-        <span class="track-badge">CRM & Low-Code Pro-Dev</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>MB-910: CRM Fundamentals</h4>
-            <p>Customer engagement core: Dynamics 365 Marketing, Sales, Customer Service, Field Service, and Shared Power Platform features.</p>
-            <a href="mb910-crm-fundamentals.html" class="btn-action">Explore MB-910 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>PL-400: Power Platform Developer</h4>
-            <p>Pro-development: C# Dataverse Plug-ins, Client Scripting (JavaScript), PCF Controls (TypeScript), Custom Connectors, and Webhooks.</p>
-            <a href="pl400-power-platform-developer.html" class="btn-action">Explore PL-400 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>PL-200: Functional Consultant</h4>
-            <p>Dataverse data modeling, Model-driven and Canvas apps, Power Automate cloud flows, and Copilot Studio.</p>
-            <a href="pl200-power-platform-functional-consultant.html" class="btn-action">Explore PL-200 Guide &rarr;</a>
-        </div>
+    <div class="section">
+        <h2 class="section-title">🖥️ Running Python on Slurm HPC Clusters (JASMIN Pattern)</h2>
+        <p>To run large Python workflows on a supercomputing cluster like JASMIN, jobs are submitted using Slurm batch scripts:</p>
+        <pre><code>#!/bin/bash
+#SBATCH --job-name=python_hpc_job
+#SBATCH --partition=standard
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=32G
+#SBATCH --time=04:00:00
+#SBATCH --output=/work/scratch/chami_%j.out
+
+module load jaspy
+source activate my_scientific_env
+
+python3 process_scientific_dataset.py --input /gws/nopw/j04/data --output /work/results</code></pre>
     </div>
 
-    <!-- TRACK 3: Data Science, Analytics & HPC -->
-    <div class="track-header">
-        <h2>📊 Data Science, Analytics & Scientific Computing</h2>
-        <span class="track-badge">Big Data & Machine Learning</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>Python for Data Science & HPC</h4>
-            <p>NumPy, Pandas, PySpark, Xarray/NetCDF, Slurm cluster job submission, and parallel computing on JASMIN.</p>
-            <a href="python-datascience.html" class="btn-action">Explore Python Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>DP-203: Azure Data Engineer</h4>
-            <p>Azure Synapse Analytics (Dedicated SQL & Spark), Databricks Lakehouse, Data Factory pipelines, and Stream Analytics.</p>
-            <a href="dp203-data-engineer.html" class="btn-action">Explore DP-203 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>DP-100: Azure Data Scientist</h4>
-            <p>Azure Machine Learning Workspace, AutoML, MLflow tracking, Hyperdrive tuning, and Managed Online Endpoints.</p>
-            <a href="dp100-data-scientist.html" class="btn-action">Explore DP-100 Guide &rarr;</a>
-        </div>
-    </div>
-    <div class="grid-2">
-        <div class="card">
-            <h4>MCSA: SQL 2016 Database Development</h4>
-            <p>Advanced Transact-SQL, Query Tuning, Columnstore Indexes, Execution Plans, and Concurrency Control.</p>
-            <a href="sql2016-database-dev.html" class="btn-action">Explore SQL Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>Fundamentals Suite (DP-900 & PL-900)</h4>
-            <p>Core data principles in Azure and foundational low-code capabilities of Power Platform.</p>
-            <a href="fundamentals-suite.html" class="btn-action">Explore Fundamentals &rarr;</a>
-        </div>
-    </div>
-
-    <!-- TRACK 4: Azure Infrastructure, DevOps & Security -->
-    <div class="track-header">
-        <h2>☁️ Azure Infrastructure, DevOps & Security Track</h2>
-        <span class="track-badge">Cloud Architecture</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>AZ-104: Azure Administrator</h4>
-            <p>Entra ID, Hybrid Networking (VNet Peering, Bastion, VPN), VM Scale Sets, Storage Lifecycle, and Azure Monitor.</p>
-            <a href="az104-azure-administrator.html" class="btn-action">Explore AZ-104 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>AZ-400: DevOps Engineer Expert</h4>
-            <p>CI/CD with multi-stage YAML pipelines, GitHub Actions, Infrastructure as Code (Bicep/Terraform), and SRE instrumentation.</p>
-            <a href="az400-devops-expert.html" class="btn-action">Explore AZ-400 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>AZ-204: Azure Developer Associate</h4>
-            <p>Cloud-native engineering: Azure Functions (Serverless), Cosmos DB, Event Grid, Service Bus, and Key Vault.</p>
-            <a href="az204-azure-developer.html" class="btn-action">Explore AZ-204 Guide &rarr;</a>
-        </div>
-    </div>
-    <div class="grid-2">
-        <div class="card">
-            <h4>AZ-500: Azure Security Engineer</h4>
-            <p>Zero Trust security: Conditional Access, PIM, Network Perimeters, Key Vault, Defender for Cloud, and Microsoft Sentinel.</p>
-            <a href="az500-security-engineer.html" class="btn-action">Explore AZ-500 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>MCT Certification & Methodology</h4>
-            <p>Instructional methodologies, lab environment delivery, and technical training practices from an experienced MCT.</p>
-            <a href="mct-certification-guide.html" class="btn-action">Explore MCT Guide &rarr;</a>
+    <div class="section">
+        <h2 class="section-title">🎯 Summary Checklist for Python Data Practitioners</h2>
+        <div class="tip-box">
+            <ul>
+                <li><strong>Vectorize:</strong> Avoid Python <code>for</code> loops when working with NumPy and Pandas. Leverage vectorized C operations.</li>
+                <li><strong>Chunk Big Data:</strong> Use Dask or PySpark when data exceeds available system RAM.</li>
+                <li><strong>Reproducibility:</strong> Lock environment dependencies using <code>environment.yml</code> or containerize workloads with Docker/Singularity.</li>
+            </ul>
         </div>
     </div>
 

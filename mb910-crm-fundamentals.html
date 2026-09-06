@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chami's Learning Hub | Microsoft Certifications & Cloud Architecture</title>
+    <title>MB-910: Dynamics 365 CRM Fundamentals | Chami's Learning Hub</title>
     <style>
-
         :root {
             --primary: #0078d4;
             --primary-dark: #005a9e;
@@ -299,53 +298,7 @@
             .section { padding: 25px 18px; }
             .nav-links { display: none; }
         }
-
-        .track-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 40px 0 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--border);
-        }
-        .track-header h2 {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin: 0;
-        }
-        .track-badge {
-            background: #eef6ff;
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-        .author-banner {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            border-left: 6px solid var(--primary);
-            flex-wrap: wrap;
-        }
-        .author-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .author-details { flex: 1; min-width: 280px; }
-        .author-tag { background: #eef6ff; color: var(--primary); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 6px; }
-        .author-name { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-        .author-title { font-size: 1rem; color: var(--gray); margin-bottom: 10px; font-weight: 500; }
-        .author-bio { font-size: 0.95rem; color: #484644; margin-bottom: 15px; }
-        .author-links { display: flex; gap: 12px; flex-wrap: wrap; }
-        .btn-author { background: var(--primary); color: white; padding: 9px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
-        .btn-author:hover { background: var(--primary-dark); }
-        .btn-cv { background: #f3f2f1; color: var(--dark); border: 1px solid #d2d0ce; padding: 9px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
-        .btn-cv:hover { background: #edebe9; }
-    </style>
+</style>
 </head>
 <body>
 
@@ -357,12 +310,12 @@
                 <span class="logo-text">Chami's Learning Hub</span>
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home Hub</a>
+                <a href="index.html">Home Hub</a>
                 <a href="bio.html">Bio & CV</a>
-                <a href="mb800-overview.html">MB-800 BC</a>
-                <a href="mb910-crm-fundamentals.html">MB-910 CRM</a>
-                <a href="al-coding-intro.html">AL Coding</a>
-                <a href="python-datascience.html">Python/HPC</a>
+                <a href="mb800-overview.html">MB-800</a>
+                <a href="mb910-crm-fundamentals.html" class='active'>MB-910</a>
+                <a href="al-coding-intro.html" >AL Coding</a>
+                <a href="python-datascience.html" >Python/HPC</a>
                 <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank">LinkedIn &nearr;</a>
                 <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="nav-btn">Download CV</a>
             </div>
@@ -372,150 +325,154 @@
 
 <div class="hero">
     <div class="container">
-        <h1>Welcome to Chami's Learning Hub</h1>
-        <p>Enterprise technical guides, Microsoft Dynamics 365, Azure Cloud Architecture, High-Performance Computing (HPC), and Developer Tracks authored by Chaminuka Mbanje (MCT).</p>
-        <div class="hero-tags">
-            <span class="hero-tag">🎓 Microsoft Certified Trainer (MCT)</span>
-            <span class="hero-tag">☁️ Azure & DevOps Architect</span>
-            <span class="hero-tag">💼 Dynamics 365 Business Central</span>
-            <span class="hero-tag">🔬 JASMIN / UKRI HPC Storage</span>
+        <div class="hero-breadcrumb">
+            <a href="index.html">Hub Home</a> &rsaquo; <span>MB-910: Dynamics 365 Fundamentals (CRM)</span>
         </div>
+        <h1>MB-910: Dynamics 365 Fundamentals (CRM)</h1>
+        <p>Complete study guide covering Customer Engagement: Marketing, Sales, Customer Service, Field Service, and Power Platform architecture.</p>
+        <div class="hero-tags"><span class="hero-tag">Exam MB-910</span><span class="hero-tag">Dynamics 365</span><span class="hero-tag">CRM</span><span class="hero-tag">Sales & Marketing</span><span class="hero-tag">Customer & Field Service</span></div>
     </div>
 </div>
-
 <div class="container">
 
-    <!-- Author Bio Card -->
-    <div class="author-banner">
-        <img src="chami_profile.jpg" alt="Chaminuka Mbanje" class="author-img">
-        <div class="author-details">
-            <span class="author-tag">Certified Instructor & Author</span>
-            <h2 class="author-name">Chaminuka Mbanje</h2>
-            <div class="author-title">Storage Operations Specialist (JASMIN / CEDA / UKRI) &bull; Microsoft Certified Trainer (MCT)</div>
-            <p class="author-bio">
-                With 25+ years across scientific supercomputing, enterprise cloud architecture, university IT management, and pedagogy, Chaminuka leads storage operations at JASMIN (UKRI-STFC) and delivers official Microsoft certification training globally.
-            </p>
-            <div class="author-links">
-                <a href="bio.html" class="btn-author">👤 Read Full Biography & Credentials &rarr;</a>
-                <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="btn-cv">📄 Download CV (PDF)</a>
-                <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank" class="btn-cv">🔗 LinkedIn Profile</a>
+    <div class="section">
+        <h2 class="section-title">📘 Exam Overview & Scope</h2>
+        <p class="lead-text">
+            Exam <strong>MB-910: Microsoft Dynamics 365 Fundamentals (CRM)</strong> validates foundational knowledge of customer engagement capabilities across 
+            Dynamics 365 Marketing, Sales, Customer Service, and Field Service, along with cross-application features and Power Platform integration.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Weight</th>
+                    <th>Core Key Areas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Describe Dynamics 365 Marketing</strong></td>
+                    <td>15–20%</td>
+                    <td>Customer Insights - Journeys, Segments, Lead Scoring, Event Management</td>
+                </tr>
+                <tr>
+                    <td><strong>Describe Dynamics 365 Sales</strong></td>
+                    <td>15–20%</td>
+                    <td>Leads, Opportunities, Quotes, Orders, Invoices, Sales Pipelines, Forecasting</td>
+                </tr>
+                <tr>
+                    <td><strong>Describe Dynamics 365 Customer Service</strong></td>
+                    <td>15–20%</td>
+                    <td>Cases, Knowledge Base, Queues, SLAs, Entitlements, Omnichannel</td>
+                </tr>
+                <tr>
+                    <td><strong>Describe Dynamics 365 Field Service</strong></td>
+                    <td>15–20%</td>
+                    <td>Work Orders, Schedule Board, Universal Resource Scheduling, Connected Field Service</td>
+                </tr>
+                <tr>
+                    <td><strong>Shared Features & Power Platform</strong></td>
+                    <td>20–25%</td>
+                    <td>Dataverse tables, Power Automate, Microsoft Teams & Outlook integration, Copilot</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">🎯 Module 1: Dynamics 365 Marketing</h2>
+        <p>Dynamics 365 Marketing (now integrated with Customer Insights - Journeys) focuses on identifying, nurturing, and converting prospects.</p>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Customer Journeys & Triggers</h3>
+                <p>Automated visual workflows triggered by user actions (e.g., website visit, email click) or scheduled intervals to send targeted communications.</p>
+                <ul>
+                    <li><strong>Real-Time Journeys:</strong> Responds instantaneously to customer actions.</li>
+                    <li><strong>Outbound Marketing:</strong> Batch-oriented campaign journeys.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Segments & Lead Scoring</h3>
+                <p>Audience targeting and prioritization based on demographic and behavioral data.</p>
+                <ul>
+                    <li><strong>Behavioral Segments:</strong> Customers who clicked a specific campaign link.</li>
+                    <li><strong>Lead Scoring Models:</strong> Adds points for engagement, decaying inactive leads.</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- TRACK 1: ERP & Business Central -->
-    <div class="track-header">
-        <h2>💼 Dynamics 365 ERP & Business Central Track</h2>
-        <span class="track-badge">Enterprise Applications</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>MB-800: Business Central Consultant</h4>
-            <p>The complete Functional Consultant study guide: Setup, Financials, Sales, Purchasing, Operations, and Migration Scenarios.</p>
-            <a href="mb800-overview.html" class="btn-action">Explore MB-800 Guide &rarr;</a>
+    <div class="section">
+        <h2 class="section-title">💼 Module 2: Dynamics 365 Sales</h2>
+        <p>Covers the complete B2B sales lifecycle from raw prospective lead to closed revenue.</p>
+        <div class="highlight-box">
+            <strong>Standard Sales Process Lifecycle:</strong><br>
+            <code>Lead (Unqualified) &rarr; Qualifying Lead &rarr; Creates Account + Contact + Opportunity &rarr; Quote Generation &rarr; Order &rarr; Invoice</code>
         </div>
-        <div class="card">
-            <h4>Intro to AL Coding</h4>
-            <p>Modern Business Central developer guide: Extensions 2.0, VS Code, Event Subscribers, Table/Page extensions, and Docker sandboxes.</p>
-            <a href="al-coding-intro.html" class="btn-action">Start AL Coding &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>MB-330: Supply Chain Management</h4>
-            <p>Product Information, Advanced Warehouse Management (WMS), Inventory Costing (FIFO/Std), and Master Planning.</p>
-            <a href="mb330-supply-chain.html" class="btn-action">Explore MB-330 Guide &rarr;</a>
-        </div>
-    </div>
-
-    <!-- TRACK 2: CRM & Customer Engagement -->
-    <div class="track-header">
-        <h2>🎧 Customer Engagement & Power Platform Track</h2>
-        <span class="track-badge">CRM & Low-Code Pro-Dev</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>MB-910: CRM Fundamentals</h4>
-            <p>Customer engagement core: Dynamics 365 Marketing, Sales, Customer Service, Field Service, and Shared Power Platform features.</p>
-            <a href="mb910-crm-fundamentals.html" class="btn-action">Explore MB-910 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>PL-400: Power Platform Developer</h4>
-            <p>Pro-development: C# Dataverse Plug-ins, Client Scripting (JavaScript), PCF Controls (TypeScript), Custom Connectors, and Webhooks.</p>
-            <a href="pl400-power-platform-developer.html" class="btn-action">Explore PL-400 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>PL-200: Functional Consultant</h4>
-            <p>Dataverse data modeling, Model-driven and Canvas apps, Power Automate cloud flows, and Copilot Studio.</p>
-            <a href="pl200-power-platform-functional-consultant.html" class="btn-action">Explore PL-200 Guide &rarr;</a>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Pipeline Management</h4>
+                <p>Tracking opportunities by estimated revenue, probability, estimated close date, and visual sales pipeline funnels.</p>
+            </div>
+            <div class="card">
+                <h4>Product Catalog</h4>
+                <p>Defining price lists, unit groups, discount lists, and product bundles for sales quotes and orders.</p>
+            </div>
+            <div class="card">
+                <h4>Sales Copilot & Insights</h4>
+                <p>Generative AI meeting summaries, automated email drafts, and LinkedIn Sales Navigator integration.</p>
+            </div>
         </div>
     </div>
 
-    <!-- TRACK 3: Data Science, Analytics & HPC -->
-    <div class="track-header">
-        <h2>📊 Data Science, Analytics & Scientific Computing</h2>
-        <span class="track-badge">Big Data & Machine Learning</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>Python for Data Science & HPC</h4>
-            <p>NumPy, Pandas, PySpark, Xarray/NetCDF, Slurm cluster job submission, and parallel computing on JASMIN.</p>
-            <a href="python-datascience.html" class="btn-action">Explore Python Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>DP-203: Azure Data Engineer</h4>
-            <p>Azure Synapse Analytics (Dedicated SQL & Spark), Databricks Lakehouse, Data Factory pipelines, and Stream Analytics.</p>
-            <a href="dp203-data-engineer.html" class="btn-action">Explore DP-203 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>DP-100: Azure Data Scientist</h4>
-            <p>Azure Machine Learning Workspace, AutoML, MLflow tracking, Hyperdrive tuning, and Managed Online Endpoints.</p>
-            <a href="dp100-data-scientist.html" class="btn-action">Explore DP-100 Guide &rarr;</a>
-        </div>
-    </div>
-    <div class="grid-2">
-        <div class="card">
-            <h4>MCSA: SQL 2016 Database Development</h4>
-            <p>Advanced Transact-SQL, Query Tuning, Columnstore Indexes, Execution Plans, and Concurrency Control.</p>
-            <a href="sql2016-database-dev.html" class="btn-action">Explore SQL Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>Fundamentals Suite (DP-900 & PL-900)</h4>
-            <p>Core data principles in Azure and foundational low-code capabilities of Power Platform.</p>
-            <a href="fundamentals-suite.html" class="btn-action">Explore Fundamentals &rarr;</a>
+    <div class="section">
+        <h2 class="section-title">🎧 Module 3: Dynamics 365 Customer Service</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Case Lifecycle & Queues</h3>
+                <ul>
+                    <li><strong>Cases (Incidents):</strong> Central record tracking a customer's inquiry or issue.</li>
+                    <li><strong>Queues:</strong> Shared holding areas where incoming cases, emails, or activities are assigned and routed.</li>
+                    <li><strong>Knowledge Management:</strong> Searchable, versioned articles linked to cases for swift first-contact resolution.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Service Level Agreements (SLAs) & Entitlements</h3>
+                <ul>
+                    <li><strong>Entitlements:</strong> Contractual agreements defining the amount and type of support a customer is eligible to receive (e.g., 50 hours or 20 cases).</li>
+                    <li><strong>SLAs:</strong> Key performance indicators tracking first response time, resolution time, and warning/escalation actions.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <!-- TRACK 4: Azure Infrastructure, DevOps & Security -->
-    <div class="track-header">
-        <h2>☁️ Azure Infrastructure, DevOps & Security Track</h2>
-        <span class="track-badge">Cloud Architecture</span>
-    </div>
-    <div class="grid-3">
-        <div class="card">
-            <h4>AZ-104: Azure Administrator</h4>
-            <p>Entra ID, Hybrid Networking (VNet Peering, Bastion, VPN), VM Scale Sets, Storage Lifecycle, and Azure Monitor.</p>
-            <a href="az104-azure-administrator.html" class="btn-action">Explore AZ-104 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>AZ-400: DevOps Engineer Expert</h4>
-            <p>CI/CD with multi-stage YAML pipelines, GitHub Actions, Infrastructure as Code (Bicep/Terraform), and SRE instrumentation.</p>
-            <a href="az400-devops-expert.html" class="btn-action">Explore AZ-400 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>AZ-204: Azure Developer Associate</h4>
-            <p>Cloud-native engineering: Azure Functions (Serverless), Cosmos DB, Event Grid, Service Bus, and Key Vault.</p>
-            <a href="az204-azure-developer.html" class="btn-action">Explore AZ-204 Guide &rarr;</a>
+    <div class="section">
+        <h2 class="section-title">🛠️ Module 4: Dynamics 365 Field Service</h2>
+        <p>Empowers mobile technicians to deliver on-site service with intelligent scheduling and IoT diagnostics.</p>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Work Orders</h4>
+                <p>Defines the on-site service request: location, customer asset, incidents, required parts, skills, and estimated duration.</p>
+            </div>
+            <div class="card">
+                <h4>Schedule Board & URS</h4>
+                <p>Universal Resource Scheduling (URS) dynamically matches work order requirements to technician skills, travel distance, and availability.</p>
+            </div>
+            <div class="card">
+                <h4>Connected Field Service (IoT)</h4>
+                <p>Connects IoT telemetry to Dataverse. Automatically detects equipment anomalies and generates preventive work orders before failure.</p>
+            </div>
         </div>
     </div>
-    <div class="grid-2">
-        <div class="card">
-            <h4>AZ-500: Azure Security Engineer</h4>
-            <p>Zero Trust security: Conditional Access, PIM, Network Perimeters, Key Vault, Defender for Cloud, and Microsoft Sentinel.</p>
-            <a href="az500-security-engineer.html" class="btn-action">Explore AZ-500 Guide &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>MCT Certification & Methodology</h4>
-            <p>Instructional methodologies, lab environment delivery, and technical training practices from an experienced MCT.</p>
-            <a href="mct-certification-guide.html" class="btn-action">Explore MCT Guide &rarr;</a>
+
+    <div class="section">
+        <h2 class="section-title">💡 Pro-Tips for Exam Success</h2>
+        <div class="tip-box">
+            <ul>
+                <li><strong>Understand the Lead qualification outcome:</strong> Qualifying a Lead in Dynamics 365 Sales creates three records: Account, Contact, and Opportunity.</li>
+                <li><strong>SLAs vs Entitlements:</strong> Entitlements specify <em>how much</em> support a customer has purchased; SLAs define <em>how quickly</em> you must respond and resolve.</li>
+                <li><strong>Schedule Board:</strong> URS can be used not just for Field Service, but across any Dataverse table requiring resource booking.</li>
+            </ul>
         </div>
     </div>
 
