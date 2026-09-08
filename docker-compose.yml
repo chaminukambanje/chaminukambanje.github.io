@@ -1,0 +1,16 @@
+services:
+  chaminukambanje:
+    image: nginx:alpine
+    container_name: chaminukambanje
+    restart: always
+    ports:
+      - "8089:80"
+    volumes:
+      - /home/mbanjec/chaminukambanje:/usr/share/nginx/html:ro
+      - /home/mbanjec/chaminukambanje/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:80/ || exit 1"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 2s
