@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPC Solutions Services | Microsoft Certifications & Cloud Architecture</title>
+    <title>Training | Microsoft Certification Study Guides | NPC Solutions Services</title>
+    <meta name="description" content="Microsoft Certified Trainer study guides for Dynamics 365 Business Central, Power Platform, Azure data engineering, Azure infrastructure and DevOps, and Python for HPC.">
     <style>
 
         :root {
@@ -346,6 +347,11 @@
         .btn-cv { background: #f3f2f1; color: var(--dark); border: 1px solid #d2d0ce; padding: 9px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
         .btn-cv:hover { background: #edebe9; }
             .track-header { scroll-margin-top: 90px; }
+        .btn-secondary { display:inline-block; background:#fff; color:var(--primary); border:1px solid var(--primary); padding:8px 16px; border-radius:6px; font-weight:600; font-size:.9rem; text-decoration:none; margin-left:8px; }
+        .btn-secondary:hover { background:#f1f6fb; }
+        .btn-row { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:auto; }
+        .btn-row .btn-secondary { margin-left:0; }
+        .sub-title { margin:6px 0 16px; color:var(--gray); font-size:1rem; font-weight:600; }
     </style>
 </head>
 <body>
@@ -358,9 +364,9 @@
                 <span class="logo-text">NPC Solutions Services</span>
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home Hub</a>
+                <a href="index.html">Home Hub</a>
                 <a href="bio.html">Bio &amp; CV</a>
-                <a href="training.html">Training</a>
+                <a href="training.html" class="active">Training</a>
                 <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank">LinkedIn &nearr;</a>
                 <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="nav-btn">Download CV</a>
             </div>
@@ -370,71 +376,187 @@
 
 <div class="hero">
     <div class="container">
-        <h1>Welcome to NPC Solutions Services</h1>
-        <p>Enterprise technical guides, Microsoft Dynamics 365, Azure Cloud Architecture, High-Performance Computing (HPC), and Developer Tracks authored by Chaminuka Mbanje (MCT).</p>
-        <div class="hero-tags">
-            <span class="hero-tag">🎓 Microsoft Certified Trainer (MCT)</span>
-            <span class="hero-tag">☁️ Azure & DevOps Architect</span>
-            <span class="hero-tag">💼 Dynamics 365 Business Central</span>
-            <span class="hero-tag">🔬 Petabyte HPC Storage</span>
-        </div>
+        <div class="hero-breadcrumb"><a href="index.html">Home</a> / Training</div>
+        <h1>Training</h1>
+        <p>Study guides, course modules and reference documentation from a Microsoft Certified Trainer: 28 resources across Dynamics 365, Power Platform, Azure data, Azure infrastructure and developer tracks.</p>
+        <div class="hero-tags"><a href="#erp" class="hero-tag" style="text-decoration:none;color:inherit">Dynamics 365 ERP & Business Central</a><a href="#crm" class="hero-tag" style="text-decoration:none;color:inherit">Customer Engagement & Power Platform</a><a href="#data" class="hero-tag" style="text-decoration:none;color:inherit">Data Science, Analytics & Scientific Computing</a><a href="#cloud" class="hero-tag" style="text-decoration:none;color:inherit">Azure Infrastructure, DevOps & Security</a><a href="#mb800" class="hero-tag" style="text-decoration:none;color:inherit">MB-800 Course &amp; Migration Docs</a></div>
     </div>
 </div>
 
 <div class="container">
 
-    <!-- Author Bio Card -->
-    <div class="author-banner">
-        <img src="chami_profile.jpg" alt="Chaminuka Mbanje" class="author-img">
-        <div class="author-details">
-            <span class="author-tag">Certified Instructor & Author</span>
-            <h2 class="author-name">Chaminuka Mbanje</h2>
-            <div class="author-title">Storage Operations Specialist &bull; Microsoft Certified Trainer (MCT)</div>
-            <p class="author-bio">
-                With 25+ years across scientific supercomputing, enterprise cloud architecture, university IT management, and pedagogy, Chaminuka leads petabyte-scale storage operations and delivers official Microsoft certification training globally.
-            </p>
-            <div class="author-links">
-                <a href="bio.html" class="btn-author">👤 Read Full Biography & Credentials &rarr;</a>
-                <a href="Chaminuka_Mbanje_CV_2024.pdf" download class="btn-cv">📄 Download CV (PDF)</a>
-                <a href="https://www.linkedin.com/in/chaminukambanje/" target="_blank" class="btn-cv">🔗 LinkedIn Profile</a>
-            </div>
+    <!-- TRACK 1: ERP & Business Central -->
+    <div class="track-header" id="erp">
+        <h2>💼 Dynamics 365 ERP & Business Central Track</h2>
+        <span class="track-badge">Enterprise Applications</span>
+    </div>
+    <div class="grid-3">
+        <div class="card">
+            <h4>MB-800: Business Central Consultant</h4>
+            <p>The complete Functional Consultant study guide: Setup, Financials, Sales, Purchasing, Operations, and Migration Scenarios.</p>
+            <a href="mb800-overview.html" class="btn-action">Explore MB-800 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>Intro to AL Coding</h4>
+            <p>Modern Business Central developer guide: Extensions 2.0, VS Code, Event Subscribers, Table/Page extensions, and Docker sandboxes.</p>
+            <a href="al-coding-intro.html" class="btn-action">Start AL Coding &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>MB-330: Supply Chain Management</h4>
+            <p>Product Information, Advanced Warehouse Management (WMS), Inventory Costing (FIFO/Std), and Master Planning.</p>
+            <a href="mb330-supply-chain.html" class="btn-action">Explore MB-330 Guide &rarr;</a>
         </div>
     </div>
 
-    <!-- TRAINING -->
-    <div class="track-header" id="training">
-        <h2>&#127891; Training</h2>
-        <span class="track-badge">Microsoft Certification Study Guides</span>
+    <!-- TRACK 2: CRM & Customer Engagement -->
+    <div class="track-header" id="crm">
+        <h2>🎧 Customer Engagement & Power Platform Track</h2>
+        <span class="track-badge">CRM & Low-Code Pro-Dev</span>
     </div>
-    <p style="margin-bottom:20px;color:var(--gray)">Study guides written and delivered by a Microsoft Certified Trainer, grouped into four tracks, with course modules and migration documentation.</p>
+    <div class="grid-3">
+        <div class="card">
+            <h4>MB-910: CRM Fundamentals</h4>
+            <p>Customer engagement core: Dynamics 365 Marketing, Sales, Customer Service, Field Service, and Shared Power Platform features.</p>
+            <a href="mb910-crm-fundamentals.html" class="btn-action">Explore MB-910 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>PL-400: Power Platform Developer</h4>
+            <p>Pro-development: C# Dataverse Plug-ins, Client Scripting (JavaScript), PCF Controls (TypeScript), Custom Connectors, and Webhooks.</p>
+            <a href="pl400-power-platform-developer.html" class="btn-action">Explore PL-400 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>PL-200: Functional Consultant</h4>
+            <p>Dataverse data modeling, Model-driven and Canvas apps, Power Automate cloud flows, and Copilot Studio.</p>
+            <a href="pl200-power-platform-functional-consultant.html" class="btn-action">Explore PL-200 Guide &rarr;</a>
+        </div>
+    </div>
+
+    <!-- TRACK 3: Data Science, Analytics & HPC -->
+    <div class="track-header" id="data">
+        <h2>📊 Data Science, Analytics & Scientific Computing</h2>
+        <span class="track-badge">Big Data & Machine Learning</span>
+    </div>
+    <div class="grid-3">
+        <div class="card">
+            <h4>Python for Data Science & HPC</h4>
+            <p>NumPy, Pandas, PySpark, Xarray/NetCDF, Slurm cluster job submission, and parallel computing on HPC clusters.</p>
+            <a href="python-datascience.html" class="btn-action">Explore Python Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>DP-203: Azure Data Engineer</h4>
+            <p>Azure Synapse Analytics (Dedicated SQL & Spark), Databricks Lakehouse, Data Factory pipelines, and Stream Analytics.</p>
+            <a href="dp203-data-engineer.html" class="btn-action">Explore DP-203 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>DP-100: Azure Data Scientist</h4>
+            <p>Azure Machine Learning Workspace, AutoML, MLflow tracking, Hyperdrive tuning, and Managed Online Endpoints.</p>
+            <a href="dp100-data-scientist.html" class="btn-action">Explore DP-100 Guide &rarr;</a>
+        </div>
+    </div>
     <div class="grid-2">
         <div class="card">
-            <h4>Dynamics 365 ERP & Business Central Track</h4>
-            <p>Business Central functional, AL development and supply chain.</p>
-            <a href="training.html#erp" class="btn-action">3 guides &rarr;</a>
+            <h4>MCSA: SQL 2016 Database Development</h4>
+            <p>Advanced Transact-SQL, Query Tuning, Columnstore Indexes, Execution Plans, and Concurrency Control.</p>
+            <a href="sql2016-database-dev.html" class="btn-action">Explore SQL Guide &rarr;</a>
         </div>
         <div class="card">
-            <h4>Customer Engagement & Power Platform Track</h4>
-            <p>Customer engagement, Power Platform developer and functional consultant.</p>
-            <a href="training.html#crm" class="btn-action">3 guides &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>Data Science, Analytics & Scientific Computing</h4>
-            <p>Python for HPC, Azure data engineering, data science and SQL.</p>
-            <a href="training.html#data" class="btn-action">5 guides &rarr;</a>
-        </div>
-        <div class="card">
-            <h4>Azure Infrastructure, DevOps & Security Track</h4>
-            <p>Azure administration, DevOps, security, development and the MCT guide.</p>
-            <a href="training.html#cloud" class="btn-action">5 guides &rarr;</a>
-        </div>
-        <div class="card" style="grid-column:1 / -1">
-            <h4>MB-800 Course Modules &amp; Migration Documentation</h4>
-            <p>Step-by-step Business Central course modules with deep-dive references, and the three-phase on-premises to cloud migration guide.</p>
-            <a href="training.html#mb800" class="btn-action">12 pages &rarr;</a>
+            <h4>Fundamentals Suite (DP-900 & PL-900)</h4>
+            <p>Core data principles in Azure and foundational low-code capabilities of Power Platform.</p>
+            <a href="fundamentals-suite.html" class="btn-action">Explore Fundamentals &rarr;</a>
         </div>
     </div>
-    <p style="margin:8px 0 40px"><a href="training.html" class="btn-action">Browse all 28 training resources &rarr;</a></p>
+
+    <!-- TRACK 4: Azure Infrastructure, DevOps & Security -->
+    <div class="track-header" id="cloud">
+        <h2>☁️ Azure Infrastructure, DevOps & Security Track</h2>
+        <span class="track-badge">Cloud Architecture</span>
+    </div>
+    <div class="grid-3">
+        <div class="card">
+            <h4>AZ-104: Azure Administrator</h4>
+            <p>Entra ID, Hybrid Networking (VNet Peering, Bastion, VPN), VM Scale Sets, Storage Lifecycle, and Azure Monitor.</p>
+            <a href="az104-azure-administrator.html" class="btn-action">Explore AZ-104 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>AZ-400: DevOps Engineer Expert</h4>
+            <p>CI/CD with multi-stage YAML pipelines, GitHub Actions, Infrastructure as Code (Bicep/Terraform), and SRE instrumentation.</p>
+            <a href="az400-devops-expert.html" class="btn-action">Explore AZ-400 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>AZ-204: Azure Developer Associate</h4>
+            <p>Cloud-native engineering: Azure Functions (Serverless), Cosmos DB, Event Grid, Service Bus, and Key Vault.</p>
+            <a href="az204-azure-developer.html" class="btn-action">Explore AZ-204 Guide &rarr;</a>
+        </div>
+    </div>
+    <div class="grid-2">
+        <div class="card">
+            <h4>AZ-500: Azure Security Engineer</h4>
+            <p>Zero Trust security: Conditional Access, PIM, Network Perimeters, Key Vault, Defender for Cloud, and Microsoft Sentinel.</p>
+            <a href="az500-security-engineer.html" class="btn-action">Explore AZ-500 Guide &rarr;</a>
+        </div>
+        <div class="card">
+            <h4>MCT Certification & Methodology</h4>
+            <p>Instructional methodologies, lab environment delivery, and technical training practices from an experienced MCT.</p>
+            <a href="mct-certification-guide.html" class="btn-action">Explore MCT Guide &rarr;</a>
+        </div>
+    </div>
+
+    <!-- COURSE MODULES & REFERENCE DOCUMENTATION -->
+    <div class="track-header" id="mb800">
+        <h2>&#128218; MB-800 Course Modules &amp; Migration Documentation</h2>
+        <span class="track-badge">Course Material &amp; Reference</span>
+    </div>
+    <div class="sub-title">Course modules with deep-dive reference pages</div>
+    <div class="grid-3">
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Start Here: Exam Strategy &amp; Overview</h4>
+            <p>What the MB-800 Functional Consultant exam validates and how to prepare for it.</p>
+            <div class="btn-row"><a href="start-here.html" class="btn-action">Open module &rarr;</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Set Up Business Central</h4>
+            <p>Initialise the environment, migrate data, and secure the system.</p>
+            <div class="btn-row"><a href="setup.html" class="btn-action">Open module &rarr;</a><a href="setup-details.html" class="btn-secondary">Deep dive</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Configure Financials</h4>
+            <p>Set up the accounting core: Chart of Accounts, Dimensions, and Posting Groups.</p>
+            <div class="btn-row"><a href="financials.html" class="btn-action">Open module &rarr;</a><a href="financials-details.html" class="btn-secondary">Deep dive</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Sales &amp; Purchasing</h4>
+            <p>Configure trade logistics: Item Cards, Costing, and Prices.</p>
+            <div class="btn-row"><a href="sales-purchase.html" class="btn-action">Open module &rarr;</a><a href="sales-purchases-details.html" class="btn-secondary">Deep dive</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Perform Operations</h4>
+            <p>Execute daily tasks, from creating quotes to reconciling bank accounts.</p>
+            <div class="btn-row"><a href="operations.html" class="btn-action">Open module &rarr;</a><a href="operations-details.html" class="btn-secondary">Deep dive</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>MB-800 Course Home</h4>
+            <p>The full Functional Consultant guide with links to every module below.</p>
+            <div class="btn-row"><a href="mb800-overview.html" class="btn-action">Open module &rarr;</a></div>
+        </div>
+    </div>
+    <div class="sub-title" style="margin-top:28px">Business Central migration guide (on-premises to cloud)</div>
+    <div class="grid-3">
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Phase 1: Migration Scenarios &amp; Assessment</h4>
+            <p>Classify the project before touching any server and choose the correct tooling.</p>
+            <div class="btn-row"><a href="phase-1-defining_the_Migration_Scenarios.html" class="btn-action">Read phase &rarr;</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Phase 2: The Technical Upgrade</h4>
+            <p>Transform legacy logic into modern extensions and build a secure data pipeline to the cloud.</p>
+            <div class="btn-row"><a href="phase-2-technical-upgrade.html" class="btn-action">Read phase &rarr;</a></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column">
+            <h4>Phase 3: Post-Migration &amp; Cutover</h4>
+            <p>Map users, verify financials, and switch the system to Live.</p>
+            <div class="btn-row"><a href="phase-3-post-Migration-and-Cutover.html" class="btn-action">Read phase &rarr;</a></div>
+        </div>
+    </div>
 
 </div>
 
@@ -443,7 +565,6 @@
         <div class="footer-nav">
             <a href="index.html">Home Hub</a> &bull;
             <a href="bio.html">Author Bio & CV</a> &bull;
-            <a href="training.html">Training</a> &bull;
             <a href="mb800-overview.html">MB-800 Business Central</a> &bull;
             <a href="mb910-crm-fundamentals.html">MB-910 CRM</a> &bull;
             <a href="al-coding-intro.html">AL Coding</a> &bull;
@@ -458,9 +579,10 @@
             <a href="pl200-power-platform-functional-consultant.html">PL-200</a> &bull;
             <a href="mb330-supply-chain.html">MB-330</a> &bull;
             <a href="sql2016-database-dev.html">MCSA SQL</a> &bull;
-            <a href="mct-certification-guide.html">MCT Guide</a>
+            <a href="mct-certification-guide.html">MCT Guide</a> &bull;
+            <a href="training.html#mb800">MB-800 Course &amp; Migration Docs</a>
         </div>
-        <p>&copy; 2025–2026 NPC Solutions Services | Developed by Chaminuka Mbanje &bull; Hosted on Docker</p>
+        <p>&copy; 2025&ndash;2026 Chaminuka Mbanje | NPC Solutions Services</p>
     </div>
 </footer>
 
